@@ -1,0 +1,39 @@
+//UniNeue
+@font-face {
+    font-family: 'UniNeue';
+    src:
+    url('../fonts/uni_neue/UniNeueBold.woff') format('woff'),
+    url('../fonts/uni_neue/UniNeueBold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'UniNeue';
+    src:
+    url('../fonts/uni_neue/UniNeueRegular.woff') format('woff'),
+    url('../fonts/uni_neue/UniNeueRegular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+//BlenderPro
+@font-face {
+    font-family: 'BlenderPro';
+    src:
+    url('../fonts/blender_pro/BlenderPro-Bold.woff') format('woff'),
+    url('../fonts/blender_pro/BlenderPro-Bold.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'BlenderPro';
+    src:
+    url('../fonts/blender_pro/BlenderPro-Heavy.woff') format('woff'),
+    url('../fonts/blender_pro/BlenderPro-Heavy.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}

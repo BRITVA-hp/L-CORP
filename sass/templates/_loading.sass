@@ -1,0 +1,42 @@
+.loading
+  height: calc(100vh - 90px)
+  &__progress
+    display: flex
+    column-gap: 14px
+    &__elem
+      width: 36px
+      height: 75px
+      border: 1px solid #08E2F0
+      transform: skew(-20deg)
+      position: relative
+      //background: #08E2F0
+      &::before
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        right: 0
+        bottom: 0
+        opacity: 0
+        border: 1px solid #08E2F0
+        background: #08E2F0
+        filter: drop-shadow(-2px 3px #CFFF04) drop-shadow(-1px -3px #ceec50) drop-shadow(2px 1px #e0f58d)
+      &--active
+        animation: fadeIn 1s forwards
+        &::before
+          animation: glitch 2s linear, fadeIn 1s forwards
+  &__title
+    font-family: 'BlenderPro', sans-serif
+    font-style: normal
+    font-weight: bold
+    font-size: 80px
+    line-height: 100%
+    text-transform: uppercase
+    text-align: center
+    color: #CFFF04
+    margin-bottom: 35px
+  &__container
+    height: 100%
+    display: flex
+    align-items: center
+    justify-content: center
