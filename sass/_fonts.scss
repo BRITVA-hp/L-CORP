@@ -22,6 +22,15 @@
 @font-face {
     font-family: 'BlenderPro';
     src:
+    url('../fonts/blender_pro/BlenderPro-Medium.woff') format('woff'),
+    url('../fonts/blender_pro/BlenderPro-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'BlenderPro';
+    src:
     url('../fonts/blender_pro/BlenderPro-Bold.woff') format('woff'),
     url('../fonts/blender_pro/BlenderPro-Bold.woff2') format('woff2');
     font-weight: bold;

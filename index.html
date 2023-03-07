@@ -14,6 +14,8 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
     <!-- styles -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -25,10 +27,30 @@
     <header class="header section">
         <div class="header__container container">
             <div class="row-center header__row">
-                <img  class="header__logo" src="img/header/logo.svg" alt="L-CORPORATION">
+                <a class="header__logo" href="#">
+                    <img src="img/header/logo.svg" alt="L-CORPORATION">
+                </a>
 
-                <button class="button header__button">бесплатная консультация</button>
-                <img class="header__phone" src="img/header/phone.svg" alt="phone">
+                <nav class="header__nav">
+                    <ul class="header__ul row">
+                        <li class="header__li header__li--active"><a href="#">ГЛАВНАЯ</a></li>
+                        <li class="header__li"><a href="#">РАЗРАБОТКА САЙТОВ</a></li>
+                        <li class="header__li"><a href="#">КОНТЕКСТНАЯ РЕКЛАМА</a></li>
+                        <li class="header__li"><a href="#">ТАРГЕТИРОВАННАЯ РЕКЛАМА</a></li>
+                        <li class="header__li"><a href="#">КОНТАКТЫ</a></li>
+                    </ul>
+                </nav>
+                
+                <a class="header__phone row-center" href="tel:8 (800) 500-07-33">
+                    <img src="img/header/phone.svg" alt="phone">
+                    <span>8 (800) 500-07-33</span>
+                </a>
+
+                <div class="header__burger">
+                    <div class="header__burger__el header__burger__el--1"></div>
+                    <div class="header__burger__el header__burger__el--2"></div>
+                    <div class="header__burger__el header__burger__el--3"></div>
+                </div>
             </div>
         </div>
     </header>
@@ -72,8 +94,8 @@
             </div>
         </section>
 
-        <img loading="lazy" src="img/index/main/bg.gif" alt="city">
-        <img loading="lazy" src="img/index/main/man.png" alt="city">
+        <img class="lozad" src="img/index/main/bgPre.jpg" data-src="img/index/main/bg.gif" alt="city">
+        <img class="lozad" data-src="img/index/main/man.png" alt="city">
 
         <section style="display: none" class="section thanks">
 

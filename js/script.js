@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    const observer = lozad();
+    observer.observe();
+
     function dropdown(dropdownMenuActiveClass) {
         const dropdown = document.querySelector('[data-dropdown]')
         const dropdownTrigger = dropdown.querySelector('[data-dropdown-trigger]')

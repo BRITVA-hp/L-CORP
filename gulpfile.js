@@ -6,6 +6,7 @@ const browserSync = require('browser-sync').create();
 const autoprefixer = require('gulp-autoprefixer');
 
 function bs() {
+
   serveSass();
   browserSync.init({
       server: {

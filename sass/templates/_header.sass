@@ -1,11 +1,67 @@
 .header
-    padding-top: 8px
-    padding-bottom: 8px
+    padding-top: 22px
+    padding-bottom: 22px
     background: rgba(8, 226, 240, 0.07)
-    &__phone
+    &__burger
+        width: 40px
+        height: 33px
+        position: relative
         display: none
-    &__button
-        width: 399px
-        height: 74px
-        background: url("../img/header/btn.png") no-repeat center/100% 100%
-        color: #CFFF04
+        flex-direction: column
+        justify-content: space-between
+        &__el
+            width: 100%
+            height: 4px
+            border-radius: 2px
+            background: #08E2F0
+    &__phone
+        text-decoration: none
+        font-family: 'UniNeue', sans-serif
+        font-style: normal
+        font-weight: bold
+        font-size: 35px
+        line-height: 120%
+        text-transform: uppercase
+        color: #FFFFFF
+        column-gap: 10px
+    &__ul
+        list-style-type: none
+        column-gap: 25px
+    &__li
+        transition: 0.3s
+        position: relative
+        padding: 5px 0
+        &::after
+            content: ''
+            opacity: 0
+            visibility: hidden
+            position: absolute
+            transition: 0.3s
+            left: 0
+            bottom: 0
+            width: 100%
+            height: 3px
+            background: radial-gradient(47.61% 27.7% at 50.5% 59.48%, rgba(116, 82, 159, 0.19) 0%, rgba(5, 160, 170, 0.2) 0.01%, rgba(8, 226, 240, 0.6) 55.73%, rgba(5, 160, 170, 0.2) 100%)
+            background-blend-mode: color-dodge
+            mix-blend-mode: hard-light
+            border-radius: 50%
+        &:hover
+            &::after
+                opacity: 1
+                visibility: visible
+            a
+                color: #08E2F0
+        a
+            font-family: 'BlenderPro', sans-serif
+            font-style: normal
+            font-weight: 500
+            font-size: 20px
+            line-height: 120%
+            color: #FFFFFF
+            text-decoration: none
+        &--active
+            &::after
+                opacity: 1
+                visibility: visible
+            a
+                color: #08E2F0

@@ -14,6 +14,13 @@
 }
 @font-face {
   font-family: "BlenderPro";
+  src: url("../fonts/blender_pro/BlenderPro-Medium.woff") format("woff"), url("../fonts/blender_pro/BlenderPro-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "BlenderPro";
   src: url("../fonts/blender_pro/BlenderPro-Bold.woff") format("woff"), url("../fonts/blender_pro/BlenderPro-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
@@ -660,18 +667,83 @@ body {
   }
 }
 .header {
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding-top: 22px;
+  padding-bottom: 22px;
   background: rgba(8, 226, 240, 0.07);
 }
-.header__phone {
+.header__burger {
+  width: 40px;
+  height: 33px;
+  position: relative;
   display: none;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.header__button {
-  width: 399px;
-  height: 74px;
-  background: url("../img/header/btn.png") no-repeat center/100% 100%;
-  color: #CFFF04;
+.header__burger__el {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #08E2F0;
+}
+.header__phone {
+  text-decoration: none;
+  font-family: "UniNeue", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  -moz-column-gap: 10px;
+  column-gap: 10px;
+}
+.header__ul {
+  list-style-type: none;
+  -moz-column-gap: 25px;
+  column-gap: 25px;
+}
+.header__li {
+  transition: 0.3s;
+  position: relative;
+  padding: 5px 0;
+}
+.header__li::after {
+  content: "";
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  transition: 0.3s;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: radial-gradient(47.61% 27.7% at 50.5% 59.48%, rgba(116, 82, 159, 0.19) 0%, rgba(5, 160, 170, 0.2) 0.01%, rgba(8, 226, 240, 0.6) 55.73%, rgba(5, 160, 170, 0.2) 100%);
+  background-blend-mode: color-dodge;
+  mix-blend-mode: hard-light;
+  border-radius: 50%;
+}
+.header__li:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+.header__li:hover a {
+  color: #08E2F0;
+}
+.header__li a {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.header__li--active::after {
+  opacity: 1;
+  visibility: visible;
+}
+.header__li--active a {
+  color: #08E2F0;
 }
 
 .main {
@@ -1118,281 +1190,55 @@ body {
 }
 
 @media screen and (max-width: 1600px) {
-  .main {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    background: url(../img/main/bgC.png) no-repeat calc(100% - 48px) center;
+  .header {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
-  .main__title {
-    font-size: 60px;
-    max-width: 720px;
+  .header__phone {
+    font-size: 20px;
+    -moz-column-gap: 5px;
+    column-gap: 5px;
   }
-  .main__subtitle {
-    font-size: 28px;
+  .header__phone img {
+    width: 30px;
   }
-  .main__card {
+  .header__ul {
     -moz-column-gap: 15px;
     column-gap: 15px;
   }
-  .main__card__text {
-    font-size: 18px;
+  .header__li a {
+    font-size: 16px;
+  }
+  .header__logo {
+    width: 145px;
   }
 }
-@media screen and (max-width: 1500px) {
-  .button--back, .button--next {
-    font-size: 20px;
-  }
-  .modal__close {
-    top: 30px;
-    right: 40px;
-  }
-  .modal__dialog {
-    width: 903px;
-    height: 512px;
-    background: url(../img/modal/bgC.png) no-repeat center;
-  }
-  .modal-last__button-group {
-    margin-bottom: 30px;
-  }
-  .modal-last__box {
-    margin-bottom: 30px;
-  }
-  .modal-last__input {
+@media screen and (max-width: 1100px) {
+  .header__phone {
     font-size: 16px;
   }
-  .modal-last__input-group {
-    max-width: 335px;
+  .header__phone img {
+    width: 22px;
   }
-  .modal-last__title {
-    font-size: 40px;
-    max-width: 570px;
-    margin-bottom: 30px;
-  }
-  .modal-quiz__arrow {
-    width: 18px;
-  }
-  .modal-quiz__button-group {
-    margin-bottom: 35px;
-  }
-  .modal-quiz__dropdown {
-    max-width: 335px;
-    margin-bottom: 30px;
-  }
-  .modal-quiz__dropdown__menu {
-    width: 349px;
-    height: 309px;
-    background: url("../img/modal/modal-quiz/dropDownM.png") no-repeat left top/calc(100% - 12px) 100%;
-    padding-top: 26px;
-    -webkit-clip-path: polygon(0 0, 112px 0, 115px 6px, calc(100% - 41px) 6px, calc(100% - 12px) 25px, 100% 25px, 100% 100%, 33px 100%, 0 calc(100% - 18px));
-    clip-path: polygon(0 0, 112px 0, 115px 6px, calc(100% - 41px) 6px, calc(100% - 12px) 25px, 100% 25px, 100% 100%, 33px 100%, 0 calc(100% - 18px));
-  }
-  .modal-quiz__dropdown__ul {
-    padding: 0 0 30px;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, calc(100% - 12px) 100%, calc(100% - 12px) calc(100% - 30px), 0 calc(100% - 30px));
-    clip-path: polygon(0 0, 100% 0, 100% 100%, calc(100% - 12px) 100%, calc(100% - 12px) calc(100% - 30px), 0 calc(100% - 30px));
-  }
-  .modal-quiz__dropdown__ul::-webkit-scrollbar {
-    width: 12px;
-  }
-  .modal-quiz__dropdown__ul {
-    font-size: 16px;
-  }
-  .modal-quiz__input {
-    font-size: 16px;
-  }
-  .modal-quiz__title {
-    font-size: 40px;
-    margin-bottom: 30px;
-  }
-  .modal-main__dialog {
-    padding-top: 120px;
-  }
-  .modal-main__title {
-    font-size: 60px;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .main {
-    background: url(../img/main/bgC.png) no-repeat right center;
-  }
-  .main__title {
-    font-size: 50px;
-    max-width: 600px;
+  .header__li a {
+    font-size: 14px;
   }
 }
 @media screen and (max-width: 991px) {
-  .input {
-    font-size: 14px;
-    padding: 18px 25px;
-  }
-  .button--next {
-    width: 337px;
-    height: 52px;
-    background: url("../img/modal/btnNextM.png") no-repeat center/100% 100%;
-  }
-  .button--back {
-    width: 347px;
-    height: 62px;
-    background: url("../img/modal/btnBackM.png") no-repeat center/100% 100%;
-  }
-  .thanks {
-    height: calc(100vh - 75px);
-  }
-  .thanks__img {
-    display: none;
-  }
-  .thanks__img--mob {
-    display: block;
-  }
-  .thanks__title {
-    font-size: 40px;
-    margin-bottom: 15px;
-  }
-  .thanks__text {
-    font-size: 22px;
-  }
-  .loading {
-    height: calc(100vh - 75px);
-  }
-  .loading__progress {
-    -moz-column-gap: 10px;
-    column-gap: 10px;
-  }
-  .loading__progress__elem {
-    width: 25px;
-    height: 50px;
-  }
-  .loading__title {
-    font-size: 40px;
-    margin-bottom: 25px;
-  }
-  .modal__close {
-    top: 15px;
-    right: 25px;
-  }
-  .modal__progress {
-    max-width: 335px;
-    border: 2px solid #08E2F0;
-  }
-  .modal-last__title {
-    max-width: 320px;
-    margin-bottom: 20px;
-  }
-  .modal-last__box {
-    flex-direction: column;
-    align-items: center;
-    row-gap: 10px;
-    margin-bottom: 20px;
-  }
-  .modal-last__button-group {
-    flex-direction: column-reverse;
-    margin-bottom: 25px;
-    row-gap: 5px;
-  }
-  .modal-last__dialog {
-    width: 357px;
-    height: 703px;
-    background: url(../img/modal/modal-last/bgM.png) no-repeat center;
-    padding-top: 55px;
-  }
-  .modal-quiz__button-group {
-    flex-direction: column-reverse;
-    align-items: center;
-    row-gap: 10px;
-    margin-bottom: 25px;
-  }
-  .modal-quiz__title {
-    margin-bottom: 20px;
-    font-size: 40px;
-  }
-  .modal-quiz__dropdown {
-    margin-bottom: 20px;
-  }
-  .modal-quiz__dropdown__ul {
-    font-size: 14px;
-  }
-  .modal-quiz__dialog {
-    width: 357px;
-    height: 462px;
-    background: url(../img/modal/modal-quiz/bgM.png) no-repeat center;
-    padding-top: 53px;
-  }
-  .modal-main__button {
-    width: 100%;
-    height: 50px;
-    font-size: 18px;
-    background: url(../img/modal/modal-main/btnM.png) no-repeat center/100% 100%;
-  }
-  .modal-main__box {
-    flex-direction: column;
-    row-gap: 10px;
-    margin-bottom: 20px;
-  }
-  .modal-main__title {
-    color: #08E2F0;
-    font-size: 40px;
-  }
-  .modal-main__dialog {
-    width: 357px;
-    height: 462px;
-    padding: 75px 10px 0;
-    background: url(../img/modal/modal-main/bgM.png) no-repeat center;
-  }
-  .main {
-    padding-top: 25px;
-    padding-bottom: 25px;
-    background: none;
-  }
-  .main__button {
-    background: url("../img/main/btnM.png") no-repeat center/100% 100%;
-    width: 335px;
-    height: 50px;
-    font-size: 18px;
-  }
-  .main__button__glitch {
-    background: url("../img/main/btnM.png") no-repeat;
-  }
-  .main__img {
-    display: block;
-  }
-  .main__box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  .main__title {
-    font-size: 40px;
-    max-width: 480px;
-    margin-bottom: 10px;
-  }
-  .main__subtitle {
-    font-size: 22px;
-    margin-bottom: 15px;
-  }
-  .main__card {
-    -moz-column-gap: 10px;
-    column-gap: 10px;
-  }
-  .main__card__img {
-    width: 66px;
-  }
-  .main__card__text {
-    font-size: 14px;
-    text-align: left;
-  }
-  .header {
-    padding-top: 3px;
-    padding-bottom: 3px;
-    padding-right: 8px;
+  .section {
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .header__logo {
-    width: 173px;
+    width: 206px;
   }
-  .header__button {
+  .header__nav {
     display: none;
   }
   .header__phone {
-    display: block;
+    display: none;
+  }
+  .header__burger {
+    display: flex;
   }
 }
