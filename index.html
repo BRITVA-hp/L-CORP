@@ -58,26 +58,57 @@
     <main>
         <section class="section main">
 
+            <video autoplay muted loop class="main__video lozad" data-poster="img/index/main/bgPre.jpg">
+                <source src="img/index/main/bg.mp4" type="video/mp4">
+            </video>
+            <div class="main__substrate"></div>
+
             <div class="container main__container">
                 <div class="main__box">
-                    <h1 class="main__title">Покупайте ЛИДЫ И ЗАЯВКИ ДЛЯ ВАШЕГО БИЗНЕСА <br> <span>от 150 руб/лид</span></h1>
-                    <h2 class="main__subtitle">Ответьте на 5 вопросов <br> и узнайте свою стоимость заявки</h2>
-                    <div class="main__card">
-                        <img class="main__card__img" src="img/main/marker.svg" alt="business">
-                        <p class="main__card__text">Мы работаем с 98 нишами бизнеса</p>
+                    <h1 class="main__title">обеспечим <span>поток <br> новых клиентов</span></h1>
+                    <h2 class="main__subtitle">Меняем маркетинг в вашу пользу, развиваем ваш бизнес</h2>
+
+                    <div class="main__block">
+                        <div class="main__card">
+                            <img class="main__card__img" src="img/index/main/marker.svg" alt="business">
+                            <p class="main__card__text">Разработка сайтов</p>
+                        </div>
+                        <div class="main__card">
+                            <img class="main__card__img" src="img/index/main/marker.svg" alt="business">
+                            <p class="main__card__text">НАстройка и ведение рекламы</p>
+                        </div>
+                        <div class="main__card">
+                            <img class="main__card__img" src="img/index/main/marker.svg" alt="business">
+                            <p class="main__card__text">лидогенерация</p>
+                        </div>
+                        <div class="main__card">
+                            <img class="main__card__img" src="img/index/main/marker.svg" alt="business">
+                            <p class="main__card__text">SMM-маркетинг</p>
+                        </div>
                     </div>
 
-                    <img class="main__img" src="img/main/bgM.png" alt="L-CORPORATION">
+                    <div class="main__img">
+                        <picture class="main__img__man">
+                            <source media="(max-width: 767px)" srcset="img/index/main/manM.png">
+                            <source media="(max-width: 1600px)" srcset="img/index/main/manC.png">
+                            <img src="img/index/main/man.png" alt="cosmonaut">
+                        </picture>
+                        <div class="main__img__rings">
+                            <img class="main__img__ring main__img__ring--1" src="img/index/main/ring1.svg" alt="ring">
+                            <img class="main__img__ring main__img__ring--2" src="img/index/main/ring2.svg" alt="ring">
+                            <img class="main__img__ring main__img__ring--3" src="img/index/main/ring3.svg" alt="ring">
+                        </div>
+                    </div>
 
                     <div class="button main__button">
-                        <span class="main__button__text" data-text="Ответить на вопросы">Ответить на вопросы</span>
+                        <span class="main__button__text" data-text="Хочу клиентов">Хочу клиентов</span>
                         <span class="main__button__glitch"></span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section loading">
+        <section style="display: none" class="section loading">
             <div class="container loading__container">
                 <div class="loading__box">
                     <h3 class="loading__title">Загрузка</h3>
@@ -94,8 +125,8 @@
             </div>
         </section>
 
-        <img class="lozad" src="img/index/main/bgPre.jpg" data-src="img/index/main/bg.gif" alt="city">
-        <img class="lozad" data-src="img/index/main/man.png" alt="city">
+<!--        <img class="lozad" src="img/index/main/bgPre.jpg" data-src="img/index/main/bg.gif" alt="city">-->
+<!--        <img class="lozad" data-src="img/index/main/man.png" alt="city">-->
 
         <section style="display: none" class="section thanks">
 
