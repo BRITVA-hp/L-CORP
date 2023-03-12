@@ -1,0 +1,88 @@
+.steps
+  position: relative
+  padding-bottom: 260px
+  &__container
+    position: relative
+    z-index: 3
+  &__substrate
+    background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.02) 22.4%, rgba(17, 17, 17, 0.94) 50.13%, rgba(17, 17, 17, 0) 76.56%, #111111 100%)
+  &__title
+    margin-bottom: 160px
+  &__field
+    display: flex
+    justify-content: center
+    height: 332px
+    width: 870px
+    margin: auto
+    position: relative
+    align-items: flex-end
+  &__interface
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin: auto
+    max-width: 830px
+  &__arrow
+    cursor: pointer
+  &__card
+    display: flex
+    flex-direction: column
+    align-items: center
+    max-width: 350px
+    &--active
+      .steps__card__lines
+        display: flex
+      .steps__card__text
+        display: block
+    &__img
+      position: relative
+      z-index: 1
+    &__screen
+      width: 258px
+      height: 246px
+      max-width: 100%
+      max-height: 100%
+      background: url("../img/index/steps/border.png") no-repeat center/contain
+      display: flex
+      align-items: center
+      justify-content: center
+      margin-bottom: 7px
+      cursor: pointer
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        z-index: 2
+        width: calc(100% - 68px)
+        height: calc(100% - 60px)
+        left: 50%
+        top: 50%
+        transform: translate(-50%, calc(-50% - 7px))
+        background: #08E2F0
+        opacity: 0.07
+        clip-path: polygon(26px 0, calc(100% - 26px) 0, 100% 32px, 100% calc(100% - 32px), calc(100% - 26px) 100%, 26px 100%, 0 calc(100% - 32px), 0 32px)
+    &__lines
+      display: none
+      flex-direction: column
+      row-gap: 7px
+      margin-bottom: 10px
+    &__line
+      width: 3px
+      height: 8px
+      background: #CFFF04
+    &__text
+      font-family: 'UniNeue', sans-serif
+      font-style: normal
+      color: #CFFF04
+      text-align: center
+      display: none
+    &__title
+      font-weight: bold
+      font-size: 50px
+      line-height: 120%
+      text-shadow: 0 3px 3px rgba(17, 17, 17, 0.5)
+    &__subtitle
+      font-weight: normal
+      font-size: 30px
+      line-height: 120%
+      text-shadow: 0 3px 3px rgba(17, 17, 17, 0.5)
