@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // const observer = lozad();
-    // observer.observe();
+    const observer = lozad();
+    observer.observe();
 
     const steps = [
         {
@@ -41,33 +41,78 @@ document.addEventListener("DOMContentLoaded", () => {
         const btnPrev = document.querySelector(btnPrevSelector)
         const btnNext = document.querySelector(btnNextSelector)
         let classes = [
-          'steps__card--active',
-          'steps__card--right',
-          'steps__card--right-1',
-          'steps__card--left-1',
-          'steps__card--left',
+            {
+                class: 'steps__card--active',
+                index: 0,
+                update: function() {
+                    this.data = steps[0]
+                }
+            },
+            {
+                class: 'steps__card--right',
+                index: 1,
+                update: function() {
+                    this.data = steps[1]
+                }
+            },
+            {
+                class: 'steps__card--right-1',
+                index: 2,
+                update: function() {
+                    this.data = steps[2]
+                }
+            },
+            {
+                class: 'steps__card--left-1',
+                index: -2,
+                update: function() {
+                    this.data = steps[steps.length - 2]
+                }
+            },
+            {
+                class: 'steps__card--left',
+                index: -1,
+                update: function() {
+                    this.data = steps[steps.length - 1]
+                }
+            }
         ]
         const cards = []
+        const updateCards = () => {
+            classes.forEach(cl => cl.update())
+            cards.forEach((card, cardIndex) => {
+                classes.forEach(el => {
+                    card.classList.remove(el.class)
+                })
+                card.setAttribute('data-index', classes[cardIndex].index)
+                card.classList.add(classes[cardIndex].class)
+                card.firstElementChild.firstElementChild.src = classes[cardIndex].data.img
+                card.lastElementChild.firstElementChild.textContent = classes[cardIndex].data.title
+                card.lastElementChild.lastElementChild.textContent = classes[cardIndex].data.subtitle
+            })
+        }
         if (steps.length < classes.length) {
             classes.splice(3,1)
             classes.splice(steps.length)
         }
         classes.forEach((cl, clIndex) => {
+            cl.update()
             const card = document.createElement('div')
             card.classList.add('steps__card')
-            card.classList.add(cl)
+            card.classList.add(cl.class)
+            card.setAttribute('data-index', cl.index)
             card.innerHTML =
                 `
                     <div class="steps__card__screen">
-                        <img class="steps__card__img" src="${clIndex === 3 ? steps[steps.length - 2].img : clIndex === 4 ? steps[steps.length - 1].img : steps[clIndex].img}" alt="step">
+                        <img class="steps__card__img" src="${cl.data.img}" alt="step">
                     </div>
                     <div class="steps__card__lines">
                         <div class="steps__card__line"></div>
                         <div class="steps__card__line"></div>
                     </div>
                     <div class="steps__card__text">
-                        <p class="steps__card__title">${clIndex === 3 ? steps[steps.length - 2].title : clIndex === 4 ? steps[steps.length - 1].title : steps[clIndex].title}</p>
-                        <p class="steps__card__subtitle">${clIndex === 3 ? steps[steps.length - 2].subtitle : clIndex === 4 ? steps[steps.length - 1].subtitle : steps[clIndex].subtitle}</p>
+                        <p class="steps__card__title">${cl.data.title}</p>
+                        <p class="steps__card__subtitle">${cl.data.subtitle}</p>
                     </div>
                 `
             container.appendChild(card)
@@ -75,26 +120,28 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
         btnNext.addEventListener('click', () => {
-            classes = classes.splice(-1).reverse().concat(classes)
+            classes = classes.splice(-1).concat(classes)
             steps = steps.concat(steps.splice(0, 1))
-            cards.forEach((card, cardIndex) => {
-                classes.forEach(el => {
-                    card.classList.remove(el)
-                })
-                card.classList.add(classes[cardIndex])
-                card.querySelector('img').src = steps[cardIndex].img
-                card.querySelector('.steps__card__title').textContent = `${steps[cardIndex].title}`
-                card.querySelector('img').src = steps[cardIndex].img
-            })
-            console.log(steps)
+            updateCards()
         })
         btnPrev.addEventListener('click', () => {
-            classes = classes.splice(-1).reverse().concat(classes)
-            cards.forEach((card, cardIndex) => {
-                classes.forEach(el => {
-                    card.classList.remove(el)
-                })
-                card.classList.add(classes[cardIndex])
+            classes = classes.concat(classes.splice(0, 1))
+            steps = steps.splice(-1).concat(steps)
+            updateCards()
+        })
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const index = card.getAttribute('data-index')
+                if (index > 0) {
+                    classes = classes.splice(-index).concat(classes)
+                    steps = steps.concat(steps.splice(0, index))
+                    updateCards()
+                } else if (index < 0) {
+                    classes = classes.concat(classes.splice(0, -index))
+                    steps = steps.splice(index).concat(steps)
+                    updateCards()
+                }
             })
         })
     }

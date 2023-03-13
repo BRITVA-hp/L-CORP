@@ -848,7 +848,7 @@ body {
   flex-direction: column;
   align-items: center;
   max-width: 350px;
-  transition: 0.3s;
+  transition: 0.5s;
   position: absolute;
 }
 .steps__card--active {
