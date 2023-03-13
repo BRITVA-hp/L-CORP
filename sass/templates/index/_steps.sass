@@ -11,32 +11,69 @@
   &__field
     display: flex
     justify-content: center
-    height: 332px
+    height: 495px
     width: 870px
     margin: auto
     position: relative
+    z-index: 1
     align-items: flex-end
   &__interface
     display: flex
     align-items: center
     justify-content: space-between
-    margin: auto
+    margin: -82px auto 0
     max-width: 830px
+    position: relative
+    z-index: 2
   &__arrow
     cursor: pointer
+    transition: 0.3s
+    &:hover
+      path
+        fill: #B488EB
   &__card
     display: flex
     flex-direction: column
     align-items: center
     max-width: 350px
+    transition: 0.3s
+    position: absolute
     &--active
+      left: 50%
+      top: 100%
+      transform: translate( -50%, -100%)
       .steps__card__lines
         display: flex
       .steps__card__text
         display: block
+    &--left
+      transform: matrix(0.97, 0.26, -0.01, 1, 0, 0)
+      width: 157px
+      height: 162px
+      left: 90px
+      top: 80px
+    &--left-1
+      transform: matrix(0.71, 0.71, 0, 1.5, 0, 0)
+      width: 86px
+      height: 92px
+      left: 0
+      top: 0
+    &--right
+      transform: matrix(0.96, -0.27, -0.01, 1, -247, 0)
+      width: 157px
+      height: 162px
+      left: 100%
+      top: 80px
+    &--right-1
+      transform: matrix(0.71, -0.71, -0.02, 1.5, -86, 0)
+      width: 86px
+      height: 92px
+      left: 100%
+      top: 0
     &__img
       position: relative
       z-index: 1
+      width: 45.7%
     &__screen
       width: 258px
       height: 246px
@@ -53,14 +90,14 @@
         content: ''
         position: absolute
         z-index: 2
-        width: calc(100% - 68px)
-        height: calc(100% - 60px)
+        width: 73.6%
+        height: 75.6%
         left: 50%
         top: 50%
         transform: translate(-50%, calc(-50% - 7px))
         background: #08E2F0
         opacity: 0.07
-        clip-path: polygon(26px 0, calc(100% - 26px) 0, 100% 32px, 100% calc(100% - 32px), calc(100% - 26px) 100%, 26px 100%, 0 calc(100% - 32px), 0 32px)
+        clip-path: polygon(13.5% 0, 86.5% 0, 100% 17.2%, 100% 82.8%, 86.5% 100%, 13.5% 100%, 0 82.8%, 0 17.2%)
     &__lines
       display: none
       flex-direction: column
