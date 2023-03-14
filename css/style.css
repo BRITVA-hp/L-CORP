@@ -890,6 +890,28 @@ body {
   left: 100%;
   top: 0;
 }
+.steps__card__dots {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  -moz-column-gap: 10%;
+  column-gap: 10%;
+  row-gap: 5px;
+  width: 45%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+}
+.steps__card__dot {
+  width: 10%;
+  height: 8px;
+  border: 1px solid #08E2F0;
+}
+.steps__card__dot--active {
+  background: #CFFF04;
+  border-color: #CFFF04;
+}
 .steps__card__img {
   position: relative;
   z-index: 1;

@@ -5,31 +5,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const steps = [
         {
+            index: 0,
             img: 'img/index/steps/img1.png',
             title: '01',
             subtitle: 'Разработаем уникальный продающий сайт'
         },
         {
+            index: 1,
             img: 'img/index/steps/img1.png',
             title: '02',
             subtitle: 'Второй текст'
         },
         {
+            index: 2,
             img: 'img/index/steps/img1.png',
             title: '03',
             subtitle: 'Третий текст'
         },
         {
+            index: 3,
             img: 'img/index/steps/img1.png',
             title: '04',
             subtitle: 'Четвёртый текст'
         },
         {
+            index: 4,
             img: 'img/index/steps/img1.png',
             title: '05',
             subtitle: 'Пятый текст'
         },
         {
+            index: 5,
             img: 'img/index/steps/img1.png',
             title: '06',
             subtitle: 'Шестой текст'
@@ -89,6 +95,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.firstElementChild.firstElementChild.src = classes[cardIndex].data.img
                 card.lastElementChild.firstElementChild.textContent = classes[cardIndex].data.title
                 card.lastElementChild.lastElementChild.textContent = classes[cardIndex].data.subtitle
+
+                for(let i=0; i<card.firstElementChild.lastElementChild.children.length; i++) {
+                    card.firstElementChild.lastElementChild.children[i].classList.remove('steps__card__dot--active')
+                }
+                card.firstElementChild.lastElementChild.children[classes[cardIndex].data.index].classList.add('steps__card__dot--active')
+
             })
         }
         if (steps.length < classes.length) {
@@ -105,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 `
                     <div class="steps__card__screen">
                         <img class="steps__card__img" src="${cl.data.img}" alt="step">
+                        <div class="steps__card__dots"></div>
                     </div>
                     <div class="steps__card__lines">
                         <div class="steps__card__line"></div>
@@ -118,7 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
             container.appendChild(card)
             cards.push(card)
         })
-
         btnNext.addEventListener('click', () => {
             classes = classes.splice(-1).concat(classes)
             steps = steps.concat(steps.splice(0, 1))
@@ -129,8 +141,11 @@ document.addEventListener("DOMContentLoaded", () => {
             steps = steps.splice(-1).concat(steps)
             updateCards()
         })
-
-        cards.forEach(card => {
+        cards.forEach((card, cardIndex) => {
+            steps.forEach(step => {
+                card.firstElementChild.lastElementChild.insertAdjacentHTML('beforeend', `<div class="steps__card__dot"></div>`)
+            })
+            card.firstElementChild.lastElementChild.children[classes[cardIndex].data.index].classList.add('steps__card__dot--active')
             card.addEventListener('click', () => {
                 const index = card.getAttribute('data-index')
                 if (index > 0) {
