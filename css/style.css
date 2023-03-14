@@ -805,17 +805,33 @@ body {
 
 .steps {
   position: relative;
-  padding-bottom: 260px;
+  padding-bottom: 300px;
+}
+.steps__img {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.steps__img__circle {
+  opacity: 0.8;
+}
+.steps__img__shine {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -64%);
+  top: 0;
 }
 .steps__container {
   position: relative;
-  z-index: 3;
+  z-index: 4;
 }
 .steps__substrate {
-  background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.02) 22.4%, rgba(17, 17, 17, 0.94) 50.13%, rgba(17, 17, 17, 0) 76.56%, #111111 100%);
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0) 67.48%, #111111 100%), linear-gradient(180deg, #111111 15.62%, rgba(17, 17, 17, 0) 100%), radial-gradient(100% 202.99% at 0% 50%, #111111 0%, rgba(17, 17, 17, 0) 50.39%, #111111 100%);
 }
 .steps__title {
-  margin-bottom: 160px;
+  margin-bottom: 90px;
 }
 .steps__field {
   display: flex;
