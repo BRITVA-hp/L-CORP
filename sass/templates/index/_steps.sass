@@ -1,9 +1,20 @@
 .steps
   position: relative
   padding-bottom: 300px
-  &__img
+  &__lattice
     position: absolute
     z-index: 3
+    top: 50%
+    transform: translateY(-50%)
+    height: calc(100% - 80px)
+    width: auto
+    &--left
+      left: 0
+    &--right
+      right: 0
+  &__img
+    position: absolute
+    z-index: 4
     bottom: 0
     left: 50%
     transform: translateX(-50%)
@@ -12,14 +23,19 @@
     &__shine
       position: absolute
       left: 50%
-      transform: translate(-50%, -64%)
+      transform: translate(-50%, -67%)
       top: 0
+      &__stop--1
+        animation: flash 5s infinite
+      &__stop--2
+        animation: flash-1 5s infinite
   &__container
     position: relative
-    z-index: 4
+    z-index: 5
   &__substrate
-    background: linear-gradient(180deg, rgba(17, 17, 17, 0) 67.48%, #111111 100%), linear-gradient(180deg, #111111 15.62%, rgba(17, 17, 17, 0) 100%), radial-gradient(100% 202.99% at 0% 50%, #111111 0%, rgba(17, 17, 17, 0) 50.39%, #111111 100%)
-    //background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.02) 22.4%, rgba(17, 17, 17, 0.94) 50.13%, rgba(17, 17, 17, 0) 76.56%, #111111 100%)
+    background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.02) 22.4%, rgba(17, 17, 17, 0.94) 50.13%, rgba(17, 17, 17, 0) 76.56%, #111111 100%)
+  &__video
+    opacity: 0.2
   &__title
     margin-bottom: 90px
   &__field
