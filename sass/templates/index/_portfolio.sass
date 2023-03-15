@@ -1,0 +1,88 @@
+.portfolio
+  &__row
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    position: relative
+    &__button
+      position: absolute
+      right: 30px
+      bottom: 0
+  &__title
+    margin-bottom: 10px
+  &__subtitle
+    font-family: 'UniNeue', sans-serif
+    font-style: normal
+    font-weight: bold
+    font-size: 35px
+    line-height: 120%
+    text-align: center
+    color: #FFFFFF
+    margin-bottom: 80px
+  &__card-text
+    position: relative
+    width: 486px
+    height: 533px
+    &__text-group
+      margin-bottom: 15px
+      &__title
+        font-family: 'BlenderPro', sans-serif
+        font-style: normal
+        font-weight: bold
+        font-size: 24px
+        line-height: 120%
+        text-transform: uppercase
+        color: #FFFFFF
+        margin-bottom: 10px
+      &__text
+        font-family: 'UniNeue', sans-serif
+        font-style: normal
+        font-weight: bold
+        font-size: 35px
+        line-height: 120%
+        color: #CFFF04
+    &__title
+      font-family: 'UniNeue', sans-serif
+      font-style: normal
+      font-weight: bold
+      font-size: 35px
+      line-height: 120%
+      color: #B488EB
+      text-shadow: 0 4px 3px rgba(25, 49, 52, 0.6)
+      margin-bottom: 25px
+      span
+        color: #08E2F0
+    &__content
+      position: relative
+      z-index: 2
+      padding: 64px 40px
+      width: 100%
+      height: 100%
+      background: url("../img/index/portfolio/borderText.png") no-repeat center/contain
+    &__video
+      opacity: 0.3
+    &__substrate
+      background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%)
+  &__card-img
+    width: 959px
+    height: 629px
+    background: url("../img/index/portfolio/borderImg.png") no-repeat center/contain
+    position: relative
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      right: 0
+      bottom: 0
+      background: #08E2F0
+      opacity: 0.14
+      filter: blur(2px)
+      clip-path: polygon(5px 104px, 67px 28px, 452px 28px, 470px 5px, calc(100% - 95px) 5px, calc(100% - 5px) 94px, calc(100% - 5px) calc(100% - 93px), calc(100% - 68px) calc(100% - 26px), 508px calc(100% - 26px), 490px calc(100% - 5px), 94px calc(100% - 5px), 5px calc(100% - 94px))
+    &__content
+      width: 100%
+      height: 100%
+      display: flex
+      align-items: center
+      justify-content: center
+      clip-path: polygon(28px 127px, 90px 58px, 468px 58px, 493px 28px, calc(100% - 118px) 28px, calc(100% - 28px) 117px, calc(100% - 28px) calc(100% - 116px), calc(100% - 85px) calc(100% - 55px), 490px calc(100% - 55px), 467px calc(100% - 28px), 117px calc(100% - 28px), 28px calc(100% - 117px))
