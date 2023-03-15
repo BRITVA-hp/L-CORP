@@ -33,12 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
             img: 'img/index/steps/img1.png',
             title: '05',
             subtitle: 'Пятый текст'
-        },
-        {
-            index: 5,
-            img: 'img/index/steps/img1.png',
-            title: '06',
-            subtitle: 'Шестой текст'
         }
     ]
 
