@@ -2,6 +2,29 @@
   .section
     padding-left: 15px
     padding-right: 15px
+    &__title
+      font-size: 35px
+
+  .portfolio
+    &__row
+      max-width: 700px
+      &__button
+        right: auto
+        left: 35px
+        &--left
+          left: auto
+          right: 35px
+    &__title
+      margin-bottom: 0
+    &__subtitle
+      margin-bottom: 40px
+    &__card-img
+      width: 343px
+      height: 225px
+      &::before
+        clip-path: polygon(5px 35px, 25px 13px, 160px 13px, 167px 5px, calc(100% - 35px) 5px, calc(100% - 5px) 35px, calc(100% - 5px) calc(100% - 35px), calc(100% - 25px) calc(100% - 12px), 182px calc(100% - 12px), 175px calc(100% - 3px), 33px calc(100% - 3px), 5px calc(100% - 35px))
+      &__content
+        clip-path: polygon(16px 35px, 28px 23px, 162px 23px, 170px 14px, calc(100% - 39px) 16px, calc(100% - 17px) 37px, calc(100% - 17px) calc(100% - 37px), calc(100% - 28px) calc(100% - 25px), 182px calc(100% - 25px), 175px calc(100% - 17px), 37px calc(100% - 17px), 16px calc(100% - 39px))
 
   .main
     margin-bottom: 60px

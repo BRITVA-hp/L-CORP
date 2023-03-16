@@ -5,7 +5,58 @@
   .container
     max-width: 1300px
 
+  .portfolio
+    &__button
+      width: 274px
+      height: 42px
+      background: url("../img/index/portfolio/btnC.png") no-repeat center/contain
+      font-size: 13px
+    &__row
+      max-width: 850px
+      margin-left: auto
+      margin-right: auto
+      margin-bottom: 38px
+      &--last
+        margin-bottom: 40px
+      &__button
+        width: 185px
+        height: 38px
+        font-size: 13px
+        right: 20px
+        &--left
+          left: 20px
+    &__card-text
+      width: 256px
+      height: 276px
+      &__title
+        font-size: 18px
+        margin-bottom: 12px
+      &__text-group
+        margin-bottom: 7px
+        &__title
+          font-size: 13px
+          margin-bottom: 6px
+        &__text
+          font-size: 18px
+      &__content
+        padding: 30px 24px
+        background: url("../img/index/portfolio/borderTextC.png") no-repeat center/contain
+        &--left
+          background: url("../img/index/portfolio/borderTextLeftC.png") no-repeat center/contain
+    &__card-img
+      width: 497px
+      height: 328px
+      background: url("../img/index/portfolio/borderImgC.png") no-repeat center/contain
+      &::before
+        clip-path: polygon(5px 46px, 37px 17px, 236px 17px, 245px 5px, calc(100% - 50px) 5px, calc(100% - 5px) 51px, calc(100% - 5px) calc(100% - 51px), calc(100% - 37px) calc(100% - 17px), 264px calc(100% - 17px), 252px calc(100% - 5px), 50px calc(100% - 5px), 5px calc(100% - 51px))
+      &__content
+        clip-path: polygon(20px 57px, 43px 32px, 236px 32px, 248px 18px, calc(100% - 55px) 20px, calc(100% - 20px) 52px, calc(100% - 20px) calc(100% - 55px), calc(100% - 40px) calc(100% - 33px), 264px calc(100% - 33px), 250px calc(100% - 20px), 55px calc(100% - 20px), 20px calc(100% - 55px))
+    &__subtitle
+      font-size: 22px
+      margin-bottom: 44px
+
   .steps
+    margin-bottom: 65px
     &__lattice
       opacity: 0.5
 

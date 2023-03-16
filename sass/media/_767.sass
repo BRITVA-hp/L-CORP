@@ -1,4 +1,49 @@
 @media screen and ( max-width: 767px )
+  .portfolio
+    overflow: hidden
+    &__button
+      width: 353px
+      height: 68px
+      background: url("../img/index/portfolio/btnM.png") no-repeat center/contain
+      font-size: 20px
+    &__card-img
+      order: 2
+    &__card-text
+      order: 1
+      width: 290px
+      height: 319px
+      &__text-group
+        margin-bottom: 10px
+        &__title
+          font-size: 20px
+          margin-bottom: 2px
+        &__text
+          font-size: 22px
+      &__title
+        font-size: 22px
+        margin-bottom: 15px
+      &__content
+        padding: 36px 30px
+        background: url("../img/index/portfolio/borderTextM.png") no-repeat center/contain
+    &__row
+      flex-direction: column
+      align-items: center
+      row-gap: 20px
+      margin-bottom: 40px
+      &--last
+        margin-bottom: 30px
+      &__button
+        position: relative
+        left: auto
+        right: auto
+        clip-path: polygon(0 0, 94% 0, 100% 23%, 100% 100%, 6% 100%, 0 77%)
+        height: 60px
+        width: 353px
+        font-size: 20px
+        order: 3
+        &::before
+          clip-path: polygon(1px 1px, calc(94% - 1px) 1px, calc(100% - 1px) calc(23% + 1px), calc(100% - 1px) calc(100% - 1px), 6% calc(100% - 1px), 1px calc(77% - 1px))
+
   .steps
     padding-left: 0
     padding-right: 0

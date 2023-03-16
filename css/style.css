@@ -379,8 +379,8 @@ body {
   position: relative;
   width: 318px;
   height: 65px;
-  -webkit-clip-path: polygon(0 15px, 19px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 19px) 100%, 0 100%);
-  clip-path: polygon(0 15px, 19px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 19px) 100%, 0 100%);
+  -webkit-clip-path: polygon(0 23%, 6% 0, 100% 0, 100% 77%, 94% 100%, 0 100%);
+  clip-path: polygon(0 23%, 6% 0, 100% 0, 100% 77%, 94% 100%, 0 100%);
 }
 .button--clip::before {
   content: "";
@@ -391,8 +391,16 @@ body {
   top: 0;
   bottom: 0;
   background: #CFFF04;
-  -webkit-clip-path: polygon(1px 16px, 20px 1px, calc(100% - 1px) 1px, calc(100% - 1px) calc(100% - 16px), calc(100% - 20px) calc(100% - 1px), 1px calc(100% - 1px));
-  clip-path: polygon(1px 16px, 20px 1px, calc(100% - 1px) 1px, calc(100% - 1px) calc(100% - 16px), calc(100% - 20px) calc(100% - 1px), 1px calc(100% - 1px));
+  -webkit-clip-path: polygon(1px calc(23% + 1px), calc(6% + 1px) 1px, calc(100% - 1px) 1px, calc(100% - 1px) calc(77% - 1px), calc(94% - 1px) calc(100% - 1px), 1px calc(100% - 1px));
+  clip-path: polygon(1px calc(23% + 1px), calc(6% + 1px) 1px, calc(100% - 1px) 1px, calc(100% - 1px) calc(77% - 1px), calc(94% - 1px) calc(100% - 1px), 1px calc(100% - 1px));
+}
+.button--clip--left {
+  -webkit-clip-path: polygon(0 0, 94% 0, 100% 23%, 100% 100%, 6% 100%, 0 77%);
+  clip-path: polygon(0 0, 94% 0, 100% 23%, 100% 100%, 6% 100%, 0 77%);
+}
+.button--clip--left::before {
+  -webkit-clip-path: polygon(1px 1px, calc(94% - 1px) 1px, calc(100% - 1px) calc(23% + 1px), calc(100% - 1px) calc(100% - 1px), 6% calc(100% - 1px), 1px calc(77% - 1px));
+  clip-path: polygon(1px 1px, calc(94% - 1px) 1px, calc(100% - 1px) calc(23% + 1px), calc(100% - 1px) calc(100% - 1px), 6% calc(100% - 1px), 1px calc(77% - 1px));
 }
 .button--clip span {
   position: relative;
@@ -864,6 +872,7 @@ body {
 .steps {
   position: relative;
   padding-bottom: 300px;
+  margin-bottom: 160px;
 }
 .steps__lattice {
   position: absolute;
@@ -1073,16 +1082,32 @@ body {
   text-shadow: 0 3px 3px rgba(17, 17, 17, 0.5);
 }
 
+.portfolio__button {
+  width: 528px;
+  height: 73px;
+  display: block;
+  margin: auto;
+  background: url("../img/index/portfolio/btn.png") no-repeat center/contain;
+  color: #08E2F0;
+}
 .portfolio__row {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
+  margin-bottom: 66px;
+}
+.portfolio__row--last {
+  margin-bottom: 100px;
 }
 .portfolio__row__button {
   position: absolute;
-  right: 30px;
+  right: 40px;
   bottom: 0;
+}
+.portfolio__row__button--left {
+  right: auto;
+  left: 40px;
 }
 .portfolio__title {
   margin-bottom: 10px;
@@ -1144,6 +1169,9 @@ body {
   height: 100%;
   background: url("../img/index/portfolio/borderText.png") no-repeat center/contain;
 }
+.portfolio__card-text__content--left {
+  background: url("../img/index/portfolio/borderTextLeft.png") no-repeat center/contain;
+}
 .portfolio__card-text__video {
   opacity: 0.3;
 }
@@ -1159,6 +1187,7 @@ body {
 .portfolio__card-img::before {
   content: "";
   position: absolute;
+  z-index: 2;
   left: 0;
   top: 0;
   right: 0;
@@ -1170,6 +1199,8 @@ body {
   clip-path: polygon(5px 104px, 67px 28px, 452px 28px, 470px 5px, calc(100% - 95px) 5px, calc(100% - 5px) 94px, calc(100% - 5px) calc(100% - 93px), calc(100% - 68px) calc(100% - 26px), 508px calc(100% - 26px), 490px calc(100% - 5px), 94px calc(100% - 5px), 5px calc(100% - 94px));
 }
 .portfolio__card-img__content {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: flex;
@@ -1438,6 +1469,75 @@ body {
   .container {
     max-width: 1300px;
   }
+  .portfolio__button {
+    width: 274px;
+    height: 42px;
+    background: url("../img/index/portfolio/btnC.png") no-repeat center/contain;
+    font-size: 13px;
+  }
+  .portfolio__row {
+    max-width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 38px;
+  }
+  .portfolio__row--last {
+    margin-bottom: 40px;
+  }
+  .portfolio__row__button {
+    width: 185px;
+    height: 38px;
+    font-size: 13px;
+    right: 20px;
+  }
+  .portfolio__row__button--left {
+    left: 20px;
+  }
+  .portfolio__card-text {
+    width: 256px;
+    height: 276px;
+  }
+  .portfolio__card-text__title {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+  .portfolio__card-text__text-group {
+    margin-bottom: 7px;
+  }
+  .portfolio__card-text__text-group__title {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .portfolio__card-text__text-group__text {
+    font-size: 18px;
+  }
+  .portfolio__card-text__content {
+    padding: 30px 24px;
+    background: url("../img/index/portfolio/borderTextC.png") no-repeat center/contain;
+  }
+  .portfolio__card-text__content--left {
+    background: url("../img/index/portfolio/borderTextLeftC.png") no-repeat center/contain;
+  }
+  .portfolio__card-img {
+    width: 497px;
+    height: 328px;
+    background: url("../img/index/portfolio/borderImgC.png") no-repeat center/contain;
+  }
+  .portfolio__card-img::before {
+    -webkit-clip-path: polygon(5px 46px, 37px 17px, 236px 17px, 245px 5px, calc(100% - 50px) 5px, calc(100% - 5px) 51px, calc(100% - 5px) calc(100% - 51px), calc(100% - 37px) calc(100% - 17px), 264px calc(100% - 17px), 252px calc(100% - 5px), 50px calc(100% - 5px), 5px calc(100% - 51px));
+    clip-path: polygon(5px 46px, 37px 17px, 236px 17px, 245px 5px, calc(100% - 50px) 5px, calc(100% - 5px) 51px, calc(100% - 5px) calc(100% - 51px), calc(100% - 37px) calc(100% - 17px), 264px calc(100% - 17px), 252px calc(100% - 5px), 50px calc(100% - 5px), 5px calc(100% - 51px));
+  }
+  .portfolio__card-img__content {
+    -webkit-clip-path: polygon(20px 57px, 43px 32px, 236px 32px, 248px 18px, calc(100% - 55px) 20px, calc(100% - 20px) 52px, calc(100% - 20px) calc(100% - 55px), calc(100% - 40px) calc(100% - 33px), 264px calc(100% - 33px), 250px calc(100% - 20px), 55px calc(100% - 20px), 20px calc(100% - 55px));
+    clip-path: polygon(20px 57px, 43px 32px, 236px 32px, 248px 18px, calc(100% - 55px) 20px, calc(100% - 20px) 52px, calc(100% - 20px) calc(100% - 55px), calc(100% - 40px) calc(100% - 33px), 264px calc(100% - 33px), 250px calc(100% - 20px), 55px calc(100% - 20px), 20px calc(100% - 55px));
+  }
+  .portfolio__subtitle {
+    font-size: 22px;
+    margin-bottom: 44px;
+  }
+  .steps {
+    margin-bottom: 65px;
+  }
   .steps__lattice {
     opacity: 0.5;
   }
@@ -1621,6 +1721,38 @@ body {
     padding-left: 15px;
     padding-right: 15px;
   }
+  .section__title {
+    font-size: 35px;
+  }
+  .portfolio__row {
+    max-width: 700px;
+  }
+  .portfolio__row__button {
+    right: auto;
+    left: 35px;
+  }
+  .portfolio__row__button--left {
+    left: auto;
+    right: 35px;
+  }
+  .portfolio__title {
+    margin-bottom: 0;
+  }
+  .portfolio__subtitle {
+    margin-bottom: 40px;
+  }
+  .portfolio__card-img {
+    width: 343px;
+    height: 225px;
+  }
+  .portfolio__card-img::before {
+    -webkit-clip-path: polygon(5px 35px, 25px 13px, 160px 13px, 167px 5px, calc(100% - 35px) 5px, calc(100% - 5px) 35px, calc(100% - 5px) calc(100% - 35px), calc(100% - 25px) calc(100% - 12px), 182px calc(100% - 12px), 175px calc(100% - 3px), 33px calc(100% - 3px), 5px calc(100% - 35px));
+    clip-path: polygon(5px 35px, 25px 13px, 160px 13px, 167px 5px, calc(100% - 35px) 5px, calc(100% - 5px) 35px, calc(100% - 5px) calc(100% - 35px), calc(100% - 25px) calc(100% - 12px), 182px calc(100% - 12px), 175px calc(100% - 3px), 33px calc(100% - 3px), 5px calc(100% - 35px));
+  }
+  .portfolio__card-img__content {
+    -webkit-clip-path: polygon(16px 35px, 28px 23px, 162px 23px, 170px 14px, calc(100% - 39px) 16px, calc(100% - 17px) 37px, calc(100% - 17px) calc(100% - 37px), calc(100% - 28px) calc(100% - 25px), 182px calc(100% - 25px), 175px calc(100% - 17px), 37px calc(100% - 17px), 16px calc(100% - 39px));
+    clip-path: polygon(16px 35px, 28px 23px, 162px 23px, 170px 14px, calc(100% - 39px) 16px, calc(100% - 17px) 37px, calc(100% - 17px) calc(100% - 37px), calc(100% - 28px) calc(100% - 25px), 182px calc(100% - 25px), 175px calc(100% - 17px), 37px calc(100% - 17px), 16px calc(100% - 39px));
+  }
   .main {
     margin-bottom: 60px;
   }
@@ -1641,6 +1773,65 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
+  .portfolio {
+    overflow: hidden;
+  }
+  .portfolio__button {
+    width: 353px;
+    height: 68px;
+    background: url("../img/index/portfolio/btnM.png") no-repeat center/contain;
+    font-size: 20px;
+  }
+  .portfolio__card-img {
+    order: 2;
+  }
+  .portfolio__card-text {
+    order: 1;
+    width: 290px;
+    height: 319px;
+  }
+  .portfolio__card-text__text-group {
+    margin-bottom: 10px;
+  }
+  .portfolio__card-text__text-group__title {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+  .portfolio__card-text__text-group__text {
+    font-size: 22px;
+  }
+  .portfolio__card-text__title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  .portfolio__card-text__content {
+    padding: 36px 30px;
+    background: url("../img/index/portfolio/borderTextM.png") no-repeat center/contain;
+  }
+  .portfolio__row {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+    margin-bottom: 40px;
+  }
+  .portfolio__row--last {
+    margin-bottom: 30px;
+  }
+  .portfolio__row__button {
+    position: relative;
+    left: auto;
+    right: auto;
+    -webkit-clip-path: polygon(0 0, 94% 0, 100% 23%, 100% 100%, 6% 100%, 0 77%);
+    clip-path: polygon(0 0, 94% 0, 100% 23%, 100% 100%, 6% 100%, 0 77%);
+    height: 60px;
+    width: 353px;
+    font-size: 20px;
+    order: 3;
+  }
+  .portfolio__row__button::before {
+    -webkit-clip-path: polygon(1px 1px, calc(94% - 1px) 1px, calc(100% - 1px) calc(23% + 1px), calc(100% - 1px) calc(100% - 1px), 6% calc(100% - 1px), 1px calc(77% - 1px));
+    clip-path: polygon(1px 1px, calc(94% - 1px) 1px, calc(100% - 1px) calc(23% + 1px), calc(100% - 1px) calc(100% - 1px), 6% calc(100% - 1px), 1px calc(77% - 1px));
+  }
   .steps {
     padding-left: 0;
     padding-right: 0;
