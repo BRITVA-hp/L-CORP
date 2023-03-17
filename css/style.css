@@ -1082,6 +1082,9 @@ body {
   text-shadow: 0 3px 3px rgba(17, 17, 17, 0.5);
 }
 
+.portfolio {
+  margin-bottom: 120px;
+}
 .portfolio__button {
   width: 528px;
   height: 73px;
@@ -1469,6 +1472,9 @@ body {
   .container {
     max-width: 1300px;
   }
+  .portfolio {
+    margin-bottom: 80px;
+  }
   .portfolio__button {
     width: 274px;
     height: 42px;
@@ -1723,6 +1729,9 @@ body {
   }
   .section__title {
     font-size: 35px;
+  }
+  .portfolio {
+    margin-bottom: 60px;
   }
   .portfolio__row {
     max-width: 700px;
