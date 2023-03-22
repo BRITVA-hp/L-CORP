@@ -1454,13 +1454,54 @@ body {
   margin: 0 auto 80px;
 }
 
+.we__line {
+  position: absolute;
+  filter: blur(3px);
+  z-index: 1;
+}
+.we__line--left {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: #08E2F0;
+}
+.we__line--right {
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: #08E2F0;
+}
+.we__line--top {
+  background: linear-gradient(to right, #08E2F0, #08E2F0, rgba(8, 226, 240, 0.4), transparent, transparent, rgba(8, 226, 240, 0.4), #08E2F0, #08E2F0);
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+}
+.we__line--bottom {
+  background: linear-gradient(to right, #08E2F0, #08E2F0, rgba(8, 226, 240, 0.4), transparent, transparent, rgba(8, 226, 240, 0.4), #08E2F0, #08E2F0);
+  bottom: 0;
+  left: 0;
+  height: 5px;
+  width: 100%;
+}
+.we__border {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 5px, 5px 5px, 5px calc(100% - 5px), calc(100% - 5px) calc(100% - 5px), calc(100% - 5px) 5px, 0 5px);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 5px, 5px 5px, 5px calc(100% - 5px), calc(100% - 5px) calc(100% - 5px), calc(100% - 5px) 5px, 0 5px);
+  background: linear-gradient(to right, #08E2F0, #08E2F0, rgba(8, 226, 240, 0.4), transparent, transparent, rgba(8, 226, 240, 0.4), #08E2F0, #08E2F0);
+}
 .we__container {
   position: relative;
-  background: url("../img/index/we/border.png") no-repeat center/contain, url("../img/index/we/bg.png") no-repeat calc(100% - 90px) center;
-  padding: 86px 0 0 135px;
-  width: 1610px;
-  height: 660px;
-  max-width: none;
+  padding: 86px 135px 115px;
+  background: url("../img/index/we/bg.png") no-repeat calc(100% - 90px) center;
 }
 .we__container::before {
   content: "";
@@ -1476,7 +1517,7 @@ body {
 }
 .we__img {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   right: 84px;
   bottom: 0;
 }
@@ -1488,7 +1529,7 @@ body {
 .we__box {
   max-width: 675px;
   position: relative;
-  z-index: 3;
+  z-index: 4;
 }
 .we__title {
   text-align: left;
@@ -1762,6 +1803,29 @@ body {
   .container {
     max-width: 1300px;
   }
+  .we__img {
+    right: 140px;
+  }
+  .we__img__logo {
+    width: 350px;
+    top: -178px;
+  }
+  .we__img__hand {
+    width: 400px;
+  }
+  .we__box {
+    max-width: 495px;
+  }
+  .we__title {
+    margin-bottom: 20px;
+  }
+  .we__text {
+    font-size: 18px;
+  }
+  .we__container {
+    padding: 60px 90px 80px;
+    background: url("../img/index/we/bgC.png") no-repeat calc(100% - 90px) center;
+  }
   .understand {
     margin-bottom: 55px;
   }
@@ -2026,6 +2090,46 @@ body {
     width: 145px;
   }
 }
+@media screen and (max-width: 1400px) {
+  .we__img {
+    right: 36px;
+  }
+  .we__img__hand {
+    width: 268px;
+  }
+  .we__img__logo {
+    width: 215px;
+    left: 19px;
+    top: -106px;
+  }
+  .we__box {
+    max-width: 345px;
+  }
+  .we__text {
+    font-size: 11px;
+  }
+  .we__container {
+    max-width: 820px;
+    padding: 50px 60px;
+    background: url("../img/index/we/bgC2.png") no-repeat calc(100% - 15px) center;
+  }
+  .we__border {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 3px, 3px 3px, 3px calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 3px, 0 3px);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 3px, 3px 3px, 3px calc(100% - 3px), calc(100% - 3px) calc(100% - 3px), calc(100% - 3px) 3px, 0 3px);
+  }
+  .we__line--left {
+    width: 3px;
+  }
+  .we__line--right {
+    width: 3px;
+  }
+  .we__line--top {
+    height: 3px;
+  }
+  .we__line--bottom {
+    height: 3px;
+  }
+}
 @media screen and (max-width: 1100px) {
   .steps {
     padding-bottom: 160px;
@@ -2186,6 +2290,30 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
+  .we__container {
+    padding: 36px 16px 280px;
+    background: url("../img/index/we/bgM.png") no-repeat center bottom;
+    max-width: 400px;
+  }
+  .we__img {
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .we__img__hand {
+    width: 230px;
+  }
+  .we__img__logo {
+    width: 185px;
+    left: 0;
+    top: -102px;
+  }
+  .we__box {
+    margin: auto;
+    text-align: center;
+  }
+  .we__title {
+    text-align: center;
+  }
   .understand {
     display: flex;
     justify-content: center;

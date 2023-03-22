@@ -1,11 +1,45 @@
 .we
+  &__line
+    position: absolute
+    filter: blur(3px)
+    z-index: 1
+    &--left
+      left: 0
+      top: 0
+      height: 100%
+      width: 5px
+      background: #08E2F0
+    &--right
+      right: 0
+      top: 0
+      height: 100%
+      width: 5px
+      background: #08E2F0
+    &--top
+      background: linear-gradient(to right, #08E2F0, #08E2F0, rgba(8, 226, 240, 0.4), transparent, transparent, rgba(8, 226, 240, 0.4), #08E2F0, #08E2F0)
+      top: 0
+      left: 0
+      height: 5px
+      width: 100%
+    &--bottom
+      background: linear-gradient(to right, #08E2F0, #08E2F0, rgba(8, 226, 240, 0.4), transparent, transparent, rgba(8, 226, 240, 0.4), #08E2F0, #08E2F0)
+      bottom: 0
+      left: 0
+      height: 5px
+      width: 100%
+  &__border
+    position: absolute
+    z-index: 2
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 5px, 5px 5px, 5px calc(100% - 5px), calc(100% - 5px) calc(100% - 5px), calc(100% - 5px) 5px, 0 5px)
+    background: linear-gradient(to right, #08E2F0, #08E2F0, rgba(8, 226, 240, 0.4), transparent, transparent, rgba(8, 226, 240, 0.4), #08E2F0, #08E2F0)
   &__container
     position: relative
-    background: url("../img/index/we/border.png") no-repeat center/contain, url("../img/index/we/bg.png") no-repeat calc(100% - 90px) center
-    padding: 86px 0 0 135px
-    width: 1610px
-    height: 660px
-    max-width: none
+    padding: 86px 135px 115px
+    background: url("../img/index/we/bg.png") no-repeat calc(100% - 90px) center
     &::before
       content: ''
       position: absolute
@@ -19,7 +53,7 @@
       opacity: 0.07
   &__img
     position: absolute
-    z-index: 2
+    z-index: 3
     right: 84px
     bottom: 0
     &__logo
@@ -29,7 +63,7 @@
   &__box
     max-width: 675px
     position: relative
-    z-index: 3
+    z-index: 4
   &__title
     text-align: left
     margin-bottom: 15px
