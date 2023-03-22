@@ -1,5 +1,12 @@
 @font-face {
   font-family: "UniNeue";
+  src: url("../fonts/uni_neue/UniNeueBlack.woff") format("woff"), url("../fonts/uni_neue/UniNeueBlack.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "UniNeue";
   src: url("../fonts/uni_neue/UniNeueBold.woff") format("woff"), url("../fonts/uni_neue/UniNeueBold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
@@ -1544,6 +1551,73 @@ body {
   color: #FFFFFF;
 }
 
+.numbers__row {
+  position: relative;
+  z-index: 2;
+  flex-wrap: wrap;
+  -moz-column-gap: 100px;
+  column-gap: 100px;
+  row-gap: 100px;
+  justify-content: center;
+}
+.numbers__card {
+  width: 290px;
+}
+.numbers__card__text {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 115%;
+  text-align: center;
+  color: #FFFFFF;
+}
+.numbers__card__text span {
+  color: #08E2F0;
+}
+.numbers__card__screen {
+  width: 245px;
+  height: 219px;
+  background: url("../img/index/numbers/border.png") no-repeat center/contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto 15px;
+}
+.numbers__card__screen::before {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: -15px;
+  width: 47px;
+  height: 32px;
+  background: url("../img/index/numbers/arrow.svg") no-repeat center/contain;
+}
+.numbers__card__screen::after {
+  content: "";
+  position: absolute;
+}
+.numbers__card__title {
+  font-size: 70px;
+  color: #B488EB;
+  font-family: "BlenderPro", sans-serif;
+  font-weight: bold;
+  line-height: 55px;
+  text-align: center;
+}
+.numbers__container {
+  padding-top: 160px;
+  padding-bottom: 160px;
+  position: relative;
+}
+.numbers__substrate {
+  background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0) 52.6%, #111111 100%), radial-gradient(100% 202.99% at 0% 50%, #111111 0%, rgba(17, 17, 17, 0) 50.39%, #111111 100%);
+}
+.numbers__video {
+  opacity: 0.3;
+}
+
 .modal {
   position: fixed;
   z-index: 199;
@@ -2091,6 +2165,37 @@ body {
   }
 }
 @media screen and (max-width: 1400px) {
+  .numbers__container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  .numbers__row {
+    row-gap: 50px;
+    -moz-column-gap: 50px;
+    column-gap: 50px;
+  }
+  .numbers__card {
+    width: 150px;
+  }
+  .numbers__card__text {
+    font-size: 13px;
+  }
+  .numbers__card__title {
+    font-size: 38px;
+    line-height: 28px;
+  }
+  .numbers__card__screen {
+    width: 126px;
+    height: 113px;
+    background: url("../img/index/numbers/borderC.png") no-repeat center/contain;
+    margin-bottom: 8px;
+  }
+  .numbers__card__screen::before {
+    width: 22px;
+    height: 14px;
+    top: 30px;
+    left: -8px;
+  }
   .we__img {
     right: 36px;
   }
@@ -2290,6 +2395,26 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
+  .numbers {
+    margin-bottom: 60px;
+  }
+  .numbers__card {
+    width: 100%;
+  }
+  .numbers__card__text {
+    font-size: 24px;
+  }
+  .numbers__container {
+    padding: 0;
+  }
+  .numbers__row {
+    grid-gap: 35px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .we {
+    margin-bottom: 60px;
+  }
   .we__container {
     padding: 36px 16px 280px;
     background: url("../img/index/we/bgM.png") no-repeat center bottom;

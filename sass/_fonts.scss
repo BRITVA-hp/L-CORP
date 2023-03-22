@@ -2,6 +2,15 @@
 @font-face {
     font-family: 'UniNeue';
     src:
+    url('../fonts/uni_neue/UniNeueBlack.woff') format('woff'),
+    url('../fonts/uni_neue/UniNeueBlack.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'UniNeue';
+    src:
     url('../fonts/uni_neue/UniNeueBold.woff') format('woff'),
     url('../fonts/uni_neue/UniNeueBold.woff2') format('woff2');
     font-weight: bold;

@@ -1,0 +1,56 @@
+.numbers
+  &__row
+    position: relative
+    z-index: 2
+    flex-wrap: wrap
+    column-gap: 100px
+    row-gap: 100px
+    justify-content: center
+  &__card
+    width: 290px
+    &__text
+      font-family: 'BlenderPro', sans-serif
+      font-style: normal
+      font-weight: bold
+      font-size: 25px
+      line-height: 115%
+      text-align: center
+      color: #FFFFFF
+      span
+        color: #08E2F0
+    &__screen
+      width: 245px
+      height: 219px
+      background: url("../img/index/numbers/border.png") no-repeat center/ contain
+      display: flex
+      align-items: center
+      justify-content: center
+      position: relative
+      margin: 0 auto 15px
+      &::before
+        content: ''
+        position: absolute
+        top: 60px
+        left: -15px
+        width: 47px
+        height: 32px
+        background: url("../img/index/numbers/arrow.svg") no-repeat center/contain
+      &::after
+        content: ''
+        position: absolute
+
+    &__title
+      font-size: 70px
+      color: #B488EB
+      font-family: 'BlenderPro', sans-serif
+      font-weight: bold
+      line-height: 55px
+      text-align: center
+  &__container
+    padding-top: 160px
+    padding-bottom: 160px
+    position: relative
+  &__substrate
+    background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0) 52.6%, #111111 100%), radial-gradient(100% 202.99% at 0% 50%, #111111 0%, rgba(17, 17, 17, 0) 50.39%, #111111 100%)
+  &__video
+    opacity: 0.3
