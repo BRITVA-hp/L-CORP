@@ -1,0 +1,98 @@
+.reviews
+  padding-left: 0
+  padding-right: 0
+  margin-bottom: 200px
+  &__container
+    max-width: 1630px
+  &__arrows
+    display: flex
+    justify-content: space-between
+    margin-bottom: 20px
+    padding-left: 15px
+    padding-right: 15px
+  &__arrow
+    cursor: pointer
+    &--active
+      path
+        fill: #B488EB
+  &__dots
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+    justify-content: center
+    column-gap: 20px
+    row-gap: 20px
+  &__dot
+    width: 13px
+    height: 13px
+    border-radius: 50%
+    background: #FFFFFF
+    box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.53)
+    position: relative
+    cursor: pointer
+    &::after
+      content: ''
+      position: absolute
+      border-radius: 50%
+      width: 18px
+      height: 18px
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      background: #B488EB
+      box-shadow: 0 0 3px 1px rgba(180, 136, 235, 0.53)
+      display: none
+    &--active
+      &::after
+        display: block
+  &__title
+    margin-bottom: 50px
+  &__window
+    overflow: hidden
+    margin-bottom: 30px
+  &__field
+    display: flex
+    column-gap: 15px
+    transition: 0.3s
+  &__card
+    min-width: 525px
+    width: 525px
+    height: 301px
+    position: relative
+    &:first-child
+      margin-left: 15px
+    &:last-child
+      margin-right: 15px
+    &__play
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      bottom: 35px
+      cursor: pointer
+    &__text
+      font-family: 'BlenderPro', sans-serif
+      font-style: normal
+      font-weight: bold
+      font-size: 25px
+      line-height: 110%
+      text-align: center
+      color: #FFFFFF
+      max-width: 244px
+      margin: 0 auto 15px
+    &__bg
+      position: absolute
+      z-index: 1
+      left: 22px
+      top: 22px
+      width: calc(100% - 44px)
+      height: calc(100% - 44px)
+      border-radius: 5px
+      overflow: hidden
+    &__content
+      position: relative
+      z-index: 2
+      width: 100%
+      height: 100%
+      background: url("../img/index/reviews/border.png") no-repeat center/contain
+      padding: 64px 20px 20px
+      text-align: center

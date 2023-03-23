@@ -1618,6 +1618,124 @@ body {
   opacity: 0.3;
 }
 
+.reviews {
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 200px;
+}
+.reviews__container {
+  max-width: 1630px;
+}
+.reviews__arrows {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.reviews__arrow {
+  cursor: pointer;
+}
+.reviews__arrow--active path {
+  fill: #B488EB;
+}
+.reviews__dots {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+.reviews__dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.53);
+  position: relative;
+  cursor: pointer;
+}
+.reviews__dot::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #B488EB;
+  box-shadow: 0 0 3px 1px rgba(180, 136, 235, 0.53);
+  display: none;
+}
+.reviews__dot--active::after {
+  display: block;
+}
+.reviews__title {
+  margin-bottom: 50px;
+}
+.reviews__window {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+.reviews__field {
+  display: flex;
+  -moz-column-gap: 15px;
+  column-gap: 15px;
+  transition: 0.3s;
+}
+.reviews__card {
+  min-width: 525px;
+  width: 525px;
+  height: 301px;
+  position: relative;
+}
+.reviews__card:first-child {
+  margin-left: 15px;
+}
+.reviews__card:last-child {
+  margin-right: 15px;
+}
+.reviews__card__play {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 35px;
+  cursor: pointer;
+}
+.reviews__card__text {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 110%;
+  text-align: center;
+  color: #FFFFFF;
+  max-width: 244px;
+  margin: 0 auto 15px;
+}
+.reviews__card__bg {
+  position: absolute;
+  z-index: 1;
+  left: 22px;
+  top: 22px;
+  width: calc(100% - 44px);
+  height: calc(100% - 44px);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.reviews__card__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: url("../img/index/reviews/border.png") no-repeat center/contain;
+  padding: 64px 20px 20px;
+  text-align: center;
+}
+
 .modal {
   position: fixed;
   z-index: 199;
@@ -2339,6 +2457,10 @@ body {
   }
   .section__title {
     font-size: 35px;
+  }
+  .reviews {
+    padding-left: 0;
+    padding-right: 0;
   }
   .services__bg__substrate {
     background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.1) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.1) 47.92%, #111111 100%);
