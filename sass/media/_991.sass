@@ -5,6 +5,63 @@
     &__title
       font-size: 35px
 
+  .footer
+    padding-top: 96px
+    padding-bottom: 58px
+    overflow: hidden
+    &__logo
+      margin-bottom: 0
+    &__bottom
+      flex-direction: column
+      align-items: center
+      row-gap: 10px
+      text-align: center
+    &__card
+      text-align: center
+      width: 260px
+      &--1
+        order: 1
+      &--2
+        order: 2
+      &--3
+        order: 3
+      &--4
+        order: 5
+      &--5
+        order: 4
+    &__row
+      position: relative
+    &__box
+      margin-bottom: 40px
+      &__block
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        width: 100%
+        bottom: 92px
+        display: flex
+        column-gap: 34px
+        justify-content: center
+        min-width: 375px
+    &__phone, &__address
+      flex-direction: column
+      row-gap: 5px
+      img
+        width: auto
+        height: 30px
+    &__phone
+      margin-bottom: 0
+    &__wrap
+      display: flex
+      flex-wrap: wrap
+      max-width: 700px
+      margin: 0 auto 148px
+      justify-content: center
+      row-gap: 30px
+    &__row
+      flex-direction: column
+      align-items: center
+
   .reviews
     padding-left: 0
     padding-right: 0
