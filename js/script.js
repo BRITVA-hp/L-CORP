@@ -1,28 +1,59 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    (function() {
-        var throttle = function(type, name, obj) {
-            obj = obj || window;
-            var running = false;
-            var func = function() {
-                if (running) { return; }
-                running = true;
-                requestAnimationFrame(function() {
-                    obj.dispatchEvent(new CustomEvent(name));
-                    running = false;
-                });
-            };
-            obj.addEventListener(type, func);
-        };
-
-        /* init - you can init any event */
-        throttle("resize", "optimizedResize");
-    })();
+    // (function() {
+    //     var throttle = function(type, name, obj) {
+    //         obj = obj || window;
+    //         var running = false;
+    //         var func = function() {
+    //             if (running) { return; }
+    //             running = true;
+    //             requestAnimationFrame(function() {
+    //                 obj.dispatchEvent(new CustomEvent(name));
+    //                 running = false;
+    //             });
+    //         };
+    //         obj.addEventListener(type, func);
+    //     };
+    //
+    //     /* init - you can init any event */
+    //     throttle("resize", "optimizedResize");
+    // })();
 
     // handle event
-    window.addEventListener("optimizedResize", function() {
-        console.log("Resource conscious resize callback!");
-    });
+    // window.addEventListener("optimizedResize", function() {
+    //     console.log("Resource conscious resize callback!");
+    // });
+
+    const burger = document.querySelector('.header__burger')
+    const menu = document.querySelector('.menu')
+    const flash = document.querySelector('.menu__flash')
+    const menuClose = document.querySelector('.menu__close')
+    const menuContent = document.querySelector('.menu__content')
+
+    let flashActive,
+        menuClosed
+
+    burger.addEventListener('click', () => {
+        clearTimeout(menuClosed)
+        menu.classList.add('menu--active')
+        setTimeout(() => {
+            menuContent.classList.add('menu__content--active')
+        }, 1500)
+        flashActive = setTimeout(() => {
+            flash.classList.add('menu__flash--active')
+        }, 2000)
+    })
+
+    menuClose.addEventListener('click', () => {
+        clearTimeout(flashActive)
+        menu.classList.remove('menu--active')
+        menu.classList.add('menu--closed')
+        flash.classList.remove('menu__flash--active')
+        menuContent.classList.remove('menu__content--active')
+        menuClosed = setTimeout(() => {
+            menu.classList.remove('menu--closed')
+        }, 1000)
+    })
 
     const observer = lozad();
     observer.observe();
