@@ -473,7 +473,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         let callback
-        let run
 
         if (right) {
             callback = function(entries, observer) {
@@ -495,11 +494,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
             };
-            run = () => {
-                transformValue += speed
-                field.style.transform = 'translateX('  + transformValue  + 'px)'
-                window.requestAnimationFrame(run)
-            }
         } else {
             callback = function(entries, observer) {
                 entries.forEach(entry => {
@@ -512,18 +506,20 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 });
             };
-
-            run = () => {
-                transformValue -= speed
-                field.style.transform = 'translateX('  + transformValue  + 'px)'
-                window.requestAnimationFrame(run)
-            }
         }
 
         const observerTicker = new IntersectionObserver(callback, options)
         tickerCards.forEach(el => {
             observerTicker.observe(el)
         })
+
+        const run = () => {
+            if (document.documentElement.clientWidth < 575) {
+                right ? transformValue += speed : transformValue -= speed
+                field.style.transform = 'translateX('  + transformValue  + 'px)'
+            }
+            window.requestAnimationFrame(run)
+        }
 
         window.requestAnimationFrame(run)
     }
