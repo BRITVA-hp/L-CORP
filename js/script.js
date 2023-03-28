@@ -58,6 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = lozad();
     observer.observe();
 
+    //slider steps
     const steps = [
         {
             index: 0,
@@ -95,75 +96,76 @@ document.addEventListener("DOMContentLoaded", () => {
         const container = document.querySelector(containerSelector)
         const btnPrev = document.querySelector(btnPrevSelector)
         const btnNext = document.querySelector(btnNextSelector)
-        let classes = [
-            {
-                class: 'steps__card--active',
-                index: 0,
-                update: function() {
-                    this.data = steps[0]
+        if (container) {
+            let classes = [
+                {
+                    class: 'steps__card--active',
+                    index: 0,
+                    update: function() {
+                        this.data = steps[0]
+                    }
+                },
+                {
+                    class: 'steps__card--right',
+                    index: 1,
+                    update: function() {
+                        this.data = steps[1]
+                    }
+                },
+                {
+                    class: 'steps__card--right-1',
+                    index: 2,
+                    update: function() {
+                        this.data = steps[2]
+                    }
+                },
+                {
+                    class: 'steps__card--left-1',
+                    index: -2,
+                    update: function() {
+                        this.data = steps[steps.length - 2]
+                    }
+                },
+                {
+                    class: 'steps__card--left',
+                    index: -1,
+                    update: function() {
+                        this.data = steps[steps.length - 1]
+                    }
                 }
-            },
-            {
-                class: 'steps__card--right',
-                index: 1,
-                update: function() {
-                    this.data = steps[1]
-                }
-            },
-            {
-                class: 'steps__card--right-1',
-                index: 2,
-                update: function() {
-                    this.data = steps[2]
-                }
-            },
-            {
-                class: 'steps__card--left-1',
-                index: -2,
-                update: function() {
-                    this.data = steps[steps.length - 2]
-                }
-            },
-            {
-                class: 'steps__card--left',
-                index: -1,
-                update: function() {
-                    this.data = steps[steps.length - 1]
-                }
-            }
-        ]
-        const cards = []
-        const updateCards = () => {
-            classes.forEach(cl => cl.update())
-            cards.forEach((card, cardIndex) => {
-                classes.forEach(el => {
-                    card.classList.remove(el.class)
+            ]
+            const cards = []
+            const updateCards = () => {
+                classes.forEach(cl => cl.update())
+                cards.forEach((card, cardIndex) => {
+                    classes.forEach(el => {
+                        card.classList.remove(el.class)
+                    })
+                    card.setAttribute('data-index', classes[cardIndex].index)
+                    card.classList.add(classes[cardIndex].class)
+                    card.firstElementChild.firstElementChild.src = classes[cardIndex].data.img
+                    card.lastElementChild.firstElementChild.textContent = classes[cardIndex].data.title
+                    card.lastElementChild.lastElementChild.textContent = classes[cardIndex].data.subtitle
+
+                    for(let i=0; i<card.firstElementChild.lastElementChild.children.length; i++) {
+                        card.firstElementChild.lastElementChild.children[i].classList.remove('steps__card__dot--active')
+                    }
+                    card.firstElementChild.lastElementChild.children[classes[cardIndex].data.index].classList.add('steps__card__dot--active')
+
                 })
-                card.setAttribute('data-index', classes[cardIndex].index)
-                card.classList.add(classes[cardIndex].class)
-                card.firstElementChild.firstElementChild.src = classes[cardIndex].data.img
-                card.lastElementChild.firstElementChild.textContent = classes[cardIndex].data.title
-                card.lastElementChild.lastElementChild.textContent = classes[cardIndex].data.subtitle
-
-                for(let i=0; i<card.firstElementChild.lastElementChild.children.length; i++) {
-                    card.firstElementChild.lastElementChild.children[i].classList.remove('steps__card__dot--active')
-                }
-                card.firstElementChild.lastElementChild.children[classes[cardIndex].data.index].classList.add('steps__card__dot--active')
-
-            })
-        }
-        if (steps.length < classes.length) {
-            classes.splice(3,1)
-            classes.splice(steps.length)
-        }
-        classes.forEach((cl, clIndex) => {
-            cl.update()
-            const card = document.createElement('div')
-            card.classList.add('steps__card')
-            card.classList.add(cl.class)
-            card.setAttribute('data-index', cl.index)
-            card.innerHTML =
-                `
+            }
+            if (steps.length < classes.length) {
+                classes.splice(3,1)
+                classes.splice(steps.length)
+            }
+            classes.forEach((cl, clIndex) => {
+                cl.update()
+                const card = document.createElement('div')
+                card.classList.add('steps__card')
+                card.classList.add(cl.class)
+                card.setAttribute('data-index', cl.index)
+                card.innerHTML =
+                  `
                     <div class="steps__card__screen">
                         <img class="steps__card__img" src="${cl.data.img}" alt="step">
                         <div class="steps__card__dots"></div>
@@ -177,37 +179,38 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p class="steps__card__subtitle">${cl.data.subtitle}</p>
                     </div>
                 `
-            container.appendChild(card)
-            cards.push(card)
-        })
-        btnNext.addEventListener('click', () => {
-            classes = classes.splice(-1).concat(classes)
-            steps = steps.concat(steps.splice(0, 1))
-            updateCards()
-        })
-        btnPrev.addEventListener('click', () => {
-            classes = classes.concat(classes.splice(0, 1))
-            steps = steps.splice(-1).concat(steps)
-            updateCards()
-        })
-        cards.forEach((card, cardIndex) => {
-            steps.forEach(step => {
-                card.firstElementChild.lastElementChild.insertAdjacentHTML('beforeend', `<div class="steps__card__dot"></div>`)
+                container.appendChild(card)
+                cards.push(card)
             })
-            card.firstElementChild.lastElementChild.children[classes[cardIndex].data.index].classList.add('steps__card__dot--active')
-            card.addEventListener('click', () => {
-                const index = card.getAttribute('data-index')
-                if (index > 0) {
-                    classes = classes.splice(-index).concat(classes)
-                    steps = steps.concat(steps.splice(0, index))
-                    updateCards()
-                } else if (index < 0) {
-                    classes = classes.concat(classes.splice(0, -index))
-                    steps = steps.splice(index).concat(steps)
-                    updateCards()
-                }
+            btnNext.addEventListener('click', () => {
+                classes = classes.splice(-1).concat(classes)
+                steps = steps.concat(steps.splice(0, 1))
+                updateCards()
             })
-        })
+            btnPrev.addEventListener('click', () => {
+                classes = classes.concat(classes.splice(0, 1))
+                steps = steps.splice(-1).concat(steps)
+                updateCards()
+            })
+            cards.forEach((card, cardIndex) => {
+                steps.forEach(step => {
+                    card.firstElementChild.lastElementChild.insertAdjacentHTML('beforeend', `<div class="steps__card__dot"></div>`)
+                })
+                card.firstElementChild.lastElementChild.children[classes[cardIndex].data.index].classList.add('steps__card__dot--active')
+                card.addEventListener('click', () => {
+                    const index = card.getAttribute('data-index')
+                    if (index > 0) {
+                        classes = classes.splice(-index).concat(classes)
+                        steps = steps.concat(steps.splice(0, index))
+                        updateCards()
+                    } else if (index < 0) {
+                        classes = classes.concat(classes.splice(0, -index))
+                        steps = steps.splice(index).concat(steps)
+                        updateCards()
+                    }
+                })
+            })
+        }
     }
 
     sliderSteps(steps, '.steps__field', '.steps__arrow--prev', '.steps__arrow--next')
@@ -456,5 +459,76 @@ document.addEventListener("DOMContentLoaded", () => {
         'reviews__arrow--active',
         false
     );
+
+    // ticker
+    function ticker(fieldSelector, cardSelector, speed, right = true) {
+        const field = document.querySelector(fieldSelector)
+        const tickerCards = field.querySelectorAll(cardSelector)
+        let transformValue = 0
+
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0
+        }
+
+        let callback
+        let run
+
+        if (right) {
+            callback = function(entries, observer) {
+                entries.forEach(entry => {
+                    // entry.time                   // a DOMHightResTimeStamp indicating when the intersection occurred.
+                    // entry.rootBounds             // a DOMRectReadOnly for the intersection observer's root.
+                    // entry.boundingClientRect     // a DOMRectReadOnly for the intersection observer's target.
+                    // entry.intersectionRect       // a DOMRectReadOnly for the visible portion of the intersection observer's target.
+                    // entry.intersectionRatio      // the number for the ratio of the intersectionRect to the boundingClientRect.
+                    // entry.target                 // the Element whose intersection with the intersection root changed.
+                    // entry.isIntersecting         // intersecting: true or false
+
+                    if (!entry.isIntersecting && entry.boundingClientRect.left > 0) {
+                        const width = entry.target.clientWidth
+                        transformValue -=width
+                        entry.target.remove()
+                        field.style.transform = `translateX(${transformValue}px)`
+                        field.prepend(entry.target)
+                    }
+                });
+            };
+            run = () => {
+                transformValue += speed
+                field.style.transform = 'translateX('  + transformValue  + 'px)'
+                window.requestAnimationFrame(run)
+            }
+        } else {
+            callback = function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting && entry.boundingClientRect.left < 0) {
+                        const width = entry.target.clientWidth
+                        transformValue +=width
+                        entry.target.remove()
+                        field.style.transform = `translateX(${transformValue}px)`
+                        field.append(entry.target)
+                    }
+                });
+            };
+
+            run = () => {
+                transformValue -= speed
+                field.style.transform = 'translateX('  + transformValue  + 'px)'
+                window.requestAnimationFrame(run)
+            }
+        }
+
+        const observerTicker = new IntersectionObserver(callback, options)
+        tickerCards.forEach(el => {
+            observerTicker.observe(el)
+        })
+
+        window.requestAnimationFrame(run)
+    }
+
+    ticker('.dev-main__row--ml', '.dev-main__card', 0.5)
+    ticker('.dev-main__row--mr', '.dev-main__card', 0.5, false)
 
 })

@@ -1,4 +1,34 @@
 @media screen and ( max-width: 575px )
+  .dev
+    &-main
+      overflow: hidden
+      padding-left: 0
+      padding-right: 0
+      &__row
+        flex-wrap: nowrap
+        margin: 0
+        display: none
+        &--ml, &--mr
+          display: flex
+        &--mr
+          margin-top: 20px
+          .dev-main__card
+            text-align: right !important
+        gap: 0
+      &__window
+        overflow: hidden
+      &__card
+        min-width: 260px
+        padding: 0 10px
+        &:nth-child(3), &:last-child
+          text-align: left
+        //&:first-child
+        //  margin-left: 15px
+        //&:last-child
+        //  margin-right: 15px
+      &__title
+        padding: 0 15px
+
   .steps
     &__interface
       max-width: 300px
