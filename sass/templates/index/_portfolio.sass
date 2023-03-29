@@ -15,6 +15,18 @@
     margin-bottom: 66px
     &--last
       margin-bottom: 100px
+    &__button-group
+      position: absolute
+      bottom: 0
+      right: 0
+      display: flex
+      column-gap: 15px
+      button
+        width: 230px
+        height: 65px
+      &--left
+        right: auto
+        left: 0
     &__button
       position: absolute
       right: 40px
@@ -37,6 +49,22 @@
     position: relative
     width: 486px
     height: 533px
+    &__coffee
+      position: relative
+      display: block
+      width: 38px
+      img
+        width: 100%
+      &::before
+        content: attr(data-coffee)
+        color: #111111
+        font-size: 15px
+        font-weight: 900
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        top: 4px
+        display: block
     &__text-group
       margin-bottom: 15px
       &__title
@@ -55,6 +83,9 @@
         font-size: 35px
         line-height: 120%
         color: #CFFF04
+        display: flex
+        align-items: center
+        column-gap: 6px
     &__title
       font-family: 'UniNeue', sans-serif
       font-style: normal

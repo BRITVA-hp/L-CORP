@@ -461,70 +461,75 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     // ticker
-    function ticker(fieldSelector, cardSelector, speed, right = true) {
+    function ticker(windowSelector, fieldSelector, cardSelector, speed, right = true) {
+        const _window = document.querySelector(windowSelector)
         const field = document.querySelector(fieldSelector)
-        const tickerCards = field.querySelectorAll(cardSelector)
-        let transformValue = 0
 
-        const options = {
-            root: null,
-            rootMargin: '0px',
-            threshold: 0
-        }
+        if (_window) {
+            const tickerCards = field.querySelectorAll(cardSelector)
+            let transformValue = 0
 
-        let callback
 
-        if (right) {
-            callback = function(entries, observer) {
-                entries.forEach(entry => {
-                    // entry.time                   // a DOMHightResTimeStamp indicating when the intersection occurred.
-                    // entry.rootBounds             // a DOMRectReadOnly for the intersection observer's root.
-                    // entry.boundingClientRect     // a DOMRectReadOnly for the intersection observer's target.
-                    // entry.intersectionRect       // a DOMRectReadOnly for the visible portion of the intersection observer's target.
-                    // entry.intersectionRatio      // the number for the ratio of the intersectionRect to the boundingClientRect.
-                    // entry.target                 // the Element whose intersection with the intersection root changed.
-                    // entry.isIntersecting         // intersecting: true or false
-
-                    if (!entry.isIntersecting && entry.boundingClientRect.left > 0) {
-                        const width = entry.target.clientWidth
-                        transformValue -=width
-                        entry.target.remove()
-                        field.style.transform = `translateX(${transformValue}px)`
-                        field.prepend(entry.target)
-                    }
-                });
-            };
-        } else {
-            callback = function(entries, observer) {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting && entry.boundingClientRect.left < 0) {
-                        const width = entry.target.clientWidth
-                        transformValue +=width
-                        entry.target.remove()
-                        field.style.transform = `translateX(${transformValue}px)`
-                        field.append(entry.target)
-                    }
-                });
-            };
-        }
-
-        const observerTicker = new IntersectionObserver(callback, options)
-        tickerCards.forEach(el => {
-            observerTicker.observe(el)
-        })
-
-        const run = () => {
-            if (document.documentElement.clientWidth < 575) {
-                right ? transformValue += speed : transformValue -= speed
-                field.style.transform = 'translateX('  + transformValue  + 'px)'
+            const options = {
+                root: _window,
+                rootMargin: '0px',
+                threshold: 0
             }
+
+            let callback
+
+            if (right) {
+                callback = function(entries, observer) {
+                    entries.forEach(entry => {
+                        // entry.time                   // a DOMHightResTimeStamp indicating when the intersection occurred.
+                        // entry.rootBounds             // a DOMRectReadOnly for the intersection observer's root.
+                        // entry.boundingClientRect     // a DOMRectReadOnly for the intersection observer's target.
+                        // entry.intersectionRect       // a DOMRectReadOnly for the visible portion of the intersection observer's target.
+                        // entry.intersectionRatio      // the number for the ratio of the intersectionRect to the boundingClientRect.
+                        // entry.target                 // the Element whose intersection with the intersection root changed.
+                        // entry.isIntersecting         // intersecting: true or false
+
+                        if (!entry.isIntersecting && entry.boundingClientRect.left > 0) {
+                            const width = entry.target.clientWidth
+                            transformValue -=width
+                            entry.target.remove()
+                            field.style.transform = `translateX(${transformValue}px)`
+                            field.prepend(entry.target)
+                        }
+                    });
+                };
+            } else {
+                callback = function(entries, observer) {
+                    entries.forEach(entry => {
+                        if (!entry.isIntersecting && entry.boundingClientRect.left < 0) {
+                            const width = entry.target.clientWidth
+                            transformValue +=width
+                            entry.target.remove()
+                            field.style.transform = `translateX(${transformValue}px)`
+                            field.append(entry.target)
+                        }
+                    });
+                };
+            }
+
+            const observerTicker = new IntersectionObserver(callback, options)
+            tickerCards.forEach(el => {
+                observerTicker.observe(el)
+            })
+
+            const run = () => {
+                if (document.documentElement.clientWidth < 575) {
+                    right ? transformValue += speed : transformValue -= speed
+                    field.style.transform = 'translateX('  + transformValue  + 'px)'
+                }
+                window.requestAnimationFrame(run)
+            }
+
             window.requestAnimationFrame(run)
         }
-
-        window.requestAnimationFrame(run)
     }
 
-    ticker('.dev-main__row--ml', '.dev-main__card', 0.5)
-    ticker('.dev-main__row--mr', '.dev-main__card', 0.5, false)
+    ticker('.dev-main__window', '.dev-main__row--ml', '.dev-main__card', 0.5)
+    ticker('.dev-main__window', '.dev-main__row--mr', '.dev-main__card', 0.5, false)
 
 })

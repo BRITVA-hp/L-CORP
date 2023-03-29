@@ -1,4 +1,40 @@
 @media screen and ( max-width: 767px )
+  .dev
+    &-advantages
+      overflow: hidden
+      &__card
+        width: 345px
+        height: 120px
+        &__line
+          width: 30px
+        &__num
+          left: auto !important
+          top: auto !important
+          right: 15px !important
+          bottom: 12px !important
+        .dev-advantages__card__text
+          text-align: left
+        .dev-advantages__card__content
+          display: block
+        &--small
+          &::before
+            clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 15px, 100% 100%, 16px 100%, 0 calc(100% - 15px), 0 1px, 1px 1px, 1px calc(100% - 16px), 17px calc(100% - 1px), calc(100% - 1px) calc(100% - 1px), calc(100% - 1px) 16px, calc(100% - 17px) 1px, 1px 1px)
+          .dev-advantages__card__content
+            clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 15px, 100% 100%, 16px 100%, 0 calc(100% - 15px))
+          .dev-advantages__card__title-group
+            flex-direction: row
+            align-items: center
+            justify-content: space-between
+            margin-bottom: 13px
+        &--big
+          .dev-advantages__card__title-group
+            row-gap: 3px
+            margin-bottom: 7px
+      &__row
+        display: flex
+        flex-direction: column
+        align-items: center
+
   .footer
     clip-path: polygon(0 15px, 9.4% 15px, 10.2% 38px, 11% 15px, 31.4% 15px, 32.2% 38px, 38% 38px, 38.8% 15px, 69.7% 15px, 70.3% 0, 70.9% 15px, 86% 15px, 87.5% 25px, 89% 15px, 100% 15px, 100% 100%, 0 100%)
     &__card
@@ -159,6 +195,10 @@
       order: 1
       width: 290px
       height: 319px
+      &__coffee
+        width: 28px
+        &::before
+          top: 4px
       &__text-group
         margin-bottom: 10px
         &__title
@@ -179,6 +219,15 @@
       margin-bottom: 40px
       &--last
         margin-bottom: 30px
+      &__button-group
+        position: relative
+        left: auto
+        right: auto
+        order: 3
+        button
+          width: 168px
+          height: 50px
+          font-size: 20px
       &__button
         position: relative
         left: auto
