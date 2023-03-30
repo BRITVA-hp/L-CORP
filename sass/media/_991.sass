@@ -6,6 +6,31 @@
       font-size: 35px
 
   .dev
+    &-installment
+      &__button
+        width: 100%
+        max-width: 345px
+        height: 60px
+        font-size: 20px
+      &__title
+        margin-bottom: 5px
+      &__subtitle
+        margin-bottom: 25px
+      &__box
+        max-width: 650px
+        margin-bottom: 15px
+        &::after
+          clip-path: polygon(0 6.6%, 8.7% 0, 100% 0, 100% 93.4%, 91.3% 100%, 0 100%, 0 6.6%, 2px calc(6.6% + 2px), 2px calc(100% - 2px), calc(91.3% - 2px) calc(100% - 2px), calc(100% - 2px) calc(93.4% - 2px), calc(100% - 2px) 2px, calc(8.7% + 2px) 2px, 2px calc(6.6% + 2px))
+        &__content
+          padding: 25px 30px
+          gap: 20px
+      &__card
+        column-gap: 10px
+        width: 280px
+        &__text
+          font-size: 15px
+        &__img
+          width: 45px
     &-advantages
       margin-bottom: 60px
       &__subtitle

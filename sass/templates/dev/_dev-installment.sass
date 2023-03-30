@@ -1,0 +1,62 @@
+.dev-installment
+  margin-bottom: 160px
+  &__button
+    margin: auto
+    display: block
+  &__title
+    margin-bottom: 10px
+    max-width: 674px
+  &__subtitle
+    font-family: 'UniNeue', sans-serif
+    font-style: normal
+    font-weight: bold
+    font-size: 35px
+    line-height: 120%
+    text-align: center
+    color: #FFFFFF
+    margin-bottom: 84px
+  &__card
+    display: flex
+    align-items: center
+    column-gap: 20px
+    &__text
+      font-family: 'BlenderPro', sans-serif
+      font-style: normal
+      font-weight: 500
+      font-size: 20px
+      line-height: 120%
+      color: #FFFFFF
+      max-width: 220px
+  &__box
+    position: relative
+    max-width: 1200px
+    margin: 0 auto 50px
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      z-index: 2
+      background: rgba(8, 226, 240, 0.1)
+      filter: blur(2px)
+      clip-path: polygon(0 6.6%, 8.7% 0, 100% 0, 100% 93.4%, 91.3% 100%, 0 100%)
+    &::after
+      content: ''
+      position: absolute
+      z-index: 3
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      background: #CFFF04
+      clip-path: polygon(0 6.6%, 8.7% 0, 100% 0, 100% 93.4%, 91.3% 100%, 0 100%, 0 6.6%, 4px calc(6.6% + 4px), 4px calc(100% - 4px), calc(91.3% - 4px) calc(100% - 4px), calc(100% - 4px) calc(93.4% - 4px), calc(100% - 4px) 4px, calc(8.7% + 4px) 4px, 4px calc(6.6% + 4px))
+    &__content
+      position: relative
+      z-index: 1
+      padding: 60px 100px
+      display: flex
+      flex-wrap: wrap
+      justify-content: center
+      gap: 40px
