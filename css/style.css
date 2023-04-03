@@ -3910,6 +3910,109 @@ body {
   .section__title {
     font-size: 35px;
   }
+  .dev-steps__title {
+    margin-bottom: 2px;
+  }
+  .dev-steps__subtitle {
+    font-size: 22px;
+    margin-bottom: 35px;
+  }
+  .dev-steps__info {
+    text-align: center;
+  }
+  .dev-steps__info__row {
+    justify-content: center;
+    flex-wrap: wrap;
+    -moz-column-gap: 25px;
+    column-gap: 25px;
+    row-gap: 15px;
+  }
+  .dev-steps__info__card {
+    width: 97px;
+    height: 97px;
+    font-size: 13px;
+  }
+  .dev-steps__info__box__title {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .dev-steps__info__content {
+    padding: 25px 50px 30px;
+  }
+  .dev-steps__info__title {
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+  .dev-steps__info__text {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .dev-steps__info__ul {
+    font-size: 15px;
+    text-transform: none;
+    max-width: 252px;
+    text-align: left;
+    margin: 0 auto 10px;
+  }
+  .dev-steps__box {
+    -webkit-clip-path: polygon(0 11px, 46px 0, calc(100% - 13px) 0, 100% 28px, 100% 40%, calc(100% - 14px) calc(40% + 15px), calc(100% - 14px) calc(40% + 67px), 100% calc(40% + 76px), 100% calc(100% - 22px), calc(100% - 30px) 100%, 50px 100%, 0 calc(100% - 17px), 0 calc(43% + 99px), 12px calc(43% + 82px), 12px calc(43% + 9px), 0 43%);
+    clip-path: polygon(0 11px, 46px 0, calc(100% - 13px) 0, 100% 28px, 100% 40%, calc(100% - 14px) calc(40% + 15px), calc(100% - 14px) calc(40% + 67px), 100% calc(40% + 76px), 100% calc(100% - 22px), calc(100% - 30px) 100%, 50px 100%, 0 calc(100% - 17px), 0 calc(43% + 99px), 12px calc(43% + 82px), 12px calc(43% + 9px), 0 43%);
+    height: auto;
+  }
+  .dev-steps__box::after {
+    -webkit-clip-path: polygon(0 11px, 46px 0, calc(100% - 13px) 0, 100% 28px, 100% 40%, calc(100% - 14px) calc(40% + 15px), calc(100% - 14px) calc(40% + 67px), 100% calc(40% + 76px), 100% calc(100% - 22px), calc(100% - 30px) 100%, 50px 100%, 0 calc(100% - 17px), 0 calc(43% + 99px), 12px calc(43% + 82px), 12px calc(43% + 9px), 0 43%, 0 11px, 2px 13px, 2px calc(43% - 2px), 15px calc(43% + 7px), 15px calc(43% + 84px), 2px calc(43% + 101px), 2px calc(100% - 19px), 52px calc(100% - 2px), calc(100% - 32px) calc(100% - 2px), calc(100% - 2px) calc(100% - 24px), calc(100% - 2px) calc(40% + 78px), calc(100% - 16px) calc(40% + 69px), calc(100% - 16px) calc(40% + 13px), calc(100% - 2px) calc(40% - 2px), calc(100% - 2px) 30px, calc(100% - 15px) 2px, 46px 2px, 2px 13px);
+    clip-path: polygon(0 11px, 46px 0, calc(100% - 13px) 0, 100% 28px, 100% 40%, calc(100% - 14px) calc(40% + 15px), calc(100% - 14px) calc(40% + 67px), 100% calc(40% + 76px), 100% calc(100% - 22px), calc(100% - 30px) 100%, 50px 100%, 0 calc(100% - 17px), 0 calc(43% + 99px), 12px calc(43% + 82px), 12px calc(43% + 9px), 0 43%, 0 11px, 2px 13px, 2px calc(43% - 2px), 15px calc(43% + 7px), 15px calc(43% + 84px), 2px calc(43% + 101px), 2px calc(100% - 19px), 52px calc(100% - 2px), calc(100% - 32px) calc(100% - 2px), calc(100% - 2px) calc(100% - 24px), calc(100% - 2px) calc(40% + 78px), calc(100% - 16px) calc(40% + 69px), calc(100% - 16px) calc(40% + 13px), calc(100% - 2px) calc(40% - 2px), calc(100% - 2px) 30px, calc(100% - 15px) 2px, 46px 2px, 2px 13px);
+  }
+  .dev-steps__box__line {
+    display: none;
+  }
+  .dev-steps__menu {
+    height: auto;
+  }
+  .dev-steps__menu::after {
+    content: "";
+    position: absolute;
+    width: calc(100% - 8px);
+    height: 2px;
+    left: 50%;
+    bottom: 1px;
+    transform: translateX(-50%);
+    background: linear-gradient(to right, #111111, #08E2F0, #08E2F0, #08E2F0, #08E2F0, #08E2F0, #08E2F0, #08E2F0, #08E2F0, #08E2F0, #08E2F0, #111111);
+    z-index: 1;
+  }
+  .dev-steps__menu__item {
+    white-space: nowrap;
+    padding: 20px 15px;
+    margin-bottom: 0;
+  }
+  .dev-steps__menu__item::after {
+    width: 1px;
+    height: calc(100% - 26px);
+    left: auto;
+    right: 0;
+    bottom: 50%;
+    transform: translateY(50%);
+  }
+  .dev-steps__menu__item__title {
+    font-size: 15px;
+  }
+  .dev-steps__menu__item__text {
+    font-size: 15px;
+  }
+  .dev-steps__menu__content {
+    display: flex;
+    padding: 0;
+  }
+  .dev-steps__menu__content::-webkit-scrollbar {
+    height: 5px;
+  }
+  .dev-steps__menu__content::-webkit-scrollbar-thumb {
+    background: #CFFF04;
+    border: 1px solid #FFFFFF;
+  }
+  .dev-steps__box__content {
+    flex-direction: column;
+  }
   .dev-installment__button {
     width: 100%;
     max-width: 345px;
@@ -4548,6 +4651,9 @@ body {
   }
 }
 @media screen and (max-width: 575px) {
+  .dev-steps__info__content {
+    padding: 25px 30px 30px;
+  }
   .dev-main {
     overflow: hidden;
     padding-left: 0;

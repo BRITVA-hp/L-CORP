@@ -532,4 +532,5 @@ document.addEventListener("DOMContentLoaded", () => {
     ticker('.dev-main__window', '.dev-main__row--ml', '.dev-main__card', 0.5)
     ticker('.dev-main__window', '.dev-main__row--mr', '.dev-main__card', 0.5, false)
 
+
 })
