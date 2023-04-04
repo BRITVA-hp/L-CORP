@@ -2688,7 +2688,7 @@ body {
   background: url("../img/dev/services/bgActive.png") no-repeat center/contain;
 }
 .dev-services__card:hover .dev-services__substrate {
-  background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%);
+  background: linear-gradient(180deg, rgba(17, 17, 17, 0.7) 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, rgba(17, 17, 17, 0.7) 100%);
 }
 .dev-services__card__bg {
   position: absolute;
@@ -3901,6 +3901,29 @@ body {
   }
 }
 @media screen and (max-width: 1200px) {
+  .dev-services {
+    margin-bottom: 80px;
+  }
+  .dev-services__title {
+    margin-bottom: 40px;
+  }
+  .dev-services__row {
+    gap: 5px;
+    max-width: 548px;
+    margin: auto;
+  }
+  .dev-services__card {
+    width: 176px;
+    height: 108px;
+    background: url("../img/dev/services/bgM.png") no-repeat center/contain;
+  }
+  .dev-services__card__text {
+    font-size: 14px;
+  }
+  .dev-services__card__bg {
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+  }
   .dev-form__row {
     max-width: 410px;
     -moz-column-gap: 10px;
