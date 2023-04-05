@@ -5,6 +5,44 @@
   .container
     max-width: 1300px
 
+  .modal
+    &-dev
+      &-quiz
+        &__radio
+          width: 298px
+          height: 182px
+          &__ok
+            width: 22px
+            height: 22px
+            top: 20px
+            right: 20px
+            border-width: 2px
+            &::after
+              width: 28px
+              height: 14px
+          &__text
+            font-size: 15px
+            width: 182px
+            height: 40px
+          &__input
+            &:checked + .modal-dev-quiz__radio__content
+              .modal-dev-quiz__radio__border
+                background: url("../img/modal/dev/quiz/borderActiveM.png") no-repeat center/contain
+          &__border
+            background: url("../img/modal/dev/quiz/borderM.png") no-repeat center/contain
+        &__title
+          margin-bottom: 20px
+        &__subtitle
+          font-size: 24px
+          margin-bottom: 20px
+        &__progress
+          height: 28px
+          box-shadow: inset 0 0 1px 2px #08E2F0
+          border-radius: 15px
+          padding: 5px
+          margin-bottom: 20px
+          max-width: 800px
+
   .dev
     &-form
       margin-bottom: 80px
