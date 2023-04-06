@@ -2622,6 +2622,137 @@ body {
 
 .dev-price {
   margin-bottom: 160px;
+  padding: 0;
+}
+.dev-price__button {
+  width: 100%;
+  display: none;
+}
+.dev-price__window {
+  width: 100%;
+  overflow: hidden;
+}
+.dev-price__field {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  transition: 0.3s;
+}
+.dev-price__title {
+  margin-bottom: 70px;
+}
+.dev-price__container {
+  max-width: none;
+  width: 100%;
+}
+.dev-price__card-wrap {
+  position: relative;
+}
+.dev-price__card-wrap--active {
+  margin: 40px 20px 0;
+}
+.dev-price__card-wrap--active::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -9px;
+  width: 145px;
+  height: 10px;
+  background: #CFFF04;
+  -webkit-clip-path: polygon(5px 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(5px 0, 100% 0, 100% 100%, 0 100%);
+}
+.dev-price__card-wrap--active .dev-price__button {
+  display: block;
+}
+.dev-price__card-wrap--active .dev-price__card {
+  width: 416px;
+  height: 580px;
+  margin-bottom: 30px;
+  padding: 90px 45px 0;
+}
+.dev-price__card-wrap--active .dev-price__card::before {
+  content: "";
+  position: absolute;
+}
+.dev-price__card-wrap--active .dev-price__card::after {
+  background: #CFFF04;
+}
+.dev-price__card-wrap--active .dev-price__card__substrate {
+  display: none;
+}
+.dev-price__card-wrap--active .dev-price__card__screen {
+  height: 198px;
+}
+.dev-price__card-wrap--active .dev-price__card__title {
+  font-size: 24px;
+}
+.dev-price__card-wrap--active .dev-price__card__title::after {
+  background: #CFFF04;
+}
+.dev-price__card-wrap--active .dev-price__card__text {
+  font-size: 20px;
+}
+.dev-price__card {
+  width: 366px;
+  height: 518px;
+  background: rgba(8, 226, 240, 0.1);
+  padding: 80px 40px 0;
+  position: relative;
+  -webkit-clip-path: polygon(0 30px, 30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px);
+  clip-path: polygon(0 30px, 30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px);
+  cursor: pointer;
+}
+.dev-price__card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-clip-path: polygon(0 30px, 30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px, 2px 32px, 2px calc(100% - 2px), calc(100% - 32px) calc(100% - 2px), calc(100% - 2px) calc(100% - 32px), calc(100% - 2px) 2px, 32px 2px, 2px 32px);
+  clip-path: polygon(0 30px, 30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px, 2px 32px, 2px calc(100% - 2px), calc(100% - 32px) calc(100% - 2px), calc(100% - 2px) calc(100% - 32px), calc(100% - 2px) 2px, 32px 2px, 2px 32px);
+  background: #08E2F0;
+}
+.dev-price__card__text {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 115%;
+  color: #FFFFFF;
+}
+.dev-price__card__title {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 115%;
+  color: #08E2F0;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  position: relative;
+}
+.dev-price__card__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 130px;
+  height: 2px;
+  background: linear-gradient(to right, #08E2F0 60%, #ffffff 60%);
+}
+.dev-price__card__substrate {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/dev/price/substrate.jpg") no-repeat center/cover;
+  opacity: 0.5;
+}
+.dev-price__card__screen {
+  width: 100%;
+  height: 165px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 35px;
 }
 
 .dev-form {

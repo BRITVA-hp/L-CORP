@@ -217,13 +217,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     //slider
-    function slider(window, field, cards, dotsWrap, dotClass, dotClassActive, arrowPrev, arrowNext, arrowClass, progress, activeCard = false) {
-        const window_ = document.querySelector(window),
-            field_ = document.querySelector(field),
-            cards_ = document.querySelectorAll(cards),
-            arrowPrev_ = document.querySelector(arrowPrev),
-            arrowNext_ = document.querySelector(arrowNext),
-            progress_ = document.querySelector(progress);
+    function slider(settings) {
+        const window_ = document.querySelector(settings.windowSelector),
+            field_ = document.querySelector(settings.fieldSelector),
+            cards_ = document.querySelectorAll(settings.cardSelector),
+            arrowPrev_ = document.querySelector(settings.buttonPrevSelector),
+            arrowNext_ = document.querySelector(settings.buttonNextSelector),
+            progress_ = document.querySelector(settings.progressSelector),
+            dotsWrap_ = document.querySelector(settings.dotsWrapSelector);
 
         let startPoint,
             swipeAction,
@@ -262,6 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (cards_.length > numberIntegerVisibleCards()) {
                     return true
                 }
+                field_.style.transform = '';
                 return false
             }
 
@@ -277,25 +279,24 @@ document.addEventListener("DOMContentLoaded", () => {
                     return
                 }
                 sliderCounter++;
-                if (arrowNext_) arrowNext_.classList.remove(arrowClass);
-                if (arrowPrev_) arrowPrev_.classList.remove(arrowClass);
+                if (arrowNext_) arrowNext_.classList.remove(settings.buttonActiveClass);
+                if (arrowPrev_) arrowPrev_.classList.remove(settings.buttonActiveClass);
                 if (sliderCounter >= cards_.length) {
                     sliderCounter = cards_.length - 1;
                 }
-                if ((sliderCounter + 1) == cards_.length) {
-                    arrowNext_.classList.add(arrowClass);
+                if ((sliderCounter + 1) === cards_.length) {
+                    arrowNext_.classList.add(settings.buttonActiveClass);
                 }
 
                 if (progress_) progress_.style.left = (100 / cards_.length) * sliderCounter + '%'
-                if (dotsWrap) dots_.forEach(item=> item.classList.remove(dotClassActive))
+                if (dotsWrap_) dots_.forEach(item=> item.classList.remove(settings.dotActiveClass))
                 if (lastCard()) {
                     field_.style.transform = `translateX(-${field_.scrollWidth - window_.clientWidth}px)`
                     sliderCounter = Math.ceil(cards_.length - numberIntegerVisibleCards() - partCard())
-                    dots_[dots_.length - numberIntegerVisibleCards()].classList.add(dotClassActive)
-                    console.log(sliderCounter)
+                    dots_[dots_.length - numberIntegerVisibleCards()].classList.add(settings.dotActiveClass)
                     return
                 }
-                if (dotsWrap) dots_[sliderCounter].classList.add(dotClassActive)
+                if (dotsWrap_) dots_[sliderCounter].classList.add(settings.dotActiveClass)
                 field_.style.transform = `translateX(-${(cards_[0].scrollWidth + betweenCards) * sliderCounter}px)`;
 
             }
@@ -308,24 +309,22 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 sliderCounter = Math.floor(sliderCounter)
                 sliderCounter--;
-                if (arrowNext_) arrowNext_.classList.remove(arrowClass);
-                if (arrowPrev_) arrowPrev_.classList.remove(arrowClass);
+                if (arrowNext_) arrowNext_.classList.remove(settings.buttonActiveClass);
+                if (arrowPrev_) arrowPrev_.classList.remove(settings.buttonActiveClass);
                 if (sliderCounter <= 0) {
                     sliderCounter = 0;
                 }
-                if (sliderCounter == 0 && arrowPrev_) {
-                    arrowPrev_.classList.add(arrowClass);
+                if (sliderCounter === 0 && arrowPrev_) {
+                    arrowPrev_.classList.add(settings.buttonActiveClass);
                 }
-                if (dotsWrap) {
+                if (dotsWrap_) {
                     dots_.forEach((item, index)=> {
-                        item.classList.remove(dotClassActive);
-                        if (index == sliderCounter) {
-                            item.classList.add(dotClassActive);
-                        }
+                        item.classList.remove(settings.dotActiveClass);
                     });
+                    dots_[sliderCounter].classList.add(settings.dotActiveClass);
                 }
 
-                if (progress) {
+                if (progress_) {
                     progress_.style.left = (100 / cards_.length) * sliderCounter + '%'
                 }
                 if (lastCard()) {
@@ -338,31 +337,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Рендер точек
 
-            if (dotsWrap) {
-                const dotsWrap_ = document.querySelector(dotsWrap);
+            if (dotsWrap_) {
 
                 cards_.forEach(() => {
                     const dot = document.createElement('div');
-                    dot.classList.add(dotClass);
+                    dot.classList.add(settings.dotClass);
                     dotsWrap_.appendChild(dot);
                     dots_.push(dot);
                 });
-                dots_[0].classList.add(dotClassActive);
+                dots_[0].classList.add(settings.dotActiveClass);
                 dots_.forEach((item, index) => {
                     item.addEventListener('click', () => {
                         sliderCounter = index;
-                        arrowNext_.classList.remove(arrowClass);
-                        arrowPrev_.classList.remove(arrowClass);
-                        if (sliderCounter == 0) {
-                            arrowPrev_.classList.add(arrowClass);
+                        arrowNext_.classList.remove(settings.buttonActiveClass);
+                        arrowPrev_.classList.remove(settings.buttonActiveClass);
+                        if (sliderCounter === 0) {
+                            arrowPrev_.classList.add(settings.buttonActiveClass);
                         }
-                        if ((sliderCounter + 1) == cards_.length) {
-                            arrowNext_.classList.add(arrowClass);
+                        if ((sliderCounter + 1) === cards_.length) {
+                            arrowNext_.classList.add(settings.buttonActiveClass);
                         }
                         dots_.forEach(item_ => {
-                            item_.classList.remove(dotClassActive);
+                            item_.classList.remove(settings.dotActiveClass);
                         });
-                        item.classList.add(dotClassActive);
+                        item.classList.add(settings.dotActiveClass);
+                        if (!checkNumCards()) {
+                            return
+                        }
                         field_.style.transform = `translateX(-${(cards_[0].scrollWidth + betweenCards) * sliderCounter}px)`;
                     });
                 });
@@ -395,8 +396,8 @@ document.addEventListener("DOMContentLoaded", () => {
             window_.addEventListener('touchend', (e) => {
                 endPoint = e.changedTouches[0].pageX;
                 if (Math.abs(startPoint - endPoint) > 50 && checkNumCards()) {
-                    if (arrowNext_) arrowNext_.classList.remove(arrowClass);
-                    if (arrowPrev_) arrowPrev_.classList.remove(arrowClass);
+                    if (arrowNext_) arrowNext_.classList.remove(settings.buttonActiveClass);
+                    if (arrowPrev_) arrowPrev_.classList.remove(settings.buttonActiveClass);
                     if (endPoint < startPoint) {
                         slideNext();
                     } else {
@@ -424,8 +425,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 mouseMoveFlag = false
                 endPoint = e.pageX;
                 if (Math.abs(startPoint - endPoint) > 50 && checkNumCards()) {
-                    if (arrowNext_) arrowNext_.classList.remove(arrowClass);
-                    if (arrowPrev_) arrowPrev_.classList.remove(arrowClass);
+                    if (arrowNext_) arrowNext_.classList.remove(settings.buttonActiveClass);
+                    if (arrowPrev_) arrowPrev_.classList.remove(settings.buttonActiveClass);
                     if (endPoint < startPoint) {
                         slideNext();
                     } else {
@@ -447,18 +448,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    slider(
-        '.reviews__window',
-        '.reviews__field',
-        '.reviews__card',
-        '.reviews__dots',
-        'reviews__dot',
-        'reviews__dot--active',
-        '.reviews__arrow--prev',
-        '.reviews__arrow--next',
-        'reviews__arrow--active',
-        false
-    );
+    slider({
+        windowSelector: '.reviews__window',
+        fieldSelector: '.reviews__field',
+        cardSelector: '.reviews__card',
+        dotsWrapSelector: '.reviews__dots',
+        dotClass: 'reviews__dot',
+        dotActiveClass: 'reviews__dot--active',
+        buttonPrevSelector: '.reviews__arrow--prev',
+        buttonNextSelector: '.reviews__arrow--next',
+        buttonActiveClass: 'reviews__arrow--active',
+    });
 
     // ticker
     function ticker(windowSelector, fieldSelector, cardSelector, speed, right = true) {
