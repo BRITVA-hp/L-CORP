@@ -1,0 +1,44 @@
+.thanks
+  position: relative
+  text-align: center
+  display: flex
+  align-items: center
+  justify-content: center
+  min-height: 100vh
+  padding-top: 20px
+  padding-bottom: 20px
+  &__box
+    position: relative
+    z-index: 2
+  &__title
+    font-family: 'BlenderPro', sans-serif
+    font-style: normal
+    font-weight: 900
+    font-size: 60px
+    line-height: 110%
+    color: #CFFF04
+    margin-bottom: 6px
+  &__subtitle
+    font-family: 'BlenderPro', sans-serif
+    font-style: normal
+    font-weight: 500
+    font-size: 20px
+    line-height: 140%
+    color: #FFFFFF
+  &__grid
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    z-index: 1
+    &--left
+      left: 0
+    &--right
+      right: 0
+    &--mobile
+      display: none
+  &__close
+    position: absolute
+    top: 20px
+    right: 62px
+    cursor: pointer
+    z-index: 3

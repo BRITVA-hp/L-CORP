@@ -2721,6 +2721,60 @@ body {
   margin-bottom: 80px;
 }
 
+.thanks {
+  position: relative;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.thanks__box {
+  position: relative;
+  z-index: 2;
+}
+.thanks__title {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 110%;
+  color: #CFFF04;
+  margin-bottom: 6px;
+}
+.thanks__subtitle {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+.thanks__grid {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.thanks__grid--left {
+  left: 0;
+}
+.thanks__grid--right {
+  right: 0;
+}
+.thanks__grid--mobile {
+  display: none;
+}
+.thanks__close {
+  position: absolute;
+  top: 20px;
+  right: 62px;
+  cursor: pointer;
+  z-index: 3;
+}
+
 .footer {
   background: rgba(8, 226, 240, 0.07);
   -webkit-clip-path: polygon(0 15px, 9.4% 15px, calc(9.4% + 15px) 38px, calc(9.4% + 30px) 15px, 31.4% 15px, calc(31.4% + 16px) 38px, calc(31.4% + 127px) 38px, calc(31.4% + 143px) 15px, 69.7% 15px, calc(69.7% + 12px) 0, calc(69.7% + 24px) 15px, 86% 15px, calc(86% + 30px) 25px, calc(86% + 60px) 15px, 100% 15px, 100% 100%, 0 100%);
@@ -3038,7 +3092,80 @@ body {
   padding: 10px;
 }
 
-.modal {
+.modal-dev-last__close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  cursor: pointer;
+}
+.modal-dev-last__container {
+  background: #111111;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.modal-dev-last__video {
+  opacity: 0.2;
+}
+.modal-dev-last__substrate {
+  background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%);
+}
+.modal-dev-last__title {
+  color: white;
+  margin-bottom: 30px;
+}
+.modal-dev-last__subtitle {
+  font-family: "UniNeue", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 120%;
+  text-align: center;
+  color: #FFFFFF;
+  max-width: 900px;
+  margin: 0 auto 50px;
+}
+.modal-dev-last__form {
+  position: relative;
+  width: 1042px;
+  height: 501px;
+  margin: auto;
+}
+.modal-dev-last__form__title {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 55px;
+  line-height: 115%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #08E2F0;
+  margin-bottom: 40px;
+}
+.modal-dev-last__form__title span {
+  color: #B488EB;
+}
+.modal-dev-last__form__content {
+  position: relative;
+  z-index: 3;
+  background: url("../img/modal/dev/last/border.png") no-repeat center/contain;
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+}
+.modal-dev-last__button {
+  width: 100%;
+  max-width: 790px;
+  margin: auto;
+  display: block;
+}
+.modal-dev-last__row {
+  display: flex;
+  gap: 20px;
+  max-width: 790px;
+  margin: 0 auto 40px;
+}
+.modal-dev-quiz {
   overflow: visible;
 }
 .modal-dev-quiz__button-group {
@@ -3082,6 +3209,9 @@ body {
   background: #CFFF04;
   border-radius: 13px;
   transition: 0.3s;
+}
+.modal-dev-quiz__progress__inner--last {
+  width: 100%;
 }
 .modal-dev-quiz__row {
   display: flex;
@@ -3205,6 +3335,39 @@ body {
   }
   .container {
     max-width: 1300px;
+  }
+  .modal-dev-last__close {
+    top: 20px;
+    right: 20px;
+  }
+  .modal-dev-last__input {
+    font-size: 16px;
+    padding: 18px 20px;
+  }
+  .modal-dev-last__button {
+    max-width: 600px;
+    height: 55px;
+    font-size: 20px;
+  }
+  .modal-dev-last__row {
+    margin-bottom: 20px;
+    max-width: 600px;
+  }
+  .modal-dev-last__form {
+    width: 751px;
+    height: 363px;
+  }
+  .modal-dev-last__form__content {
+    background: url("../img/modal/dev/last/border.png") no-repeat center/contain;
+  }
+  .modal-dev-last__form__title {
+    font-size: 34px;
+    margin-bottom: 30px;
+  }
+  .modal-dev-last__subtitle {
+    font-size: 22px;
+    margin: 0 auto 20px;
+    max-width: 580px;
   }
   .modal-dev-quiz__radio {
     width: 298px;
@@ -4073,6 +4236,35 @@ body {
   .section__title {
     font-size: 35px;
   }
+  .thanks__grid {
+    display: none;
+  }
+  .thanks__grid--mobile {
+    display: block;
+  }
+  .thanks__close {
+    width: 26px;
+  }
+  .thanks__title {
+    font-size: 38px;
+  }
+  .thanks__subtitle {
+    font-size: 18px;
+  }
+  .modal-dev-last__row {
+    gap: 10px;
+  }
+  .modal-dev-last__form__title {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+  .modal-dev-last__title {
+    margin-bottom: 20px;
+  }
+  .modal-dev-last__subtitle {
+    font-size: 18px;
+    max-width: 460px;
+  }
   .modal-dev-quiz__dialog__container {
     padding-top: 40px;
     padding-bottom: 80px;
@@ -4487,6 +4679,40 @@ body {
   }
 }
 @media screen and (max-width: 767px) {
+  .thanks__close {
+    top: 10px;
+    right: 40px;
+  }
+  .thanks__box {
+    max-width: 270px;
+  }
+  .modal-dev-last__close {
+    top: 10px;
+    right: 10px;
+  }
+  .modal-dev-last__container {
+    overflow: hidden;
+    padding-top: 45px;
+  }
+  .modal-dev-last__form {
+    width: 359px;
+    height: 434px;
+  }
+  .modal-dev-last__form__title {
+    font-size: 26px;
+  }
+  .modal-dev-last__form__content {
+    background: url("../img/modal/dev/last/borderM.png") no-repeat center/contain;
+    padding: 50px 20px 0;
+  }
+  .modal-dev-last__button {
+    max-width: 400px;
+  }
+  .modal-dev-last__row {
+    margin-bottom: 10px;
+    flex-direction: column;
+    max-width: 400px;
+  }
   .dev-advantages {
     overflow: hidden;
   }
