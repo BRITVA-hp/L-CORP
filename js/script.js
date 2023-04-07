@@ -532,5 +532,112 @@ document.addEventListener("DOMContentLoaded", () => {
     ticker('.dev-main__window', '.dev-main__row--ml', '.dev-main__card', 0.5)
     ticker('.dev-main__window', '.dev-main__row--mr', '.dev-main__card', 0.5, false)
 
+    //dev-price slider
+    function devPriceSlider() {
+        const btnPrev = document.querySelector('.dev-price__arrow--prev')
+        const btnNext = document.querySelector('.dev-price__arrow--next')
+        const field = document.querySelector('.dev-price__field')
+        const window = document.querySelector('.dev-price__window')
+        const cards = document.querySelectorAll('.dev-price__card-wrap')
+        const dotsWrap = document.querySelector('.dev-price__dots')
+
+        const dots = []
+        let counter = 0,
+            translate = 0,
+            startPoint,
+            swipeAction,
+            endPoint
+
+        const activeCard = (touch = false) => {
+            cards.forEach(card => {
+                card.classList.remove('dev-price__card-wrap--active')
+            })
+            cards[counter].classList.add('dev-price__card-wrap--active')
+            const right = cards[counter].getBoundingClientRect().right - window.getBoundingClientRect().right
+            const left = cards[counter].getBoundingClientRect().left - window.getBoundingClientRect().left
+            if (right > 0) {
+                translate += -right - 20
+            }
+            if (left < 0) {
+                translate += -left + 20
+            }
+            field.style.transform = `translateX(${translate}px)`
+        }
+
+        const activeDot = () => {
+            dots.forEach(dot => {
+                dot.classList.remove('dev-price__dot--active')
+            })
+            dots[counter].classList.add('dev-price__dot--active')
+        }
+
+        // создаём пагинацию
+        cards.forEach(card => {
+            const dot = document.createElement('div')
+            dot.classList.add('dev-price__dot')
+            dotsWrap.appendChild(dot)
+            dots.push(dot)
+        })
+        dots[counter].classList.add('dev-price__dot--active')
+        dots.forEach((dot, dotIndex) => {
+            dot.addEventListener('click', () => {
+                counter = dotIndex
+                activeCard()
+                activeDot()
+            })
+        })
+
+        cards.forEach((card, cardIndex) => {
+            card.addEventListener('click', () => {
+                counter = cardIndex
+                activeCard()
+                activeDot()
+            })
+        })
+
+        // следующий слайд при нажатии на стрелку
+        btnNext.addEventListener('click', () => {
+            counter++
+            if (counter >= cards.length) counter = cards.length - 1
+
+            activeCard()
+            activeDot()
+
+        })
+
+        // предыдущий слайд при нажатии на стрелку
+        btnPrev.addEventListener('click', () => {
+            counter--
+            if (counter < 0) counter = 0
+
+            activeCard()
+            activeDot()
+        })
+
+        // Свайп слайдов тач-событиями
+
+        window.addEventListener('touchstart', (e) => {
+            startPoint = e.changedTouches[0].pageX;
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            swipeAction = e.changedTouches[0].pageX - startPoint;
+            field.style.transform = `translateX(${swipeAction + translate}px)`
+        });
+
+        window.addEventListener('touchend', (e) => {
+            endPoint = e.changedTouches[0].pageX;
+            translate += swipeAction
+            // field.style.transform = `translateX(${translate}px)`;
+            if (Math.abs(startPoint - endPoint) > 50) {
+                if (endPoint < startPoint) {
+                } else {
+                }
+            }
+        });
+    }
+
+    devPriceSlider()
+
 
 })
