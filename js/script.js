@@ -537,7 +537,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const btnPrev = document.querySelector('.dev-price__arrow--prev')
         const btnNext = document.querySelector('.dev-price__arrow--next')
         const field = document.querySelector('.dev-price__field')
-        const window = document.querySelector('.dev-price__window')
+        const _window = document.querySelector('.dev-price__window')
         const cards = document.querySelectorAll('.dev-price__card-wrap')
         const dotsWrap = document.querySelector('.dev-price__dots')
 
@@ -546,15 +546,17 @@ document.addEventListener("DOMContentLoaded", () => {
             translate = 0,
             startPoint,
             swipeAction,
-            endPoint
+            endPoint,
+            timeStart,
+            timeFinish
 
         const activeCard = (touch = false) => {
             cards.forEach(card => {
                 card.classList.remove('dev-price__card-wrap--active')
             })
             cards[counter].classList.add('dev-price__card-wrap--active')
-            const right = cards[counter].getBoundingClientRect().right - window.getBoundingClientRect().right
-            const left = cards[counter].getBoundingClientRect().left - window.getBoundingClientRect().left
+            const right = cards[counter].getBoundingClientRect().right - _window.getBoundingClientRect().right
+            const left = cards[counter].getBoundingClientRect().left - _window.getBoundingClientRect().left
             if (right > 0) {
                 translate += -right - 20
             }
@@ -588,7 +590,9 @@ document.addEventListener("DOMContentLoaded", () => {
         })
 
         cards.forEach((card, cardIndex) => {
-            card.addEventListener('click', () => {
+            card.addEventListener('click', (e) => {
+                // e.stopImmediatePropagation()
+                // e.stopPropagation()
                 counter = cardIndex
                 activeCard()
                 activeDot()
@@ -616,24 +620,44 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Свайп слайдов тач-событиями
 
-        window.addEventListener('touchstart', (e) => {
+        _window.addEventListener('touchstart', (e) => {
             startPoint = e.changedTouches[0].pageX;
+            timeStart = new Date()
         });
 
-        window.addEventListener('touchmove', (e) => {
+        _window.addEventListener('touchmove', (e) => {
             swipeAction = e.changedTouches[0].pageX - startPoint;
-            field.style.transform = `translateX(${swipeAction + translate}px)`
+            // translate += swipeAction
+
+            const run = () => {
+                field.style.transform = `translateX(${translate + swipeAction}px)`
+                // window.requestAnimationFrame(run)
+            }
+            window.requestAnimationFrame(run)
+
+            // field.style.transform = `translateX(${swipeAction + translate}px)`
         });
 
-        window.addEventListener('touchend', (e) => {
-            endPoint = e.changedTouches[0].pageX;
-            translate += swipeAction
-            // field.style.transform = `translateX(${translate}px)`;
-            if (Math.abs(startPoint - endPoint) > 50) {
-                if (endPoint < startPoint) {
-                } else {
-                }
+        _window.addEventListener('touchend', (e) => {
+            timeFinish = new Date()
+            const time = timeFinish - timeStart
+            // console.log(swipeAction/time)
+            console.log(cards[cards.length - 1].getBoundingClientRect().right, document.documentElement.clientWidth)
+            if (cards[0].getBoundingClientRect().left > 0) {
+                field.style.transform = ''
+                translate = 0
+                swipeAction = 0
+                return
             }
+            if (cards[cards.length - 1].getBoundingClientRect().right < document.documentElement.clientWidth) {
+                translate = -(field.clientWidth - document.documentElement.clientWidth)
+                field.style.transform = `translateX(${translate}px)`
+                swipeAction = 0
+                return
+            }
+            translate += swipeAction
+            swipeAction = 0
+            endPoint = e.changedTouches[0].pageX;
         });
     }
 
