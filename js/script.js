@@ -618,6 +618,36 @@ document.addEventListener("DOMContentLoaded", () => {
             activeDot()
         })
 
+        function animate(duration, right = true) {
+
+            let start = performance.now();
+
+            requestAnimationFrame(function animate(time) {
+                // timeFraction изменяется от 0 до 1
+                let timeFraction = (time - start) / duration;
+                if (timeFraction > 1) timeFraction = 1;
+
+                // вычисление текущего состояния анимации
+                // let progress = (timeFraction) => {
+                //     return Math.pow(timeFraction, 2)
+                // };
+
+                // translate += progress
+                // console.log(Math.pow(timeFraction, 1/3))
+                // field.style.transform = `translateX(${translate}px)`
+                const progress = Math.pow(timeFraction, 1/3) * 100
+                console.log(progress)
+                field.style.transform = `translateX(${translate + right ? -progress : progress}px)`
+
+                if (timeFraction < 1) {
+                    requestAnimationFrame(animate);
+                } else {
+                    translate = translate + right ? -progress : progress
+                }
+
+            });
+        }
+
         // Свайп слайдов тач-событиями
 
         _window.addEventListener('touchstart', (e) => {
@@ -627,27 +657,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         _window.addEventListener('touchmove', (e) => {
             swipeAction = e.changedTouches[0].pageX - startPoint;
-            // translate += swipeAction
-
             const run = () => {
                 field.style.transform = `translateX(${translate + swipeAction}px)`
-                // window.requestAnimationFrame(run)
             }
             window.requestAnimationFrame(run)
-
-            // field.style.transform = `translateX(${swipeAction + translate}px)`
         });
 
         _window.addEventListener('touchend', (e) => {
             timeFinish = performance.now()
-            const time = timeFinish - timeStart
-            const V0 = swipeAction/time
-            const a = 0.4 * 9.8
-            const t = V0/a
-            const S = (V0*t) - (a*t*t)/2
-            console.log(t)
-            console.log(S)
-            if (cards[0].getBoundingClientRect().left > 0) {
+            const time = (timeFinish - timeStart)/1000
+            const V0 = Math.abs(swipeAction/time)
+            const a = 20000
+            const t = Math.abs(V0/a)
+            const S = (V0*t) + (a*t*t)/2
+            // console.log(t)
+            // console.log(S)
+            if (field.getBoundingClientRect().left > 0) {
                 field.style.transform = ''
                 translate = 0
                 swipeAction = 0
@@ -660,6 +685,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 return
             }
             translate += swipeAction
+            if (swipeAction < 0) animate(t*1000)
+            if (swipeAction > 0) animate(t*1000, false)
             swipeAction = 0
             endPoint = e.changedTouches[0].pageX;
         });
