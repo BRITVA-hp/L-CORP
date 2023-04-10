@@ -622,7 +622,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         _window.addEventListener('touchstart', (e) => {
             startPoint = e.changedTouches[0].pageX;
-            timeStart = new Date()
+            timeStart = performance.now()
         });
 
         _window.addEventListener('touchmove', (e) => {
@@ -639,10 +639,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         _window.addEventListener('touchend', (e) => {
-            timeFinish = new Date()
+            timeFinish = performance.now()
             const time = timeFinish - timeStart
-            // console.log(swipeAction/time)
-            console.log(cards[cards.length - 1].getBoundingClientRect().right, document.documentElement.clientWidth)
+            const V0 = swipeAction/time
+            const a = 0.4 * 9.8
+            const t = V0/a
+            const S = (V0*t) - (a*t*t)/2
+            console.log(t)
+            console.log(S)
             if (cards[0].getBoundingClientRect().left > 0) {
                 field.style.transform = ''
                 translate = 0

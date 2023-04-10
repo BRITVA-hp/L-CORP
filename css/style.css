@@ -2673,7 +2673,7 @@ body {
   padding: 0 15px;
 }
 .dev-price__container {
-  max-width: none;
+  max-width: none !important;
   width: 100%;
 }
 .dev-price__card-wrap {
