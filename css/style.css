@@ -2706,7 +2706,7 @@ body {
   background: #CFFF04;
 }
 .dev-price__card-wrap--active .dev-price__card__substrate {
-  display: none;
+  opacity: 0;
 }
 .dev-price__card-wrap--active .dev-price__card__screen {
   height: 198px;
@@ -2772,6 +2772,7 @@ body {
 .dev-price__card__substrate {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../img/dev/price/substrate.jpg") no-repeat center/cover;
   opacity: 0.5;
+  transition: 0.3s;
 }
 .dev-price__card__screen {
   width: 100%;

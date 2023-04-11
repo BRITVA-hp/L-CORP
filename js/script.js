@@ -548,7 +548,9 @@ document.addEventListener("DOMContentLoaded", () => {
             swipeAction,
             endPoint,
             timeStart,
-            timeFinish
+            timeFinish,
+            animFlag = true,
+            mouseMoveFlag = false
 
         const activeCard = (touch = false) => {
             cards.forEach(card => {
@@ -618,7 +620,7 @@ document.addEventListener("DOMContentLoaded", () => {
             activeDot()
         })
 
-        function animate(duration, right = true) {
+        function animate({duration, right = true, distance}) {
 
             let start = performance.now();
 
@@ -626,48 +628,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 // timeFraction изменяется от 0 до 1
                 let timeFraction = (time - start) / duration;
                 if (timeFraction > 1) timeFraction = 1;
-
-                // вычисление текущего состояния анимации
-                // let progress = (timeFraction) => {
-                //     return Math.pow(timeFraction, 2)
-                // };
-
-                // translate += progress
-                // console.log(Math.pow(timeFraction, 1/3))
-                // field.style.transform = `translateX(${translate}px)`
-                const progress = Math.pow(timeFraction, 1/3) * 100
-                console.log(progress)
-                field.style.transform = `translateX(${translate + right ? -progress : progress}px)`
-
-                if (timeFraction < 1) {
+                let progress = Math.pow(timeFraction, 1/2) * distance
+                if (right) progress = -progress
+                field.style.transform = `translateX(${translate + progress}px)`
+                if (timeFraction < 1 && animFlag && field.getBoundingClientRect().left < 0 && field.getBoundingClientRect().right > document.documentElement.clientWidth) {
                     requestAnimationFrame(animate);
-                } else {
-                    translate = translate + right ? -progress : progress
+                }
+                if (timeFraction >= 1 || !animFlag) {
+                    translate += progress
+                }
+                if (field.getBoundingClientRect().left > 0) {
+                    field.style.transform = ''
+                    translate = 0
+                }
+                if (field.getBoundingClientRect().right < document.documentElement.clientWidth) {
+                    translate = -(field.clientWidth - document.documentElement.clientWidth)
+                    field.style.transform = `translateX(${translate}px)`
                 }
 
             });
         }
 
-        // Свайп слайдов тач-событиями
-
-        _window.addEventListener('touchstart', (e) => {
-            startPoint = e.changedTouches[0].pageX;
-            timeStart = performance.now()
-        });
-
-        _window.addEventListener('touchmove', (e) => {
-            swipeAction = e.changedTouches[0].pageX - startPoint;
-            const run = () => {
-                field.style.transform = `translateX(${translate + swipeAction}px)`
-            }
-            window.requestAnimationFrame(run)
-        });
-
-        _window.addEventListener('touchend', (e) => {
+        function touchMouseUp() {
             timeFinish = performance.now()
             const time = (timeFinish - timeStart)/1000
             const V0 = Math.abs(swipeAction/time)
-            const a = 20000
+            const a = 5000
             const t = Math.abs(V0/a)
             const S = (V0*t) + (a*t*t)/2
             // console.log(t)
@@ -678,18 +664,85 @@ document.addEventListener("DOMContentLoaded", () => {
                 swipeAction = 0
                 return
             }
-            if (cards[cards.length - 1].getBoundingClientRect().right < document.documentElement.clientWidth) {
+            if (field.getBoundingClientRect().right < document.documentElement.clientWidth) {
                 translate = -(field.clientWidth - document.documentElement.clientWidth)
                 field.style.transform = `translateX(${translate}px)`
                 swipeAction = 0
                 return
             }
             translate += swipeAction
-            if (swipeAction < 0) animate(t*1000)
-            if (swipeAction > 0) animate(t*1000, false)
+            if (swipeAction < 0) animate({duration: 1500, distance: S})
+            if (swipeAction > 0) animate({duration: 1500, right: false, distance: S})
             swipeAction = 0
-            endPoint = e.changedTouches[0].pageX;
+        }
+
+        // Свайп слайдов тач-событиями
+
+        _window.addEventListener('touchstart', (e) => {
+            startPoint = e.changedTouches[0].pageX;
+            timeStart = performance.now()
+            animFlag = false
         });
+
+        _window.addEventListener('touchmove', (e) => {
+            swipeAction = e.changedTouches[0].pageX - startPoint;
+            animFlag = true
+            const run = () => {
+                field.style.transform = `translateX(${translate + swipeAction}px)`
+            }
+            window.requestAnimationFrame(run)
+        });
+
+        _window.addEventListener('touchend', (e) => {
+            touchMouseUp()
+            // endPoint = e.changedTouches[0].pageX;
+        });
+
+        // Свайп слайдов mouse-событиями
+
+        _window.addEventListener('mousedown', (e) => {
+            e.preventDefault()
+            startPoint = e.pageX;
+            timeStart = performance.now()
+            animFlag = false
+            mouseMoveFlag = true
+        });
+
+        _window.addEventListener('mousemove', (e) => {
+            e.preventDefault()
+            if(mouseMoveFlag) {
+                swipeAction = e.pageX - startPoint;
+                animFlag = true
+                const run = () => {
+                    field.style.transform = `translateX(${translate + swipeAction}px)`
+                }
+                window.requestAnimationFrame(run)
+            }
+        });
+
+        _window.addEventListener('mouseup', (e) => {
+            e.preventDefault()
+            touchMouseUp()
+            mouseMoveFlag = false
+        });
+
+        _window.addEventListener('mouseleave', () => {
+            // if (mouseMoveFlag) {
+            //     field_.style.transform = `translateX(-${(cards_[0].scrollWidth + betweenCards) * sliderCounter}px)`;
+            // }
+            mouseMoveFlag = false
+            if (field.getBoundingClientRect().left > 0) {
+                field.style.transform = ''
+                translate = 0
+                swipeAction = 0
+                return
+            }
+            if (field.getBoundingClientRect().right < document.documentElement.clientWidth) {
+                translate = -(field.clientWidth - document.documentElement.clientWidth)
+                field.style.transform = `translateX(${translate}px)`
+                swipeAction = 0
+            }
+        })
     }
 
     devPriceSlider()
