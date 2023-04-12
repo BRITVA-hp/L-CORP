@@ -34,6 +34,9 @@
         top: 0
         left: 45%
         z-index: 3
+        &__man
+            img
+                animation: man 6s ease-out infinite
         &__ring
             position: absolute
             left: 50%
@@ -42,6 +45,11 @@
             &--1
                 transform: none
                 position: static
+                animation: ring-1 6s ease-out infinite
+            &--2
+                animation: ring-2 6s ease-out infinite
+            &--3
+                animation: ring-3 6s ease-out infinite
         &__rings
             position: absolute
             right: 55px

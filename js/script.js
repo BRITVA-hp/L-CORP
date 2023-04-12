@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             // проверяем, показывается ли последняя карточка
             function lastCard() {
-                if ( (sliderCounter + numberIntegerVisibleCards()) >= (cards_.length) && cards_.length >= numberIntegerVisibleCards()) {
+                if ( (sliderCounter + numberIntegerVisibleCards()) >= (cards_.length) && cards_.length > numberIntegerVisibleCards()) {
                     sliderCounter = cards_.length - numberIntegerVisibleCards() - 1
                     return true
                 }
@@ -377,7 +377,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             window_.addEventListener('touchstart', (e) => {
                 startPoint = e.changedTouches[0].pageX;
-                if (lastCard()) moveLastCardFlag = true
+                console.log(sliderCounter)
+                if (lastCard() && numberIntegerVisibleCards() < cards_.length) moveLastCardFlag = true
+
+
             });
 
             window_.addEventListener('touchmove', (e) => {
@@ -386,6 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     field_.style.transform = `translateX(${swipeAction + -(field_.clientWidth - document.documentElement.clientWidth)}px)`;
                 } else {
                     field_.style.transform = `translateX(${swipeAction + (-(cards_[0].scrollWidth + betweenCards) * sliderCounter)}px)`;
+
                 }
             });
 
@@ -410,15 +414,21 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 startPoint = e.pageX;
                 mouseMoveFlag = true;
+                if (lastCard()) moveLastCardFlag = true
             });
             window_.addEventListener('mousemove', (e) => {
                 if (mouseMoveFlag) {
                     e.preventDefault();
                     swipeAction = e.pageX - startPoint;
-                    field_.style.transform = `translateX(${swipeAction + (-(cards_[0].scrollWidth + betweenCards) * sliderCounter)}px)`;
+                    if (moveLastCardFlag) {
+                        field_.style.transform = `translateX(${swipeAction + -(field_.clientWidth - document.documentElement.clientWidth)}px)`;
+                    } else {
+                        field_.style.transform = `translateX(${swipeAction + (-(cards_[0].scrollWidth + betweenCards) * sliderCounter)}px)`;
+                    }
                 }
             });
             window_.addEventListener('mouseup', (e) => {
+                moveLastCardFlag = false
                 mouseMoveFlag = false
                 endPoint = e.pageX;
                 if (Math.abs(startPoint - endPoint) > 50 && checkNumCards()) {
@@ -441,6 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     field_.style.transform = `translateX(-${(cards_[0].scrollWidth + betweenCards) * sliderCounter}px)`;
                 }
                 mouseMoveFlag = false
+                moveLastCardFlag = false
             })
         }
     }
