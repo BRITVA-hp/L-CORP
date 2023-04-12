@@ -1932,6 +1932,8 @@ body {
   -moz-column-gap: 15px;
   column-gap: 15px;
   transition: 0.3s;
+  width: -moz-min-content;
+  width: min-content;
 }
 .reviews__card {
   min-width: 525px;
@@ -2404,8 +2406,6 @@ body {
 }
 .dev-steps__box {
   position: relative;
-  -webkit-clip-path: polygon(0 102px, 42px 0, 32% 0, calc(32% + 31px) 36px, calc(32% + 260px) 36px, calc(32% + 294px) 0, calc(100% - 80px) 0, 100% 80px, 100% calc(100% - 136px), calc(100% - 57px) calc(100% - 38px), calc(32% + 53px) calc(100% - 38px), calc(32% + 20px) 100%, 42px 100%, 0 calc(100% - 121px), 0 102px);
-  clip-path: polygon(0 102px, 42px 0, 32% 0, calc(32% + 31px) 36px, calc(32% + 260px) 36px, calc(32% + 294px) 0, calc(100% - 80px) 0, 100% 80px, 100% calc(100% - 136px), calc(100% - 57px) calc(100% - 38px), calc(32% + 53px) calc(100% - 38px), calc(32% + 20px) 100%, 42px 100%, 0 calc(100% - 121px), 0 102px);
   height: 900px;
 }
 .dev-steps__box::after {
@@ -2442,9 +2442,11 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  z-index: 1;
+  z-index: 3;
   display: flex;
   max-height: 100%;
+  -webkit-clip-path: polygon(2px 104px, 2px calc(100% - 123px), 44px calc(100% - 2px), calc(32% + 18px) calc(100% - 2px), calc(32% + 51px) calc(100% - 40px), calc(100% - 59px) calc(100% - 40px), calc(100% - 2px) calc(100% - 138px), calc(100% - 2px) 82px, calc(100% - 82px) 2px, calc(32% + 296px) 2px, calc(32% + 262px) 38px, calc(32% + 29px) 38px, calc(32% - 2px) 2px, 44px 2px, 2px 104px);
+  clip-path: polygon(2px 104px, 2px calc(100% - 123px), 44px calc(100% - 2px), calc(32% + 18px) calc(100% - 2px), calc(32% + 51px) calc(100% - 40px), calc(100% - 59px) calc(100% - 40px), calc(100% - 2px) calc(100% - 138px), calc(100% - 2px) 82px, calc(100% - 82px) 2px, calc(32% + 296px) 2px, calc(32% + 262px) 38px, calc(32% + 29px) 38px, calc(32% - 2px) 2px, 44px 2px, 2px 104px);
 }
 .dev-steps__title {
   margin-bottom: 10px;
@@ -3698,6 +3700,9 @@ body {
     -moz-column-gap: 50px;
     column-gap: 50px;
   }
+  .reviews__container {
+    max-width: none;
+  }
   .we__img {
     right: 140px;
   }
@@ -4578,8 +4583,6 @@ body {
     margin: 0 auto 10px;
   }
   .dev-steps__box {
-    -webkit-clip-path: polygon(0 11px, 46px 0, calc(100% - 13px) 0, 100% 28px, 100% 40%, calc(100% - 14px) calc(40% + 15px), calc(100% - 14px) calc(40% + 67px), 100% calc(40% + 76px), 100% calc(100% - 22px), calc(100% - 30px) 100%, 50px 100%, 0 calc(100% - 17px), 0 calc(43% + 99px), 12px calc(43% + 82px), 12px calc(43% + 9px), 0 43%);
-    clip-path: polygon(0 11px, 46px 0, calc(100% - 13px) 0, 100% 28px, 100% 40%, calc(100% - 14px) calc(40% + 15px), calc(100% - 14px) calc(40% + 67px), 100% calc(40% + 76px), 100% calc(100% - 22px), calc(100% - 30px) 100%, 50px 100%, 0 calc(100% - 17px), 0 calc(43% + 99px), 12px calc(43% + 82px), 12px calc(43% + 9px), 0 43%);
     height: auto;
   }
   .dev-steps__box::after {
@@ -4588,6 +4591,10 @@ body {
   }
   .dev-steps__box__line {
     display: none;
+  }
+  .dev-steps__box__content {
+    -webkit-clip-path: polygon(2px 13px, 2px calc(43% - 2px), 15px calc(43% + 7px), 15px calc(43% + 84px), 2px calc(43% + 101px), 2px calc(100% - 19px), 52px calc(100% - 2px), calc(100% - 32px) calc(100% - 2px), calc(100% - 2px) calc(100% - 24px), calc(100% - 2px) calc(40% + 78px), calc(100% - 16px) calc(40% + 69px), calc(100% - 16px) calc(40% + 13px), calc(100% - 2px) calc(40% - 2px), calc(100% - 2px) 30px, calc(100% - 15px) 2px, 46px 2px, 2px 13px);
+    clip-path: polygon(2px 13px, 2px calc(43% - 2px), 15px calc(43% + 7px), 15px calc(43% + 84px), 2px calc(43% + 101px), 2px calc(100% - 19px), 52px calc(100% - 2px), calc(100% - 32px) calc(100% - 2px), calc(100% - 2px) calc(100% - 24px), calc(100% - 2px) calc(40% + 78px), calc(100% - 16px) calc(40% + 69px), calc(100% - 16px) calc(40% + 13px), calc(100% - 2px) calc(40% - 2px), calc(100% - 2px) 30px, calc(100% - 15px) 2px, 46px 2px, 2px 13px);
   }
   .dev-steps__menu {
     height: auto;
@@ -4825,7 +4832,7 @@ body {
     padding-right: 0;
   }
   .services__bg__substrate {
-    background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.1) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.1) 47.92%, #111111 100%);
+    background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.1) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.5) 47.92%, #111111 100%);
   }
   .portfolio {
     margin-bottom: 60px;
@@ -5294,7 +5301,7 @@ body {
   .main__img__rings {
     width: 210px;
     bottom: 70px;
-    right: 83px;
+    right: 50px;
   }
   .main__img__ring--2 {
     width: 133px;

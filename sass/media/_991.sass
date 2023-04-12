@@ -154,12 +154,13 @@
           text-align: left
           margin: 0 auto 10px
       &__box
-        clip-path: polygon(0 11px, 46px 0, calc(100% - 13px) 0, 100% 28px, 100% 40%, calc(100% - 14px) calc(40% + 15px), calc(100% - 14px) calc(40% + 67px), 100% calc(40% + 76px), 100% calc(100% - 22px), calc(100% - 30px) 100%, 50px 100%, 0 calc(100% - 17px), 0 calc(43% + 99px), 12px calc(43% + 82px), 12px calc(43% + 9px), 0 43%)
         height: auto
         &::after
           clip-path: polygon(0 11px, 46px 0, calc(100% - 13px) 0, 100% 28px, 100% 40%, calc(100% - 14px) calc(40% + 15px), calc(100% - 14px) calc(40% + 67px), 100% calc(40% + 76px), 100% calc(100% - 22px), calc(100% - 30px) 100%, 50px 100%, 0 calc(100% - 17px), 0 calc(43% + 99px), 12px calc(43% + 82px), 12px calc(43% + 9px), 0 43%, 0 11px, 2px 13px, 2px calc(43% - 2px), 15px calc(43% + 7px), 15px calc(43% + 84px), 2px  calc(43% + 101px), 2px calc(100% - 19px), 52px calc(100% - 2px), calc(100% - 32px) calc(100% - 2px), calc(100% - 2px) calc(100% - 24px), calc(100% - 2px) calc(40% + 78px), calc(100% - 16px) calc(40% + 69px), calc(100% - 16px) calc(40% + 13px), calc(100% - 2px) calc(40% - 2px), calc(100% - 2px) 30px, calc(100% - 15px) 2px, 46px 2px, 2px 13px)
         &__line
           display: none
+        &__content
+          clip-path: polygon(2px 13px, 2px calc(43% - 2px), 15px calc(43% + 7px), 15px calc(43% + 84px), 2px  calc(43% + 101px), 2px calc(100% - 19px), 52px calc(100% - 2px), calc(100% - 32px) calc(100% - 2px), calc(100% - 2px) calc(100% - 24px), calc(100% - 2px) calc(40% + 78px), calc(100% - 16px) calc(40% + 69px), calc(100% - 16px) calc(40% + 13px), calc(100% - 2px) calc(40% - 2px), calc(100% - 2px) 30px, calc(100% - 15px) 2px, 46px 2px, 2px 13px)
       &__menu
         height: auto
         &::after
@@ -352,7 +353,7 @@
   .services
     &__bg
       &__substrate
-        background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.1) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.1) 47.92%, #111111 100%)
+        background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.1) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.5) 47.92%, #111111 100%)
 
   .portfolio
     margin-bottom: 60px

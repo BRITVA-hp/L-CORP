@@ -231,7 +231,8 @@ document.addEventListener("DOMContentLoaded", () => {
             endPoint,
             sliderCounter = 0,
             dots_ = [],
-            mouseMoveFlag = false;
+            mouseMoveFlag = false,
+            moveLastCardFlag = false
 
         if (window_) {
 
@@ -274,11 +275,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Слайд следующий
 
-            function slideNext() {
+            function slideNext(dots = false) {
                 if (!checkNumCards()) {
                     return
                 }
-                sliderCounter++;
+                if(!dots) sliderCounter++;
                 if (arrowNext_) arrowNext_.classList.remove(settings.buttonActiveClass);
                 if (arrowPrev_) arrowPrev_.classList.remove(settings.buttonActiveClass);
                 if (sliderCounter >= cards_.length) {
@@ -287,13 +288,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 if ((sliderCounter + 1) === cards_.length) {
                     arrowNext_.classList.add(settings.buttonActiveClass);
                 }
-
                 if (progress_) progress_.style.left = (100 / cards_.length) * sliderCounter + '%'
-                if (dotsWrap_) dots_.forEach(item=> item.classList.remove(settings.dotActiveClass))
+                if (dotsWrap_) dots_.forEach(item => item.classList.remove(settings.dotActiveClass))
                 if (lastCard()) {
                     field_.style.transform = `translateX(-${field_.scrollWidth - window_.clientWidth}px)`
                     sliderCounter = Math.ceil(cards_.length - numberIntegerVisibleCards() - partCard())
-                    dots_[dots_.length - numberIntegerVisibleCards()].classList.add(settings.dotActiveClass)
+                    dots_[dots_.length - 1].classList.add(settings.dotActiveClass)
+                    console.log(1)
                     return
                 }
                 if (dotsWrap_) dots_[sliderCounter].classList.add(settings.dotActiveClass)
@@ -303,12 +304,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Слайд предыдущий
 
-            function slidePrev() {
+            function slidePrev(dots = false) {
                 if (!checkNumCards()) {
                     return
                 }
                 sliderCounter = Math.floor(sliderCounter)
-                sliderCounter--;
+                if(!dots) sliderCounter--;
                 if (arrowNext_) arrowNext_.classList.remove(settings.buttonActiveClass);
                 if (arrowPrev_) arrowPrev_.classList.remove(settings.buttonActiveClass);
                 if (sliderCounter <= 0) {
@@ -327,11 +328,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (progress_) {
                     progress_.style.left = (100 / cards_.length) * sliderCounter + '%'
                 }
-                if (lastCard()) {
-                    field_.style.transform = `translateX(-${field_.scrollWidth - window_.clientWidth - (cards_[0].scrollWidth + betweenCards)}px)`
-                    sliderCounter = cards_.length - numberIntegerVisibleCards() - 1
-                    return
-                }
                 field_.style.transform = `translateX(-${(cards_[0].scrollWidth + betweenCards) * sliderCounter}px)`;
             }
 
@@ -348,23 +344,18 @@ document.addEventListener("DOMContentLoaded", () => {
                 dots_[0].classList.add(settings.dotActiveClass);
                 dots_.forEach((item, index) => {
                     item.addEventListener('click', () => {
-                        sliderCounter = index;
-                        arrowNext_.classList.remove(settings.buttonActiveClass);
-                        arrowPrev_.classList.remove(settings.buttonActiveClass);
-                        if (sliderCounter === 0) {
-                            arrowPrev_.classList.add(settings.buttonActiveClass);
-                        }
-                        if ((sliderCounter + 1) === cards_.length) {
-                            arrowNext_.classList.add(settings.buttonActiveClass);
-                        }
-                        dots_.forEach(item_ => {
-                            item_.classList.remove(settings.dotActiveClass);
-                        });
-                        item.classList.add(settings.dotActiveClass);
                         if (!checkNumCards()) {
                             return
                         }
-                        field_.style.transform = `translateX(-${(cards_[0].scrollWidth + betweenCards) * sliderCounter}px)`;
+                        if (index > sliderCounter) {
+                            sliderCounter = index;
+                            slideNext(true)
+                            return
+                        }
+                        if (index < sliderCounter) {
+                            sliderCounter = index;
+                            slidePrev(true)
+                        }
                     });
                 });
             }
@@ -386,14 +377,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
             window_.addEventListener('touchstart', (e) => {
                 startPoint = e.changedTouches[0].pageX;
+                if (lastCard()) moveLastCardFlag = true
             });
 
             window_.addEventListener('touchmove', (e) => {
                 swipeAction = e.changedTouches[0].pageX - startPoint;
-                field_.style.transform = `translateX(${swipeAction + (-(cards_[0].scrollWidth + betweenCards) * sliderCounter)}px)`;
+                if (moveLastCardFlag) {
+                    field_.style.transform = `translateX(${swipeAction + -(field_.clientWidth - document.documentElement.clientWidth)}px)`;
+                } else {
+                    field_.style.transform = `translateX(${swipeAction + (-(cards_[0].scrollWidth + betweenCards) * sliderCounter)}px)`;
+                }
             });
 
             window_.addEventListener('touchend', (e) => {
+                moveLastCardFlag = false
                 endPoint = e.changedTouches[0].pageX;
                 if (Math.abs(startPoint - endPoint) > 50 && checkNumCards()) {
                     if (arrowNext_) arrowNext_.classList.remove(settings.buttonActiveClass);
@@ -541,208 +538,210 @@ document.addEventListener("DOMContentLoaded", () => {
         const cards = document.querySelectorAll('.dev-price__card-wrap')
         const dotsWrap = document.querySelector('.dev-price__dots')
 
-        const dots = []
-        let counter = 0,
-            translate = 0,
-            startPoint,
-            swipeAction,
-            endPoint,
-            timeStart,
-            timeFinish,
-            animFlag = true,
-            mouseMoveFlag = false
+        if (_window) {
+            const dots = []
+            let counter = 0,
+                translate = 0,
+                startPoint,
+                swipeAction,
+                endPoint,
+                timeStart,
+                timeFinish,
+                animFlag = true,
+                mouseMoveFlag = false
 
-        const activeCard = (touch = false) => {
+            const activeCard = (touch = false) => {
+                cards.forEach(card => {
+                    card.classList.remove('dev-price__card-wrap--active')
+                })
+                cards[counter].classList.add('dev-price__card-wrap--active')
+                const right = cards[counter].getBoundingClientRect().right - _window.getBoundingClientRect().right
+                const left = cards[counter].getBoundingClientRect().left - _window.getBoundingClientRect().left
+                if (right > 0) {
+                    translate += -right - 20
+                }
+                if (left < 0) {
+                    translate += -left + 20
+                }
+                field.style.transform = `translateX(${translate}px)`
+            }
+
+            const activeDot = () => {
+                dots.forEach(dot => {
+                    dot.classList.remove('dev-price__dot--active')
+                })
+                dots[counter].classList.add('dev-price__dot--active')
+            }
+
+            // создаём пагинацию
             cards.forEach(card => {
-                card.classList.remove('dev-price__card-wrap--active')
-            })
-            cards[counter].classList.add('dev-price__card-wrap--active')
-            const right = cards[counter].getBoundingClientRect().right - _window.getBoundingClientRect().right
-            const left = cards[counter].getBoundingClientRect().left - _window.getBoundingClientRect().left
-            if (right > 0) {
-                translate += -right - 20
-            }
-            if (left < 0) {
-                translate += -left + 20
-            }
-            field.style.transform = `translateX(${translate}px)`
-        }
-
-        const activeDot = () => {
-            dots.forEach(dot => {
-                dot.classList.remove('dev-price__dot--active')
+                const dot = document.createElement('div')
+                dot.classList.add('dev-price__dot')
+                dotsWrap.appendChild(dot)
+                dots.push(dot)
             })
             dots[counter].classList.add('dev-price__dot--active')
-        }
+            dots.forEach((dot, dotIndex) => {
+                dot.addEventListener('click', () => {
+                    counter = dotIndex
+                    activeCard()
+                    activeDot()
+                })
+            })
 
-        // создаём пагинацию
-        cards.forEach(card => {
-            const dot = document.createElement('div')
-            dot.classList.add('dev-price__dot')
-            dotsWrap.appendChild(dot)
-            dots.push(dot)
-        })
-        dots[counter].classList.add('dev-price__dot--active')
-        dots.forEach((dot, dotIndex) => {
-            dot.addEventListener('click', () => {
-                counter = dotIndex
+            cards.forEach((card, cardIndex) => {
+                card.addEventListener('click', (e) => {
+                    // e.stopImmediatePropagation()
+                    // e.stopPropagation()
+                    counter = cardIndex
+                    activeCard()
+                    activeDot()
+                })
+            })
+
+            // следующий слайд при нажатии на стрелку
+            btnNext.addEventListener('click', () => {
+                counter++
+                if (counter >= cards.length) counter = cards.length - 1
+
+                activeCard()
+                activeDot()
+
+            })
+
+            // предыдущий слайд при нажатии на стрелку
+            btnPrev.addEventListener('click', () => {
+                counter--
+                if (counter < 0) counter = 0
+
                 activeCard()
                 activeDot()
             })
-        })
 
-        cards.forEach((card, cardIndex) => {
-            card.addEventListener('click', (e) => {
-                // e.stopImmediatePropagation()
-                // e.stopPropagation()
-                counter = cardIndex
-                activeCard()
-                activeDot()
-            })
-        })
+            function animate({duration, right = true, distance}) {
 
-        // следующий слайд при нажатии на стрелку
-        btnNext.addEventListener('click', () => {
-            counter++
-            if (counter >= cards.length) counter = cards.length - 1
+                let start = performance.now();
 
-            activeCard()
-            activeDot()
+                requestAnimationFrame(function animate(time) {
+                    // timeFraction изменяется от 0 до 1
+                    let timeFraction = (time - start) / duration;
+                    if (timeFraction > 1) timeFraction = 1;
+                    let progress = Math.pow(timeFraction, 1/2) * distance
+                    if (right) progress = -progress
+                    field.style.transform = `translateX(${translate + progress}px)`
+                    if (timeFraction < 1 && animFlag && field.getBoundingClientRect().left < 0 && field.getBoundingClientRect().right > document.documentElement.clientWidth) {
+                        requestAnimationFrame(animate);
+                    }
+                    if (timeFraction >= 1 || !animFlag) {
+                        translate += progress
+                    }
+                    if (field.getBoundingClientRect().left > 0) {
+                        field.style.transform = ''
+                        translate = 0
+                    }
+                    if (field.getBoundingClientRect().right < document.documentElement.clientWidth) {
+                        translate = -(field.clientWidth - document.documentElement.clientWidth)
+                        field.style.transform = `translateX(${translate}px)`
+                    }
 
-        })
+                });
+            }
 
-        // предыдущий слайд при нажатии на стрелку
-        btnPrev.addEventListener('click', () => {
-            counter--
-            if (counter < 0) counter = 0
-
-            activeCard()
-            activeDot()
-        })
-
-        function animate({duration, right = true, distance}) {
-
-            let start = performance.now();
-
-            requestAnimationFrame(function animate(time) {
-                // timeFraction изменяется от 0 до 1
-                let timeFraction = (time - start) / duration;
-                if (timeFraction > 1) timeFraction = 1;
-                let progress = Math.pow(timeFraction, 1/2) * distance
-                if (right) progress = -progress
-                field.style.transform = `translateX(${translate + progress}px)`
-                if (timeFraction < 1 && animFlag && field.getBoundingClientRect().left < 0 && field.getBoundingClientRect().right > document.documentElement.clientWidth) {
-                    requestAnimationFrame(animate);
-                }
-                if (timeFraction >= 1 || !animFlag) {
-                    translate += progress
-                }
+            function touchMouseUp() {
+                timeFinish = performance.now()
+                const time = (timeFinish - timeStart)/1000
+                const V0 = Math.abs(swipeAction/time)
+                const a = 5000
+                const t = Math.abs(V0/a)
+                const S = (V0*t) + (a*t*t)/2
+                // console.log(t)
+                // console.log(S)
                 if (field.getBoundingClientRect().left > 0) {
                     field.style.transform = ''
                     translate = 0
+                    swipeAction = 0
+                    return
                 }
                 if (field.getBoundingClientRect().right < document.documentElement.clientWidth) {
                     translate = -(field.clientWidth - document.documentElement.clientWidth)
                     field.style.transform = `translateX(${translate}px)`
+                    swipeAction = 0
+                    return
                 }
+                translate += swipeAction
+                if (swipeAction < 0) animate({duration: 1500, distance: S})
+                if (swipeAction > 0) animate({duration: 1500, right: false, distance: S})
+                swipeAction = 0
+            }
 
+            // Свайп слайдов тач-событиями
+
+            _window.addEventListener('touchstart', (e) => {
+                startPoint = e.changedTouches[0].pageX;
+                timeStart = performance.now()
+                animFlag = false
             });
-        }
 
-        function touchMouseUp() {
-            timeFinish = performance.now()
-            const time = (timeFinish - timeStart)/1000
-            const V0 = Math.abs(swipeAction/time)
-            const a = 5000
-            const t = Math.abs(V0/a)
-            const S = (V0*t) + (a*t*t)/2
-            // console.log(t)
-            // console.log(S)
-            if (field.getBoundingClientRect().left > 0) {
-                field.style.transform = ''
-                translate = 0
-                swipeAction = 0
-                return
-            }
-            if (field.getBoundingClientRect().right < document.documentElement.clientWidth) {
-                translate = -(field.clientWidth - document.documentElement.clientWidth)
-                field.style.transform = `translateX(${translate}px)`
-                swipeAction = 0
-                return
-            }
-            translate += swipeAction
-            if (swipeAction < 0) animate({duration: 1500, distance: S})
-            if (swipeAction > 0) animate({duration: 1500, right: false, distance: S})
-            swipeAction = 0
-        }
-
-        // Свайп слайдов тач-событиями
-
-        _window.addEventListener('touchstart', (e) => {
-            startPoint = e.changedTouches[0].pageX;
-            timeStart = performance.now()
-            animFlag = false
-        });
-
-        _window.addEventListener('touchmove', (e) => {
-            swipeAction = e.changedTouches[0].pageX - startPoint;
-            animFlag = true
-            const run = () => {
-                field.style.transform = `translateX(${translate + swipeAction}px)`
-            }
-            window.requestAnimationFrame(run)
-        });
-
-        _window.addEventListener('touchend', (e) => {
-            touchMouseUp()
-            // endPoint = e.changedTouches[0].pageX;
-        });
-
-        // Свайп слайдов mouse-событиями
-
-        _window.addEventListener('mousedown', (e) => {
-            e.preventDefault()
-            startPoint = e.pageX;
-            timeStart = performance.now()
-            animFlag = false
-            mouseMoveFlag = true
-        });
-
-        _window.addEventListener('mousemove', (e) => {
-            e.preventDefault()
-            if(mouseMoveFlag) {
-                swipeAction = e.pageX - startPoint;
+            _window.addEventListener('touchmove', (e) => {
+                swipeAction = e.changedTouches[0].pageX - startPoint;
                 animFlag = true
                 const run = () => {
                     field.style.transform = `translateX(${translate + swipeAction}px)`
                 }
                 window.requestAnimationFrame(run)
-            }
-        });
+            });
 
-        _window.addEventListener('mouseup', (e) => {
-            e.preventDefault()
-            touchMouseUp()
-            mouseMoveFlag = false
-        });
+            _window.addEventListener('touchend', (e) => {
+                touchMouseUp()
+                // endPoint = e.changedTouches[0].pageX;
+            });
 
-        _window.addEventListener('mouseleave', () => {
-            // if (mouseMoveFlag) {
-            //     field_.style.transform = `translateX(-${(cards_[0].scrollWidth + betweenCards) * sliderCounter}px)`;
-            // }
-            mouseMoveFlag = false
-            if (field.getBoundingClientRect().left > 0) {
-                field.style.transform = ''
-                translate = 0
-                swipeAction = 0
-                return
-            }
-            if (field.getBoundingClientRect().right < document.documentElement.clientWidth) {
-                translate = -(field.clientWidth - document.documentElement.clientWidth)
-                field.style.transform = `translateX(${translate}px)`
-                swipeAction = 0
-            }
-        })
+            // Свайп слайдов mouse-событиями
+
+            _window.addEventListener('mousedown', (e) => {
+                e.preventDefault()
+                startPoint = e.pageX;
+                timeStart = performance.now()
+                animFlag = false
+                mouseMoveFlag = true
+            });
+
+            _window.addEventListener('mousemove', (e) => {
+                e.preventDefault()
+                if(mouseMoveFlag) {
+                    swipeAction = e.pageX - startPoint;
+                    animFlag = true
+                    const run = () => {
+                        field.style.transform = `translateX(${translate + swipeAction}px)`
+                    }
+                    window.requestAnimationFrame(run)
+                }
+            });
+
+            _window.addEventListener('mouseup', (e) => {
+                e.preventDefault()
+                touchMouseUp()
+                mouseMoveFlag = false
+            });
+
+            _window.addEventListener('mouseleave', () => {
+                // if (mouseMoveFlag) {
+                //     field_.style.transform = `translateX(-${(cards_[0].scrollWidth + betweenCards) * sliderCounter}px)`;
+                // }
+                mouseMoveFlag = false
+                if (field.getBoundingClientRect().left > 0) {
+                    field.style.transform = ''
+                    translate = 0
+                    swipeAction = 0
+                    return
+                }
+                if (field.getBoundingClientRect().right < document.documentElement.clientWidth) {
+                    translate = -(field.clientWidth - document.documentElement.clientWidth)
+                    field.style.transform = `translateX(${translate}px)`
+                    swipeAction = 0
+                }
+            })
+        }
     }
 
     devPriceSlider()
