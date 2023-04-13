@@ -634,7 +634,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 let start = performance.now();
 
                 requestAnimationFrame(function animate(time) {
-                    console.log(translate)
                     // timeFraction изменяется от 0 до 1
                     let timeFraction = (time - start) / duration;
                     if (timeFraction > 1) timeFraction = 1;
@@ -692,7 +691,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 startPoint = e.changedTouches[0].pageX;
                 timeStart = performance.now()
                 animFlag = false
-                console.log(translate)
             });
 
             _window.addEventListener('touchmove', (e) => {
