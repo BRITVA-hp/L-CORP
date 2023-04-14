@@ -931,132 +931,132 @@ body {
 }
 @keyframes noise-anim {
   0% {
-    clip: rect(76px, 9999px, 51px, 0);
+    clip: rect(4px, 9999px, 71px, 0);
   }
   5% {
-    clip: rect(26px, 9999px, 67px, 0);
+    clip: rect(90px, 9999px, 61px, 0);
   }
   10% {
-    clip: rect(75px, 9999px, 29px, 0);
+    clip: rect(13px, 9999px, 56px, 0);
   }
   15% {
-    clip: rect(47px, 9999px, 91px, 0);
+    clip: rect(85px, 9999px, 5px, 0);
   }
   20% {
-    clip: rect(33px, 9999px, 50px, 0);
+    clip: rect(25px, 9999px, 86px, 0);
   }
   25% {
-    clip: rect(49px, 9999px, 56px, 0);
+    clip: rect(40px, 9999px, 29px, 0);
   }
   30% {
-    clip: rect(5px, 9999px, 97px, 0);
+    clip: rect(36px, 9999px, 75px, 0);
   }
   35% {
-    clip: rect(33px, 9999px, 27px, 0);
+    clip: rect(16px, 9999px, 88px, 0);
   }
   40% {
-    clip: rect(72px, 9999px, 51px, 0);
+    clip: rect(7px, 9999px, 25px, 0);
   }
   45% {
-    clip: rect(24px, 9999px, 83px, 0);
+    clip: rect(41px, 9999px, 13px, 0);
   }
   50% {
-    clip: rect(46px, 9999px, 55px, 0);
+    clip: rect(91px, 9999px, 78px, 0);
   }
   55% {
-    clip: rect(33px, 9999px, 56px, 0);
+    clip: rect(13px, 9999px, 73px, 0);
   }
   60% {
-    clip: rect(6px, 9999px, 100px, 0);
+    clip: rect(49px, 9999px, 39px, 0);
   }
   65% {
-    clip: rect(80px, 9999px, 57px, 0);
+    clip: rect(16px, 9999px, 48px, 0);
   }
   70% {
-    clip: rect(3px, 9999px, 14px, 0);
+    clip: rect(55px, 9999px, 51px, 0);
   }
   75% {
-    clip: rect(61px, 9999px, 9px, 0);
+    clip: rect(34px, 9999px, 76px, 0);
   }
   80% {
-    clip: rect(27px, 9999px, 16px, 0);
+    clip: rect(94px, 9999px, 52px, 0);
   }
   85% {
-    clip: rect(8px, 9999px, 54px, 0);
+    clip: rect(39px, 9999px, 28px, 0);
   }
   90% {
-    clip: rect(80px, 9999px, 27px, 0);
+    clip: rect(75px, 9999px, 15px, 0);
   }
   95% {
-    clip: rect(88px, 9999px, 10px, 0);
+    clip: rect(84px, 9999px, 44px, 0);
   }
   100% {
-    clip: rect(86px, 9999px, 38px, 0);
+    clip: rect(66px, 9999px, 12px, 0);
   }
 }
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(72px, 9999px, 4px, 0);
+    clip: rect(89px, 9999px, 22px, 0);
   }
   5% {
-    clip: rect(31px, 9999px, 89px, 0);
+    clip: rect(3px, 9999px, 70px, 0);
   }
   10% {
-    clip: rect(93px, 9999px, 62px, 0);
+    clip: rect(26px, 9999px, 90px, 0);
   }
   15% {
-    clip: rect(39px, 9999px, 85px, 0);
+    clip: rect(87px, 9999px, 53px, 0);
   }
   20% {
-    clip: rect(67px, 9999px, 75px, 0);
+    clip: rect(69px, 9999px, 68px, 0);
   }
   25% {
-    clip: rect(79px, 9999px, 18px, 0);
+    clip: rect(99px, 9999px, 2px, 0);
   }
   30% {
-    clip: rect(81px, 9999px, 54px, 0);
+    clip: rect(77px, 9999px, 20px, 0);
   }
   35% {
-    clip: rect(42px, 9999px, 9px, 0);
+    clip: rect(36px, 9999px, 13px, 0);
   }
   40% {
-    clip: rect(20px, 9999px, 80px, 0);
+    clip: rect(74px, 9999px, 8px, 0);
   }
   45% {
-    clip: rect(73px, 9999px, 99px, 0);
+    clip: rect(47px, 9999px, 17px, 0);
   }
   50% {
-    clip: rect(38px, 9999px, 35px, 0);
+    clip: rect(85px, 9999px, 61px, 0);
   }
   55% {
-    clip: rect(20px, 9999px, 48px, 0);
+    clip: rect(77px, 9999px, 94px, 0);
   }
   60% {
-    clip: rect(22px, 9999px, 65px, 0);
+    clip: rect(12px, 9999px, 76px, 0);
   }
   65% {
-    clip: rect(66px, 9999px, 95px, 0);
+    clip: rect(84px, 9999px, 6px, 0);
   }
   70% {
-    clip: rect(51px, 9999px, 82px, 0);
+    clip: rect(55px, 9999px, 58px, 0);
   }
   75% {
-    clip: rect(10px, 9999px, 24px, 0);
+    clip: rect(26px, 9999px, 85px, 0);
   }
   80% {
-    clip: rect(69px, 9999px, 89px, 0);
+    clip: rect(27px, 9999px, 61px, 0);
   }
   85% {
-    clip: rect(91px, 9999px, 23px, 0);
+    clip: rect(10px, 9999px, 83px, 0);
   }
   90% {
-    clip: rect(23px, 9999px, 89px, 0);
+    clip: rect(68px, 9999px, 95px, 0);
   }
   95% {
-    clip: rect(45px, 9999px, 83px, 0);
+    clip: rect(25px, 9999px, 47px, 0);
   }
   100% {
-    clip: rect(4px, 9999px, 58px, 0);
+    clip: rect(37px, 9999px, 61px, 0);
   }
 }
 .header {
@@ -3079,6 +3079,121 @@ body {
   margin-bottom: 80px;
 }
 
+.con-main {
+  padding-top: 80px;
+  margin-bottom: 130px;
+}
+.con-main__button {
+  display: block;
+  margin: auto;
+}
+.con-main__title {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 105px;
+  line-height: 100%;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  color: #08E2F0;
+  margin-bottom: 25px;
+}
+.con-main__title span {
+  color: #CFFF04;
+}
+.con-main__subtitle {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 144px;
+  line-height: 115%;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-shadow: 4px 5px 2px #4E0058, 2px 2px 2px #E943FF;
+}
+.con-main__subtitle br {
+  display: none;
+}
+.con-main__subtitle--2 {
+  text-shadow: 4px 5px 2px #016167, 0px 4px 4px #08E2F0;
+  text-align: right;
+  margin-bottom: 20px;
+}
+.con-main__content {
+  position: relative;
+  z-index: 3;
+}
+.con-main__container {
+  position: relative;
+}
+.con-main__substrate {
+  background: linear-gradient(270deg, rgba(17, 17, 17, 0) 83.16%, #111111 89.79%), linear-gradient(90.84deg, rgba(17, 17, 17, 0) 93.17%, #111111 101.01%), linear-gradient(359.6deg, rgba(17, 17, 17, 0) 88.85%, #111111 98.89%), linear-gradient(180.37deg, rgba(17, 17, 17, 0) 92.6%, #111111 98.89%);
+}
+.con-main__video {
+  opacity: 0.2;
+}
+
+.con-advantages {
+  margin-bottom: 180px;
+}
+.con-advantages__card {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 520px;
+}
+.con-advantages__card__img img {
+  max-width: none;
+}
+.con-advantages__card__title {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 110%;
+  text-transform: uppercase;
+  color: #CFFF04;
+  margin-bottom: 5px;
+}
+.con-advantages__card__text {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 120%;
+  color: #FFFFFF;
+}
+.con-advantages__substrate {
+  background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%);
+}
+.con-advantages__video {
+  opacity: 0.2;
+}
+.con-advantages__box {
+  position: relative;
+  padding-bottom: 60px;
+}
+.con-advantages__row {
+  position: relative;
+  display: flex;
+  -moz-column-gap: 200px;
+  column-gap: 200px;
+}
+.con-advantages__row:nth-child(even) {
+  justify-content: flex-end;
+}
+.con-advantages__wrap {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 3;
+  row-gap: 48px;
+}
+.con-advantages__title {
+  margin-bottom: 80px;
+}
+
 .thanks {
   position: relative;
   text-align: center;
@@ -3786,6 +3901,22 @@ body {
   }
   .container {
     max-width: 1300px;
+  }
+  .con-advantages {
+    margin-bottom: 100px;
+  }
+  .con-advantages__row {
+    -moz-column-gap: 100px;
+    column-gap: 100px;
+  }
+  .con-main {
+    margin-bottom: 100px;
+  }
+  .con-main__title {
+    font-size: 80px;
+  }
+  .con-main__subtitle {
+    font-size: 108px;
   }
   .unavailable {
     padding: 80px 0;
@@ -4507,6 +4638,25 @@ body {
   }
 }
 @media screen and (max-width: 1200px) {
+  .con-main {
+    padding-top: 30px;
+    margin-bottom: 80px;
+  }
+  .con-main__title {
+    font-size: 55px;
+    margin-bottom: 10px;
+  }
+  .con-main__subtitle {
+    font-size: 75px;
+  }
+  .con-main__content {
+    max-width: 850px;
+    margin: auto;
+  }
+  .con-main__button {
+    font-size: 20px;
+    height: 60px;
+  }
   .dev-services {
     margin-bottom: 80px;
   }
@@ -4696,6 +4846,16 @@ body {
   }
   .section__title {
     font-size: 35px;
+  }
+  .con-main__title {
+    font-size: 42px;
+  }
+  .con-main__subtitle {
+    font-size: 65px;
+    line-height: 106%;
+  }
+  .con-main__content {
+    max-width: 700px;
   }
   .unavailable {
     padding: 80px 0;
@@ -5200,6 +5360,24 @@ body {
   }
   .thanks__box {
     max-width: 270px;
+  }
+  .con-main__button {
+    width: 100%;
+    max-width: 345px;
+  }
+  .con-main__content {
+    max-width: 340px;
+  }
+  .con-main__subtitle {
+    text-align: left;
+  }
+  .con-main__subtitle br {
+    display: inline-block;
+  }
+  .con-main__subtitle span {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
   }
   .unavailable {
     padding: 30px 15px;
