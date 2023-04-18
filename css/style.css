@@ -931,132 +931,132 @@ body {
 }
 @keyframes noise-anim {
   0% {
-    clip: rect(22px, 9999px, 57px, 0);
+    clip: rect(78px, 9999px, 72px, 0);
   }
   5% {
-    clip: rect(75px, 9999px, 22px, 0);
+    clip: rect(64px, 9999px, 11px, 0);
   }
   10% {
-    clip: rect(25px, 9999px, 79px, 0);
+    clip: rect(48px, 9999px, 26px, 0);
   }
   15% {
-    clip: rect(80px, 9999px, 17px, 0);
+    clip: rect(38px, 9999px, 96px, 0);
   }
   20% {
-    clip: rect(72px, 9999px, 14px, 0);
+    clip: rect(9px, 9999px, 49px, 0);
   }
   25% {
-    clip: rect(30px, 9999px, 42px, 0);
+    clip: rect(68px, 9999px, 9px, 0);
   }
   30% {
-    clip: rect(54px, 9999px, 98px, 0);
+    clip: rect(93px, 9999px, 84px, 0);
   }
   35% {
-    clip: rect(34px, 9999px, 86px, 0);
+    clip: rect(16px, 9999px, 93px, 0);
   }
   40% {
-    clip: rect(21px, 9999px, 45px, 0);
+    clip: rect(66px, 9999px, 86px, 0);
   }
   45% {
-    clip: rect(17px, 9999px, 57px, 0);
+    clip: rect(11px, 9999px, 99px, 0);
   }
   50% {
-    clip: rect(55px, 9999px, 83px, 0);
+    clip: rect(61px, 9999px, 94px, 0);
   }
   55% {
-    clip: rect(53px, 9999px, 18px, 0);
+    clip: rect(4px, 9999px, 94px, 0);
   }
   60% {
-    clip: rect(53px, 9999px, 77px, 0);
+    clip: rect(9px, 9999px, 14px, 0);
   }
   65% {
-    clip: rect(41px, 9999px, 45px, 0);
+    clip: rect(57px, 9999px, 42px, 0);
   }
   70% {
-    clip: rect(94px, 9999px, 22px, 0);
+    clip: rect(40px, 9999px, 63px, 0);
   }
   75% {
-    clip: rect(39px, 9999px, 89px, 0);
+    clip: rect(100px, 9999px, 73px, 0);
   }
   80% {
-    clip: rect(39px, 9999px, 39px, 0);
+    clip: rect(79px, 9999px, 2px, 0);
   }
   85% {
-    clip: rect(20px, 9999px, 90px, 0);
+    clip: rect(41px, 9999px, 99px, 0);
   }
   90% {
-    clip: rect(83px, 9999px, 20px, 0);
+    clip: rect(31px, 9999px, 61px, 0);
   }
   95% {
-    clip: rect(27px, 9999px, 24px, 0);
+    clip: rect(65px, 9999px, 66px, 0);
   }
   100% {
-    clip: rect(6px, 9999px, 79px, 0);
+    clip: rect(57px, 9999px, 52px, 0);
   }
 }
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(63px, 9999px, 36px, 0);
+    clip: rect(90px, 9999px, 38px, 0);
   }
   5% {
-    clip: rect(29px, 9999px, 7px, 0);
+    clip: rect(37px, 9999px, 88px, 0);
   }
   10% {
-    clip: rect(9px, 9999px, 41px, 0);
+    clip: rect(56px, 9999px, 34px, 0);
   }
   15% {
-    clip: rect(45px, 9999px, 23px, 0);
+    clip: rect(5px, 9999px, 89px, 0);
   }
   20% {
-    clip: rect(14px, 9999px, 1px, 0);
+    clip: rect(38px, 9999px, 62px, 0);
   }
   25% {
-    clip: rect(5px, 9999px, 26px, 0);
+    clip: rect(12px, 9999px, 4px, 0);
   }
   30% {
-    clip: rect(88px, 9999px, 42px, 0);
+    clip: rect(58px, 9999px, 97px, 0);
   }
   35% {
-    clip: rect(10px, 9999px, 43px, 0);
+    clip: rect(67px, 9999px, 18px, 0);
   }
   40% {
-    clip: rect(78px, 9999px, 66px, 0);
+    clip: rect(99px, 9999px, 48px, 0);
   }
   45% {
-    clip: rect(49px, 9999px, 99px, 0);
+    clip: rect(29px, 9999px, 100px, 0);
   }
   50% {
-    clip: rect(25px, 9999px, 35px, 0);
+    clip: rect(30px, 9999px, 63px, 0);
   }
   55% {
-    clip: rect(32px, 9999px, 22px, 0);
+    clip: rect(62px, 9999px, 81px, 0);
   }
   60% {
-    clip: rect(16px, 9999px, 35px, 0);
+    clip: rect(27px, 9999px, 41px, 0);
   }
   65% {
-    clip: rect(48px, 9999px, 22px, 0);
+    clip: rect(17px, 9999px, 1px, 0);
   }
   70% {
-    clip: rect(70px, 9999px, 29px, 0);
+    clip: rect(77px, 9999px, 49px, 0);
   }
   75% {
-    clip: rect(24px, 9999px, 69px, 0);
+    clip: rect(70px, 9999px, 78px, 0);
   }
   80% {
-    clip: rect(28px, 9999px, 85px, 0);
+    clip: rect(95px, 9999px, 57px, 0);
   }
   85% {
-    clip: rect(86px, 9999px, 74px, 0);
+    clip: rect(38px, 9999px, 80px, 0);
   }
   90% {
-    clip: rect(15px, 9999px, 23px, 0);
+    clip: rect(62px, 9999px, 28px, 0);
   }
   95% {
-    clip: rect(75px, 9999px, 4px, 0);
+    clip: rect(53px, 9999px, 28px, 0);
   }
   100% {
-    clip: rect(37px, 9999px, 58px, 0);
+    clip: rect(8px, 9999px, 88px, 0);
   }
 }
 .header {
@@ -3195,8 +3195,12 @@ body {
   margin-bottom: 80px;
 }
 
+.con-get {
+  margin-bottom: 160px;
+}
 .con-get__row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 90px;
@@ -3204,8 +3208,9 @@ body {
 .con-get__card {
   position: relative;
   text-align: center;
-  width: 757px;
-  height: 428px;
+  width: 100%;
+  max-width: 755px;
+  height: 426px;
 }
 .con-get__card::before {
   content: "";
@@ -3262,6 +3267,82 @@ body {
 }
 .con-get__substrate--2 {
   background: linear-gradient(0deg, rgba(207, 255, 4, 0.07), rgba(207, 255, 4, 0.07));
+}
+
+.con-work {
+  position: relative;
+  margin-bottom: 160px;
+}
+.con-work__img {
+  position: absolute;
+  left: -10px;
+  top: 0;
+  z-index: 2;
+}
+.con-work__container {
+  max-width: 1620px;
+  position: relative;
+  z-index: 1;
+}
+.con-work__title {
+  margin-bottom: 25px;
+}
+.con-work__substrate {
+  background: linear-gradient(180deg, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%), radial-gradient(100% 319.8% at 100% 53.38%, #111111 0%, rgba(17, 17, 17, 0.02) 47.92%, #111111 100%);
+}
+.con-work__video {
+  opacity: 0.2;
+}
+.con-work__card {
+  position: relative;
+  z-index: 3;
+  width: 540px;
+  height: 245px;
+  text-align: center;
+  padding: 70px 40px 0;
+}
+.con-work__card--1 {
+  background: url("../img/con/work/border1LB.png") no-repeat center/contain;
+}
+.con-work__card--2 {
+  background: url("../img/con/work/border2LB.png") no-repeat center calc(50% - 5px)/contain;
+}
+.con-work__card--3 {
+  background: url("../img/con/work/border2RB.png") no-repeat center/contain;
+}
+.con-work__card--4 {
+  padding-top: 110px;
+  background: url("../img/con/work/border1LT.png") no-repeat center/contain;
+  transform: translateY(-45px);
+}
+.con-work__card--5 {
+  padding-top: 110px;
+  background: url("../img/con/work/border1RT.png") no-repeat center/contain;
+  transform: translateY(-45px);
+}
+.con-work__card__title {
+  font-family: "Blender Pro", sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 115%;
+  color: #08E2F0;
+  text-transform: uppercase;
+}
+.con-work__card__text {
+  font-family: "Blender Pro", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 115%;
+  color: white;
+}
+.con-work__row {
+  position: relative;
+  padding: 25px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .thanks {
@@ -4729,6 +4810,47 @@ body {
   }
 }
 @media screen and (max-width: 1200px) {
+  .con-work {
+    overflow: hidden;
+    padding: 0;
+    margin-bottom: 80px;
+  }
+  .con-work__row {
+    padding: 0;
+  }
+  .con-work__img {
+    display: none;
+  }
+  .con-work__card {
+    width: 380px;
+    min-width: 380px;
+    height: 170px;
+    padding-top: 40px;
+  }
+  .con-work__card--1 {
+    background: url("../img/con/work/borderM1LB.png") no-repeat center/contain;
+  }
+  .con-work__card--2 {
+    background: url("../img/con/work/borderM2RB.png") no-repeat center/contain;
+  }
+  .con-work__card--3 {
+    background: url("../img/con/work/borderM2RB.png") no-repeat center/contain;
+  }
+  .con-work__card--4 {
+    padding-top: 75px;
+    background: url("../img/con/work/borderM1LT.png") no-repeat center/contain;
+    transform: translateY(-30px);
+  }
+  .con-work__card--5 {
+    background: url("../img/con/work/borderM2RB.png") no-repeat center/contain;
+    transform: none;
+  }
+  .con-work__card__title {
+    font-size: 18px;
+  }
+  .con-work__card__text {
+    font-size: 18px;
+  }
   .con-main {
     padding-top: 30px;
     margin-bottom: 80px;
@@ -4937,6 +5059,38 @@ body {
   }
   .section__title {
     font-size: 35px;
+  }
+  .con-get {
+    margin-bottom: 80px;
+  }
+  .con-get__row {
+    gap: 40px;
+  }
+  .con-get__card {
+    max-width: 345px;
+    height: 240px;
+  }
+  .con-get__card::before {
+    -webkit-clip-path: polygon(0 12px, 13px 0, 53px 0, 58px 6px, calc(50% - 34px) 6px, calc(50% - 29px) 0, calc(50% + 29px) 0, calc(50% + 34px) 6px, calc(100% - 58px) 6px, calc(100% - 53px) 0, calc(100% - 13px) 0, 100% 12px, 100% 51px, calc(100% - 6px) 75px, calc(100% - 3px) calc(100% - 87px), calc(100% - 1px) calc(100% - 71px), 100% calc(100% - 10px), calc(100% - 12px) 100%, calc(100% - 53px) 100%, calc(100% - 59px) calc(100% - 6px), calc(50% + 35px) calc(100% - 6px), calc(50% + 38px) 100%, calc(50% - 38px) 100%, calc(50% - 35px) calc(100% - 6px), 59px calc(100% - 6px), 53px 100%, 12px 100%, 0 calc(100% - 10px), 1px calc(100% - 71px), 3px calc(100% - 87px), 6px 75px, 0 51px, 0 12px, 1px 13px, 1px 50px, 7px 76px, 4px calc(100% - 86px), 2px calc(100% - 72px), 1px calc(100% - 11px), 13px calc(100% - 1px), 52px calc(100% - 1px), 58px calc(100% - 7px), calc(50% - 34px) calc(100% - 7px), calc(50% - 37px) calc(100% - 1px), calc(50% + 37px) calc(100% - 1px), calc(50% + 34px) calc(100% - 7px), calc(100% - 58px) calc(100% - 7px), calc(100% - 52px) calc(100% - 1px), calc(100% - 13px) calc(100% - 1px), calc(100% - 1px) calc(100% - 11px), calc(100% - 2px) calc(100% - 70px), calc(100% - 4px) calc(100% - 86px), calc(100% - 7px) 74px, calc(100% - 1px) 50px, calc(100% - 1px) 13px, calc(100% - 14px) 1px, calc(100% - 52px) 1px, calc(100% - 57px) 7px, calc(50% + 33px) 7px, calc(50% + 28px) 1px, calc(50% - 28px) 1px, calc(50% - 33px) 7px, 57px 7px, 52px 1px, 14px 1px, 1px 13px);
+    clip-path: polygon(0 12px, 13px 0, 53px 0, 58px 6px, calc(50% - 34px) 6px, calc(50% - 29px) 0, calc(50% + 29px) 0, calc(50% + 34px) 6px, calc(100% - 58px) 6px, calc(100% - 53px) 0, calc(100% - 13px) 0, 100% 12px, 100% 51px, calc(100% - 6px) 75px, calc(100% - 3px) calc(100% - 87px), calc(100% - 1px) calc(100% - 71px), 100% calc(100% - 10px), calc(100% - 12px) 100%, calc(100% - 53px) 100%, calc(100% - 59px) calc(100% - 6px), calc(50% + 35px) calc(100% - 6px), calc(50% + 38px) 100%, calc(50% - 38px) 100%, calc(50% - 35px) calc(100% - 6px), 59px calc(100% - 6px), 53px 100%, 12px 100%, 0 calc(100% - 10px), 1px calc(100% - 71px), 3px calc(100% - 87px), 6px 75px, 0 51px, 0 12px, 1px 13px, 1px 50px, 7px 76px, 4px calc(100% - 86px), 2px calc(100% - 72px), 1px calc(100% - 11px), 13px calc(100% - 1px), 52px calc(100% - 1px), 58px calc(100% - 7px), calc(50% - 34px) calc(100% - 7px), calc(50% - 37px) calc(100% - 1px), calc(50% + 37px) calc(100% - 1px), calc(50% + 34px) calc(100% - 7px), calc(100% - 58px) calc(100% - 7px), calc(100% - 52px) calc(100% - 1px), calc(100% - 13px) calc(100% - 1px), calc(100% - 1px) calc(100% - 11px), calc(100% - 2px) calc(100% - 70px), calc(100% - 4px) calc(100% - 86px), calc(100% - 7px) 74px, calc(100% - 1px) 50px, calc(100% - 1px) 13px, calc(100% - 14px) 1px, calc(100% - 52px) 1px, calc(100% - 57px) 7px, calc(50% + 33px) 7px, calc(50% + 28px) 1px, calc(50% - 28px) 1px, calc(50% - 33px) 7px, 57px 7px, 52px 1px, 14px 1px, 1px 13px);
+  }
+  .con-get__card__content {
+    padding: 25px 20px 0;
+    -webkit-clip-path: polygon(1px 13px, 1px 50px, 7px 76px, 4px calc(100% - 86px), 2px calc(100% - 72px), 1px calc(100% - 11px), 13px calc(100% - 1px), 52px calc(100% - 1px), 58px calc(100% - 7px), calc(50% - 34px) calc(100% - 7px), calc(50% - 37px) calc(100% - 1px), calc(50% + 37px) calc(100% - 1px), calc(50% + 34px) calc(100% - 7px), calc(100% - 58px) calc(100% - 7px), calc(100% - 52px) calc(100% - 1px), calc(100% - 13px) calc(100% - 1px), calc(100% - 1px) calc(100% - 11px), calc(100% - 2px) calc(100% - 70px), calc(100% - 4px) calc(100% - 86px), calc(100% - 7px) 74px, calc(100% - 1px) 50px, calc(100% - 1px) 13px, calc(100% - 14px) 1px, calc(100% - 52px) 1px, calc(100% - 57px) 7px, calc(50% + 33px) 7px, calc(50% + 28px) 1px, calc(50% - 28px) 1px, calc(50% - 33px) 7px, 57px 7px, 52px 1px, 14px 1px);
+    clip-path: polygon(1px 13px, 1px 50px, 7px 76px, 4px calc(100% - 86px), 2px calc(100% - 72px), 1px calc(100% - 11px), 13px calc(100% - 1px), 52px calc(100% - 1px), 58px calc(100% - 7px), calc(50% - 34px) calc(100% - 7px), calc(50% - 37px) calc(100% - 1px), calc(50% + 37px) calc(100% - 1px), calc(50% + 34px) calc(100% - 7px), calc(100% - 58px) calc(100% - 7px), calc(100% - 52px) calc(100% - 1px), calc(100% - 13px) calc(100% - 1px), calc(100% - 1px) calc(100% - 11px), calc(100% - 2px) calc(100% - 70px), calc(100% - 4px) calc(100% - 86px), calc(100% - 7px) 74px, calc(100% - 1px) 50px, calc(100% - 1px) 13px, calc(100% - 14px) 1px, calc(100% - 52px) 1px, calc(100% - 57px) 7px, calc(50% + 33px) 7px, calc(50% + 28px) 1px, calc(50% - 28px) 1px, calc(50% - 33px) 7px, 57px 7px, 52px 1px, 14px 1px);
+  }
+  .con-get__card__title {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .con-get__card__button {
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+  .con-get__card__info {
+    font-size: 12px;
   }
   .con-advantages {
     margin-bottom: 80px;
