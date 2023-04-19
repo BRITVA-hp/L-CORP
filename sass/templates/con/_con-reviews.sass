@@ -1,0 +1,71 @@
+.con-reviews
+  padding: 0
+  margin-bottom: 160px
+  &__title
+    margin-bottom: 80px
+  &__window
+    overflow: auto
+  &__field
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: 40px
+  &__card
+    position: relative
+    width: 777px
+    height: 361px
+    background: url("../img/con/reviews/border.png") no-repeat center/contain
+    &__row
+      display: flex
+      align-items: center
+      gap: 24px
+      margin-bottom: 24px
+    &__msg
+      font-family: 'BlenderPro', sans-serif
+      font-style: normal
+      font-weight: bold
+      font-size: 28px
+      line-height: 110%
+      color: #FFFFFF
+    &__name
+      font-family: 'UniNeue', sans-serif
+      font-style: normal
+      font-weight: bold
+      font-size: 28px
+      line-height: 120%
+      color: #FFFFFF
+      margin-bottom: 5px
+    &__spec
+      font-family: 'BlenderPro', sans-serif
+      font-style: normal
+      font-weight: bold
+      font-size: 23px
+      line-height: 120%
+      color: #CFFF04
+    &__photo
+      width: 118px
+      height: 118px
+      display: flex
+      align-items: center
+      justify-content: center
+      border-radius: 50%
+      overflow: hidden
+      border: 1px solid #CFFF04
+    &__video
+      opacity: 0.4
+    &__content
+      position: relative
+      z-index: 2
+      width: 100%
+      height: 100%
+      padding: 40px
+    &__bg
+      position: absolute
+      z-index: 1
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      width: calc(100% - 50px)
+      height: calc(100% - 40px)
+      border-radius: 5px
+      overflow: hidden

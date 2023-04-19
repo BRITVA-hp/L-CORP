@@ -931,132 +931,132 @@ body {
 }
 @keyframes noise-anim {
   0% {
-    clip: rect(7px, 9999px, 81px, 0);
+    clip: rect(76px, 9999px, 77px, 0);
   }
   5% {
-    clip: rect(1px, 9999px, 14px, 0);
+    clip: rect(100px, 9999px, 35px, 0);
   }
   10% {
-    clip: rect(98px, 9999px, 33px, 0);
+    clip: rect(56px, 9999px, 5px, 0);
   }
   15% {
-    clip: rect(46px, 9999px, 7px, 0);
+    clip: rect(5px, 9999px, 42px, 0);
   }
   20% {
-    clip: rect(33px, 9999px, 4px, 0);
+    clip: rect(33px, 9999px, 100px, 0);
   }
   25% {
-    clip: rect(26px, 9999px, 52px, 0);
+    clip: rect(63px, 9999px, 52px, 0);
   }
   30% {
-    clip: rect(63px, 9999px, 24px, 0);
+    clip: rect(51px, 9999px, 98px, 0);
   }
   35% {
-    clip: rect(27px, 9999px, 37px, 0);
+    clip: rect(61px, 9999px, 6px, 0);
   }
   40% {
-    clip: rect(3px, 9999px, 19px, 0);
+    clip: rect(78px, 9999px, 57px, 0);
   }
   45% {
-    clip: rect(13px, 9999px, 76px, 0);
+    clip: rect(62px, 9999px, 94px, 0);
   }
   50% {
-    clip: rect(35px, 9999px, 98px, 0);
+    clip: rect(64px, 9999px, 61px, 0);
   }
   55% {
-    clip: rect(80px, 9999px, 98px, 0);
+    clip: rect(98px, 9999px, 88px, 0);
   }
   60% {
-    clip: rect(39px, 9999px, 92px, 0);
+    clip: rect(9px, 9999px, 80px, 0);
   }
   65% {
-    clip: rect(16px, 9999px, 60px, 0);
+    clip: rect(53px, 9999px, 10px, 0);
   }
   70% {
-    clip: rect(35px, 9999px, 53px, 0);
+    clip: rect(83px, 9999px, 69px, 0);
   }
   75% {
-    clip: rect(39px, 9999px, 84px, 0);
+    clip: rect(96px, 9999px, 62px, 0);
   }
   80% {
-    clip: rect(50px, 9999px, 94px, 0);
+    clip: rect(50px, 9999px, 47px, 0);
   }
   85% {
-    clip: rect(67px, 9999px, 74px, 0);
+    clip: rect(50px, 9999px, 29px, 0);
   }
   90% {
-    clip: rect(47px, 9999px, 73px, 0);
+    clip: rect(45px, 9999px, 19px, 0);
   }
   95% {
-    clip: rect(16px, 9999px, 33px, 0);
+    clip: rect(78px, 9999px, 14px, 0);
   }
   100% {
-    clip: rect(12px, 9999px, 75px, 0);
+    clip: rect(3px, 9999px, 53px, 0);
   }
 }
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(18px, 9999px, 97px, 0);
+    clip: rect(35px, 9999px, 52px, 0);
   }
   5% {
-    clip: rect(22px, 9999px, 40px, 0);
+    clip: rect(9px, 9999px, 63px, 0);
   }
   10% {
-    clip: rect(67px, 9999px, 98px, 0);
+    clip: rect(17px, 9999px, 56px, 0);
   }
   15% {
-    clip: rect(74px, 9999px, 69px, 0);
+    clip: rect(3px, 9999px, 92px, 0);
   }
   20% {
-    clip: rect(12px, 9999px, 6px, 0);
+    clip: rect(23px, 9999px, 40px, 0);
   }
   25% {
-    clip: rect(9px, 9999px, 47px, 0);
+    clip: rect(49px, 9999px, 10px, 0);
   }
   30% {
-    clip: rect(7px, 9999px, 31px, 0);
+    clip: rect(20px, 9999px, 23px, 0);
   }
   35% {
-    clip: rect(3px, 9999px, 58px, 0);
+    clip: rect(84px, 9999px, 27px, 0);
   }
   40% {
-    clip: rect(75px, 9999px, 9px, 0);
+    clip: rect(94px, 9999px, 33px, 0);
   }
   45% {
-    clip: rect(61px, 9999px, 7px, 0);
+    clip: rect(63px, 9999px, 63px, 0);
   }
   50% {
-    clip: rect(54px, 9999px, 40px, 0);
+    clip: rect(66px, 9999px, 38px, 0);
   }
   55% {
-    clip: rect(81px, 9999px, 7px, 0);
+    clip: rect(29px, 9999px, 37px, 0);
   }
   60% {
-    clip: rect(97px, 9999px, 14px, 0);
+    clip: rect(33px, 9999px, 65px, 0);
   }
   65% {
-    clip: rect(33px, 9999px, 64px, 0);
+    clip: rect(54px, 9999px, 17px, 0);
   }
   70% {
-    clip: rect(13px, 9999px, 34px, 0);
+    clip: rect(37px, 9999px, 80px, 0);
   }
   75% {
-    clip: rect(40px, 9999px, 40px, 0);
+    clip: rect(36px, 9999px, 24px, 0);
   }
   80% {
-    clip: rect(31px, 9999px, 73px, 0);
+    clip: rect(90px, 9999px, 63px, 0);
   }
   85% {
-    clip: rect(84px, 9999px, 30px, 0);
+    clip: rect(9px, 9999px, 79px, 0);
   }
   90% {
-    clip: rect(27px, 9999px, 37px, 0);
+    clip: rect(99px, 9999px, 50px, 0);
   }
   95% {
-    clip: rect(62px, 9999px, 64px, 0);
+    clip: rect(77px, 9999px, 3px, 0);
   }
   100% {
-    clip: rect(99px, 9999px, 49px, 0);
+    clip: rect(25px, 9999px, 42px, 0);
   }
 }
 .header {
@@ -3352,6 +3352,91 @@ body {
   color: #CF42FF;
 }
 
+.con-reviews {
+  padding: 0;
+  margin-bottom: 160px;
+}
+.con-reviews__title {
+  margin-bottom: 80px;
+}
+.con-reviews__window {
+  overflow: auto;
+}
+.con-reviews__field {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.con-reviews__card {
+  position: relative;
+  width: 777px;
+  height: 361px;
+  background: url("../img/con/reviews/border.png") no-repeat center/contain;
+}
+.con-reviews__card__row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.con-reviews__card__msg {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 110%;
+  color: #FFFFFF;
+}
+.con-reviews__card__name {
+  font-family: "UniNeue", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 120%;
+  color: #FFFFFF;
+  margin-bottom: 5px;
+}
+.con-reviews__card__spec {
+  font-family: "BlenderPro", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 120%;
+  color: #CFFF04;
+}
+.con-reviews__card__photo {
+  width: 118px;
+  height: 118px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #CFFF04;
+}
+.con-reviews__card__video {
+  opacity: 0.4;
+}
+.con-reviews__card__content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+}
+.con-reviews__card__bg {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 50px);
+  height: calc(100% - 40px);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
 .thanks {
   position: relative;
   text-align: center;
@@ -4059,6 +4144,48 @@ body {
   }
   .container {
     max-width: 1300px;
+  }
+  .con-reviews {
+    margin-bottom: 80px;
+  }
+  .con-reviews__title {
+    margin-bottom: 40px;
+  }
+  .con-reviews__field {
+    gap: 12px;
+    max-width: 822px;
+    margin: auto;
+  }
+  .con-reviews__card {
+    width: 405px;
+    height: 189px;
+    background: url("../img/con/reviews/borderC.png") no-repeat center/contain;
+  }
+  .con-reviews__card__photo {
+    width: 60px;
+    height: 60px;
+  }
+  .con-reviews__card__row {
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  .con-reviews__card__name {
+    font-size: 15px;
+    margin-bottom: 2px;
+  }
+  .con-reviews__card__spec {
+    font-size: 12px;
+  }
+  .con-reviews__card__msg {
+    font-size: 15px;
+  }
+  .con-reviews__card__content {
+    padding: 20px 20px 0;
+  }
+  .con-reviews__card__bg {
+    width: calc(100% - 20px);
+    height: calc(100% - 16px);
+    border-radius: 3px;
   }
   .con-steps__title {
     margin-bottom: 40px !important;
@@ -5069,6 +5196,41 @@ body {
   }
   .section__title {
     font-size: 35px;
+  }
+  .con-reviews {
+    padding: 0 !important;
+  }
+  .con-reviews__field {
+    max-width: none;
+    flex-wrap: nowrap;
+    width: -moz-min-content;
+    width: min-content;
+    padding: 0 15px;
+  }
+  .con-reviews__card {
+    width: 325px;
+    min-width: 325px;
+    height: 151px;
+    background: url("../img/con/reviews/borderM.png") no-repeat center/contain;
+  }
+  .con-reviews__card__photo {
+    width: 50px;
+    height: 50px;
+  }
+  .con-reviews__card__row {
+    margin-bottom: 6px;
+  }
+  .con-reviews__card__name {
+    font-size: 14px;
+  }
+  .con-reviews__card__msg {
+    font-size: 13px;
+  }
+  .con-reviews__card__content {
+    padding: 15px 15px 0;
+  }
+  .con-reviews__card__bg {
+    height: calc(100% - 14px);
   }
   .con-get {
     margin-bottom: 80px;
