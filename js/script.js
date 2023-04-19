@@ -68,27 +68,27 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         {
             index: 1,
-            img: 'img/index/steps/img1.png',
+            img: 'img/index/steps/img2.png',
             title: '02',
-            subtitle: 'Второй текст'
+            subtitle: 'Правильно упакуем ваш продукт'
         },
         {
             index: 2,
-            img: 'img/index/steps/img1.png',
+            img: 'img/index/steps/img3.png',
             title: '03',
-            subtitle: 'Третий текст'
+            subtitle: 'Привлечем новых клиентов на выгодных условиях'
         },
         {
             index: 3,
-            img: 'img/index/steps/img1.png',
+            img: 'img/index/steps/img4.png',
             title: '04',
-            subtitle: 'Четвёртый текст'
+            subtitle: 'Проанализируем сферу вашего бизнеса'
         },
         {
             index: 4,
-            img: 'img/index/steps/img1.png',
+            img: 'img/index/steps/img5.png',
             title: '05',
-            subtitle: 'Пятый текст'
+            subtitle: 'Грамотно настроим рекламную кампанию'
         }
     ]
 
