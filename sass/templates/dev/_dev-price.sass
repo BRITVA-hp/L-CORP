@@ -33,7 +33,7 @@
     margin-bottom: 30px
   &__field
     display: flex
-    align-items: center
+    align-items: flex-start
     gap: 20px
     width: min-content
   &__title
@@ -45,7 +45,8 @@
   &__card-wrap
     position: relative
     &--active
-      margin: 40px 20px 0
+      //margin: 40px 20px 0
+      margin: 0 20px
       &::before
         content: ''
         position: absolute
@@ -62,7 +63,6 @@
           width: 416px
           height: 580px
           margin-bottom: 30px
-          padding: 90px 45px 0
           &::after
             background: #CFFF04
           &__substrate
@@ -77,9 +77,9 @@
             font-size: 20px
   &__card
     width: 366px
-    height: 518px
+    min-height: 518px
     background: rgba(8, 226, 240, 0.1)
-    padding: 80px 40px 0
+    padding: 40px 40px 0
     position: relative
     clip-path: polygon(0 30px, 30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px)
     cursor: pointer
