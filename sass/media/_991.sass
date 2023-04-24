@@ -4,6 +4,10 @@
     padding-right: 15px
     &__title
       font-size: 35px
+  .phone-fix
+    width: 70px
+    right: 10px
+    bottom: 10px
 
   .con
     &-reviews
@@ -128,8 +132,6 @@
   .dev
     &-price
       padding: 0
-      &__window
-        margin-bottom: 15px
       &__title
         margin-bottom: 20px
       &__button
@@ -137,8 +139,8 @@
         font-size: 20px
       &__card
         width: 300px
-        height: 430px
-        padding: 55px 30px 0
+        min-height: 460px
+        padding: 40px 30px 0
         &__title
           font-size: 18px
         &__text
@@ -149,13 +151,19 @@
           border-radius: 16px
       &__card-wrap
         &--active
-          margin: 45px 10px 10px
+          //margin: 45px 10px 10px
           .dev-price
             &__card
               width: 345px
-              height: 470px
+              min-height: 500px
               margin-bottom: 15px
-              padding: 68px 35px 0
+              &__ul
+                font-size: 18px
+              &__li
+                &__header
+                  font-size: 18px
+                &__text
+                  font-size: 16px
               &__screen
                 height: 165px
               &__title

@@ -45,7 +45,6 @@
   &__card-wrap
     position: relative
     &--active
-      //margin: 40px 20px 0
       margin: 0 20px
       &::before
         content: ''
@@ -61,10 +60,17 @@
           display: block
         &__card
           width: 416px
-          height: 580px
+          min-height: 580px
           margin-bottom: 30px
           &::after
             background: #CFFF04
+          &__ul
+            font-size: 22px
+          &__li
+            &__header
+              font-size: 22px
+            &__text
+              font-size: 18px
           &__substrate
             opacity: 0
           &__screen
@@ -79,7 +85,7 @@
     width: 366px
     min-height: 518px
     background: rgba(8, 226, 240, 0.1)
-    padding: 40px 40px 0
+    padding: 40px 40px 10px
     position: relative
     clip-path: polygon(0 30px, 30px 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0 30px)
     cursor: pointer
@@ -99,6 +105,23 @@
       font-size: 15px
       line-height: 115%
       color: #FFFFFF
+      margin-bottom: 10px
+    &__ul
+      padding-left: 15px
+      font-family: 'Blender Pro', sans-serif
+      font-style: normal
+      font-weight: bold
+      font-size: 14px
+      line-height: 120%
+      color: #CFFF04
+    &__li
+      margin-bottom: 4px
+      &__header
+        color: #08E2F0
+      &__text
+        color: #CFFF04
+        font-weight: 500
+        font-size: 12px
     &__title
       font-family: 'BlenderPro', sans-serif
       font-style: normal
@@ -127,4 +150,4 @@
       position: relative
       border-radius: 20px
       overflow: hidden
-      margin-bottom: 35px
+      margin-bottom: 25px
