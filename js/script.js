@@ -469,7 +469,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ticker
-    function ticker(windowSelector, fieldSelector, cardSelector, speed, right = true) {
+    function ticker({windowSelector, fieldSelector, cardSelector, speed, right, breakpoint}) {
         const _window = document.querySelector(windowSelector)
         const field = document.querySelector(fieldSelector)
 
@@ -526,9 +526,11 @@ document.addEventListener("DOMContentLoaded", () => {
             })
 
             const run = () => {
-                if (document.documentElement.clientWidth < 575) {
+                if (document.documentElement.clientWidth < breakpoint) {
                     right ? transformValue += speed : transformValue -= speed
                     field.style.transform = 'translateX('  + transformValue  + 'px)'
+                } else {
+                    field.style.transform = ''
                 }
                 window.requestAnimationFrame(run)
             }
@@ -537,8 +539,30 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    ticker('.dev-main__window', '.dev-main__row--ml', '.dev-main__card', 0.5)
-    ticker('.dev-main__window', '.dev-main__row--mr', '.dev-main__card', 0.5, false)
+    ticker({
+        windowSelector: '.dev-main__window',
+        fieldSelector: '.dev-main__row--ml',
+        cardSelector: '.dev-main__card',
+        right: true,
+        speed: 0.5,
+        breakpoint: 575
+    })
+    ticker({
+        windowSelector: '.dev-main__window',
+        fieldSelector: '.dev-main__row--mr',
+        cardSelector: '.dev-main__card',
+        right: false,
+        speed: 0.5,
+        breakpoint: 575
+    })
+    ticker({
+        windowSelector: '.dev-tools__window',
+        fieldSelector: '.dev-tools__row',
+        cardSelector: '.dev-tools__card',
+        right: true,
+        speed: 1.5,
+        breakpoint: 991
+    })
 
     //dev-price slider
     function devPriceSlider() {
