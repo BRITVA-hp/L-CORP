@@ -941,132 +941,132 @@ body {
 }
 @keyframes noise-anim {
   0% {
-    clip: rect(89px, 9999px, 58px, 0);
+    clip: rect(100px, 9999px, 24px, 0);
   }
   5% {
-    clip: rect(82px, 9999px, 94px, 0);
+    clip: rect(14px, 9999px, 58px, 0);
   }
   10% {
-    clip: rect(31px, 9999px, 81px, 0);
+    clip: rect(86px, 9999px, 25px, 0);
   }
   15% {
-    clip: rect(13px, 9999px, 14px, 0);
+    clip: rect(1px, 9999px, 81px, 0);
   }
   20% {
-    clip: rect(63px, 9999px, 6px, 0);
+    clip: rect(60px, 9999px, 53px, 0);
   }
   25% {
-    clip: rect(77px, 9999px, 10px, 0);
+    clip: rect(2px, 9999px, 85px, 0);
   }
   30% {
-    clip: rect(83px, 9999px, 91px, 0);
+    clip: rect(13px, 9999px, 99px, 0);
   }
   35% {
-    clip: rect(95px, 9999px, 10px, 0);
+    clip: rect(3px, 9999px, 12px, 0);
   }
   40% {
-    clip: rect(50px, 9999px, 23px, 0);
+    clip: rect(52px, 9999px, 76px, 0);
   }
   45% {
-    clip: rect(83px, 9999px, 74px, 0);
+    clip: rect(47px, 9999px, 92px, 0);
   }
   50% {
-    clip: rect(19px, 9999px, 5px, 0);
+    clip: rect(14px, 9999px, 53px, 0);
   }
   55% {
-    clip: rect(30px, 9999px, 69px, 0);
+    clip: rect(27px, 9999px, 4px, 0);
   }
   60% {
-    clip: rect(86px, 9999px, 7px, 0);
+    clip: rect(48px, 9999px, 17px, 0);
   }
   65% {
-    clip: rect(100px, 9999px, 88px, 0);
+    clip: rect(75px, 9999px, 29px, 0);
   }
   70% {
-    clip: rect(38px, 9999px, 20px, 0);
+    clip: rect(23px, 9999px, 17px, 0);
   }
   75% {
-    clip: rect(16px, 9999px, 88px, 0);
+    clip: rect(63px, 9999px, 45px, 0);
   }
   80% {
-    clip: rect(86px, 9999px, 65px, 0);
+    clip: rect(46px, 9999px, 45px, 0);
   }
   85% {
-    clip: rect(76px, 9999px, 78px, 0);
+    clip: rect(95px, 9999px, 50px, 0);
   }
   90% {
-    clip: rect(93px, 9999px, 64px, 0);
+    clip: rect(47px, 9999px, 11px, 0);
   }
   95% {
-    clip: rect(80px, 9999px, 9px, 0);
+    clip: rect(16px, 9999px, 11px, 0);
   }
   100% {
-    clip: rect(81px, 9999px, 19px, 0);
+    clip: rect(55px, 9999px, 27px, 0);
   }
 }
 @keyframes noise-anim-2 {
   0% {
-    clip: rect(50px, 9999px, 46px, 0);
+    clip: rect(70px, 9999px, 52px, 0);
   }
   5% {
-    clip: rect(96px, 9999px, 6px, 0);
+    clip: rect(57px, 9999px, 60px, 0);
   }
   10% {
-    clip: rect(93px, 9999px, 54px, 0);
+    clip: rect(89px, 9999px, 37px, 0);
   }
   15% {
-    clip: rect(20px, 9999px, 91px, 0);
+    clip: rect(80px, 9999px, 40px, 0);
   }
   20% {
-    clip: rect(69px, 9999px, 73px, 0);
+    clip: rect(43px, 9999px, 100px, 0);
   }
   25% {
-    clip: rect(25px, 9999px, 98px, 0);
+    clip: rect(80px, 9999px, 40px, 0);
   }
   30% {
-    clip: rect(34px, 9999px, 92px, 0);
+    clip: rect(15px, 9999px, 72px, 0);
   }
   35% {
-    clip: rect(55px, 9999px, 61px, 0);
+    clip: rect(34px, 9999px, 90px, 0);
   }
   40% {
-    clip: rect(49px, 9999px, 93px, 0);
+    clip: rect(56px, 9999px, 54px, 0);
   }
   45% {
-    clip: rect(97px, 9999px, 94px, 0);
+    clip: rect(89px, 9999px, 25px, 0);
   }
   50% {
-    clip: rect(54px, 9999px, 60px, 0);
+    clip: rect(33px, 9999px, 90px, 0);
   }
   55% {
-    clip: rect(40px, 9999px, 32px, 0);
+    clip: rect(92px, 9999px, 86px, 0);
   }
   60% {
-    clip: rect(61px, 9999px, 58px, 0);
+    clip: rect(92px, 9999px, 50px, 0);
   }
   65% {
-    clip: rect(98px, 9999px, 90px, 0);
+    clip: rect(40px, 9999px, 46px, 0);
   }
   70% {
-    clip: rect(62px, 9999px, 6px, 0);
+    clip: rect(14px, 9999px, 71px, 0);
   }
   75% {
-    clip: rect(15px, 9999px, 97px, 0);
+    clip: rect(22px, 9999px, 77px, 0);
   }
   80% {
-    clip: rect(67px, 9999px, 37px, 0);
+    clip: rect(30px, 9999px, 72px, 0);
   }
   85% {
-    clip: rect(99px, 9999px, 8px, 0);
+    clip: rect(54px, 9999px, 11px, 0);
   }
   90% {
-    clip: rect(86px, 9999px, 72px, 0);
+    clip: rect(87px, 9999px, 84px, 0);
   }
   95% {
-    clip: rect(64px, 9999px, 44px, 0);
+    clip: rect(26px, 9999px, 55px, 0);
   }
   100% {
-    clip: rect(34px, 9999px, 52px, 0);
+    clip: rect(69px, 9999px, 100px, 0);
   }
 }
 .header {
@@ -3623,6 +3623,94 @@ body {
   overflow: hidden;
 }
 
+.case-main {
+  padding-top: 116px;
+  margin-bottom: 80px;
+}
+.case-main__row {
+  display: flex;
+  justify-content: center;
+  gap: 65px;
+  flex-wrap: wrap;
+}
+.case-main__card {
+  padding-top: 25px;
+  text-align: center;
+}
+.case-main__card--1 {
+  background: url("../img/case/main/img1.png") no-repeat left center/contain;
+}
+.case-main__card--2 {
+  background: url("../img/case/main/img2.png") no-repeat left center/contain;
+}
+.case-main__card--2 .case-main__card__text::before {
+  content: attr(data-coffee);
+  position: absolute;
+  display: block;
+  width: 36px;
+  height: 40px;
+  background: url("../img/case/main/coffee.svg") no-repeat center/contain;
+  color: #111111;
+  font-family: "UniNeue", sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  left: 0;
+  top: 50%;
+  transform: translate(calc(-100% - 5px), -50%);
+  padding-top: 12px;
+}
+.case-main__card--3 {
+  background: url("../img/case/main/img3.png") no-repeat left center/contain;
+}
+.case-main__card--3 .case-main__card__text::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 36px;
+  height: 38px;
+  background: url("../img/case/main/cookie.svg") no-repeat center/contain;
+  right: 0;
+  top: 50%;
+  transform: translate(calc(100% + 10px), -50%);
+}
+.case-main__card__title {
+  font-family: "Blender Pro", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  margin-bottom: 17px;
+}
+.case-main__card__text {
+  font-family: "Blender Pro", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 35px;
+  line-height: 100%;
+  color: #CFFF04;
+  position: relative;
+  display: inline-block;
+}
+.case-main__container {
+  position: relative;
+}
+.case-main__back {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100px;
+}
+.case-main__back svg {
+  max-width: 100%;
+}
+.case-main__title {
+  font-size: 90px;
+  margin-bottom: 90px;
+}
+
 .thanks {
   position: relative;
   text-align: center;
@@ -4344,6 +4432,35 @@ body {
   }
   .phone-fix {
     width: 100px;
+  }
+  .case-main {
+    padding-top: 80px;
+  }
+  .case-main__card--2 .case-main__card__text::before {
+    width: 25px;
+    height: 28px;
+    font-size: 12px;
+    padding-top: 13px;
+  }
+  .case-main__card--3 .case-main__card__text::before {
+    width: 25px;
+    height: 26px;
+  }
+  .case-main__card__title {
+    font-size: 36px;
+  }
+  .case-main__card__text {
+    font-size: 30px;
+  }
+  .case-main__back {
+    width: 70px;
+  }
+  .case-main__title {
+    font-size: 65px;
+    margin-bottom: 60px;
+  }
+  .case-main__container {
+    max-width: 1600px;
   }
   .con-reviews {
     margin-bottom: 80px;
@@ -5193,6 +5310,16 @@ body {
   }
 }
 @media screen and (max-width: 1200px) {
+  .case-main__row {
+    gap: 35px;
+  }
+  .case-main__card__title {
+    font-size: 30px;
+    margin-bottom: 6px;
+  }
+  .case-main__card__text {
+    font-size: 18px;
+  }
   .con-work {
     overflow: hidden;
     padding: 0;
@@ -5450,6 +5577,20 @@ body {
     width: 70px;
     right: 10px;
     bottom: 10px;
+  }
+  .case-main {
+    padding-top: 50px;
+  }
+  .case-main__card {
+    padding-top: 14px;
+  }
+  .case-main__back {
+    width: 37px;
+    transform: translateY(-100%);
+  }
+  .case-main__title {
+    font-size: 40px;
+    margin-bottom: 28px;
   }
   .con-reviews {
     padding: 0 !important;
@@ -6099,6 +6240,12 @@ body {
   }
   .thanks__box {
     max-width: 270px;
+  }
+  .case-main__row {
+    flex-direction: column;
+  }
+  .case-main__card {
+    background-position: center;
   }
   .con-advantages__wrap {
     gap: 30px;

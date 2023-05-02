@@ -1,0 +1,75 @@
+.case-main
+  padding-top: 116px
+  margin-bottom: 80px
+  &__row
+    display: flex
+    justify-content: center
+    gap: 65px
+    flex-wrap: wrap
+  &__card
+    padding-top: 25px
+    text-align: center
+    &--1
+      background: url("../img/case/main/img1.png") no-repeat left center/contain
+    &--2
+      background: url("../img/case/main/img2.png") no-repeat left center/contain
+      .case-main__card__text
+        &::before
+          content: attr(data-coffee)
+          position: absolute
+          display: block
+          width: 36px
+          height: 40px
+          background: url("../img/case/main/coffee.svg") no-repeat center/contain
+          color: #111111
+          font-family: 'UniNeue', sans-serif
+          font-size: 14px
+          font-weight: 900
+          left: 0
+          top: 50%
+          transform: translate(calc(-100% - 5px), -50%)
+          padding-top: 12px
+    &--3
+      background: url("../img/case/main/img3.png") no-repeat left center/contain
+      .case-main__card__text
+        &::before
+          content: ''
+          position: absolute
+          display: block
+          width: 36px
+          height: 38px
+          background: url("../img/case/main/cookie.svg") no-repeat center/contain
+          right: 0
+          top: 50%
+          transform: translate(calc(100% + 10px), -50%)
+    &__title
+      font-family: 'Blender Pro', sans-serif
+      font-style: normal
+      font-weight: bold
+      font-size: 45px
+      line-height: 100%
+      text-transform: uppercase
+      color: #FFFFFF
+      margin-bottom: 17px
+    &__text
+      font-family: 'Blender Pro', sans-serif
+      font-style: normal
+      font-weight: bold
+      font-size: 35px
+      line-height: 100%
+      color: #CFFF04
+      position: relative
+      display: inline-block
+  &__container
+    position: relative
+  &__back
+    position: absolute
+    left: 0
+    top: 0
+    display: block
+    width: 100px
+    svg
+      max-width: 100%
+  &__title
+    font-size: 90px
+    margin-bottom: 90px
