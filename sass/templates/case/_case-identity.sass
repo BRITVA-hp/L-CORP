@@ -1,0 +1,61 @@
+.case-identity
+  margin-bottom: 80px
+  &__container
+    background: #040404
+    border-radius: 0 0 20px 20px
+    padding: 160px 0 80px
+  &__row
+    display: flex
+    justify-content: center
+    gap: 150px
+    align-items: center
+  &__block
+    &__card
+      width: 460px
+      display: flex
+      justify-content: center
+      align-items: center
+      margin-bottom: 35px
+      &:last-child
+        margin-bottom: 0
+  &__box
+    &__title
+      font-family: 'Blender Pro', sans-serif
+      font-style: normal
+      font-weight: bold
+      font-size: 48px
+      line-height: 120%
+      color: #FFFFFF
+      margin-bottom: 95px
+    &__font
+      margin-bottom: 80px
+      display: block
+    &__row
+      display: flex
+      flex-wrap: wrap
+      gap: 70px
+      text-align: center
+    &__card
+      &__color
+        width: 135px
+        height: 135px
+        border-radius: 50%
+        margin: 0 auto 25px
+  &__title
+    color: #FFFFFF
+    position: relative
+    margin-bottom: 65px
+    max-width: 670px
+    &::before, &::after
+      content: ''
+      position: absolute
+      bottom: 20px
+      left: 0
+      height: 5px
+      width: 260px
+      background: #08E2F0
+      transform: translateX(-100%)
+    &::after
+      left: auto
+      right: 0
+      transform: translateX(100%)

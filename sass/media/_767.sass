@@ -7,6 +7,18 @@
       max-width: 270px
 
   .case
+    &-desktop
+      overflow: hidden
+      &__img
+        img
+          max-width: none
+      &__title
+        text-align: center
+        padding: 0
+      &::before
+        height: 3px
+        border-radius: 0 3px 3px 0
+
     &-main
       &__row
         flex-direction: column

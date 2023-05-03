@@ -1,0 +1,72 @@
+.case-mobile
+  overflow: hidden
+  &__img
+    img
+      max-width: none
+  &__container
+    background: #040404
+    padding-top: 160px
+  &__title
+    margin-bottom: 60px
+    color: #FFFFFF
+    position: relative
+    max-width: 670px
+    &::before, &::after
+      content: ''
+      position: absolute
+      bottom: 20px
+      left: 0
+      height: 5px
+      width: 260px
+      background: #08E2F0
+      transform: translateX(-100%)
+    &::after
+      left: auto
+      right: 0
+      transform: translateX(100%)
+  &__row
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 50px
+  &__box
+    width: 440px
+    height: 832px
+    background: url("../img/case/mobile/bg.png") no-repeat center/contain
+    display: flex
+    justify-content: center
+    padding-top: 32px
+    position: relative
+    &::after
+      content: 'Листай вниз'
+      font-family: 'Blender Pro', sans-serif
+      font-style: normal
+      font-weight: 900
+      font-size: 14px
+      line-height: 17px
+      color: #FFFFFF
+      text-align: center
+      position: absolute
+      width: 240px
+      padding-top: 10px
+      background: url("../img/case/mobile/arrow.svg") no-repeat center top/contain
+      top: 50%
+      right: 0
+      transform: translate(120px, -50%) rotate(-90deg)
+      display: block
+  &__window
+    overflow-y: auto
+    width: 354px
+    height: 768px
+    border-radius: 36px
+    &::-webkit-scrollbar
+      width: 0
+    //&::-webkit-scrollbar-track
+    //&::-webkit-scrollbar-thumb
+  &__field
+    margin: auto
+    overflow-x: hidden
+    display: flex
+    justify-content: center
+    img
+      max-width: none
