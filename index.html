@@ -34,8 +34,8 @@
                 <nav class="header__nav">
                     <ul class="header__ul row">
                         <li class="header__li header__li--active"><a href="#">ГЛАВНАЯ</a></li>
-                        <li class="header__li"><a href="#">РАЗРАБОТКА САЙТОВ</a></li>
-                        <li class="header__li"><a href="#">КОНТЕКСТНАЯ РЕКЛАМА</a></li>
+                        <li class="header__li"><a href="development.html">РАЗРАБОТКА САЙТОВ</a></li>
+                        <li class="header__li"><a href="context.html">КОНТЕКСТНАЯ РЕКЛАМА</a></li>
                         <li class="header__li"><a href="#">ТАРГЕТИРОВАННАЯ РЕКЛАМА</a></li>
                         <li class="header__li"><a href="#">КОНТАКТЫ</a></li>
                     </ul>
@@ -70,8 +70,8 @@
             <img class="menu__close" src="img/close.svg" alt="close">
             <ul class="menu__ul">
                 <li class="menu__li menu__li--active"><a href="#">ГЛАВНАЯ</a></li>
-                <li class="menu__li"><a href="#">РАЗРАБОТКА САЙТОВ</a></li>
-                <li class="menu__li"><a href="#">КОНТЕКСТНАЯ РЕКЛАМА</a></li>
+                <li class="menu__li"><a href="development.html">РАЗРАБОТКА САЙТОВ</a></li>
+                <li class="menu__li"><a href="context.html">КОНТЕКСТНАЯ РЕКЛАМА</a></li>
                 <li class="menu__li"><a href="#">ТАРГЕТИРОВАННАЯ РЕКЛАМА</a></li>
                 <li class="menu__li"><a href="#">КОНТАКТЫ</a></li>
             </ul>
@@ -84,7 +84,7 @@
     </div>
     <!-- /.menu -->
 
-    <a href="#" class="phone-fix">
+    <a href="tel:8 (800) 500-07-33" class="phone-fix">
         <img src="img/phoneFix.svg" alt="phone">
     </a>
 
@@ -134,7 +134,7 @@
                     </div>
 
                     <div class="button main__button">
-                        <span class="main__button__text" data-text="Хочу клиентов">Хочу клиентов</span>
+                        <span data-modal class="main__button__text" data-text="Хочу клиентов">Хочу клиентов</span>
                         <span class="main__button__glitch"></span>
                     </div>
                 </div>
@@ -285,7 +285,7 @@
                         </div>
                     </div>
 
-                    <a href="#form" class="button portfolio__row__button button--clip">
+                    <a data-modal class="button portfolio__row__button button--clip">
                         <span>Обсудить проект</span>
                     </a>
 
@@ -328,7 +328,7 @@
                         </div>
                     </div>
 
-                    <a href="#form" class="button portfolio__row__button portfolio__row__button--left button--clip button--clip--left">
+                    <a data-modal class="button portfolio__row__button portfolio__row__button--left button--clip button--clip--left">
                         <span>Обсудить проект</span>
                     </a>
 
@@ -371,7 +371,7 @@
                         </div>
                     </div>
 
-                    <a href="#form" class="button portfolio__row__button button--clip">
+                    <a data-modal class="button portfolio__row__button button--clip">
                         <span>Обсудить проект</span>
                     </a>
 
@@ -897,27 +897,30 @@
     </footer>
     <!-- /.footer section -->
 
-<!--    <div class="modal modal-main">-->
-<!--        <div class="modal__container">-->
-<!--            <form action="#" class="modal-main__dialog modal__dialog">-->
-<!--                <picture class="modal__close modal-main__close">-->
-<!--                    <source media="(max-width: 991px)" srcset="img/closeM.svg">-->
-<!--                    <img src="img/close.png" alt="close">-->
-<!--                </picture>-->
-<!--                <h3 class="modal-main__title">Обратный звонок</h3>-->
-<!--                <div class="modal-main__box">-->
-<!--                    <div class="modal-main__input-group">-->
-<!--                        <input class="modal-main__input input" type="text" placeholder="Ваше имя">-->
-<!--                    </div>-->
-<!--                    <div class="modal-main__input-group">-->
-<!--                        <input class="modal-main__input input" type="tel" placeholder="Телефон">-->
-<!--                    </div>-->
-<!--                </div>-->
+    <div class="modal modal-main">
+        <div class="modal__container">
+            <form action="#" class="modal-main__dialog">
+                <video playsinline autoplay muted loop class="video-bg modal-main__video lozad">
+                    <source src="img/modal/main/bg.mp4" type="video/mp4">
+                </video>
+                <div class="substrate modal-main__substrate"></div>
 
-<!--                <button class="button modal-main__button">Получить консультацию</button>-->
-<!--            </form>-->
-<!--        </div>-->
-<!--    </div>-->
+                <div class="modal-main__content">
+                    <img class="modal-main__close" src="img/modal/main/close.svg" alt="close">
+                    <h3 class="section__title modal-main__title"><span>Получить</span> бесплатную консультацию</h3>
+                    <div class="modal-main__box">
+                        <div class="input-group modal-main__input-group">
+                            <input placeholder="Ваше Имя" type="text" class="input modal-main__input">
+                        </div>
+                        <div class="input-group modal-main__input-group">
+                            <input placeholder="+7 (___) ___ - __ - __" type="text" class="input modal-main__input">
+                        </div>
+                    </div>
+                    <button class="button button--clip modal-main__button"><span>ОТПРАВИТЬ</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 
